@@ -68,7 +68,6 @@
                                 <state key="normal" title="LOGIN"/>
                                 <connections>
                                     <action selector="loginAction:" destination="8xY-On-fFC" eventType="touchUpInside" id="uMm-dS-peF"/>
-                                    <segue destination="QU6-4h-5Ge" kind="presentation" identifier="loginToHome" id="clP-pn-WuN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckr-HW-zGK">
@@ -117,6 +116,7 @@
                     <connections>
                         <outlet property="email" destination="WRb-YR-QRR" id="Edb-mB-miP"/>
                         <outlet property="password" destination="EJr-0K-yEF" id="rTb-64-shC"/>
+                        <segue destination="QU6-4h-5Ge" kind="presentation" identifier="loginToHome" id="ERu-NG-pBF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vA1-02-epl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -128,6 +128,7 @@
             <objects>
                 <navigationController id="OdF-jl-d1m" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="x8m-8g-9N3">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -151,8 +152,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="SIGNUP"/>
                                 <connections>
-                                    <action selector="signupAction:" destination="FP2-B5-95O" eventType="touchUpInside" id="8qD-dg-FvJ"/>
-                                    <segue destination="QU6-4h-5Ge" kind="presentation" identifier="signupToHome" id="krx-rO-uZK"/>
+                                    <action selector="signupAction:" destination="FP2-B5-95O" eventType="touchUpInside" id="fgH-2b-oQS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiH-Lf-RBa">
@@ -218,7 +218,8 @@
                     <connections>
                         <outlet property="email" destination="OaA-L8-ihS" id="5rJ-FE-gqo"/>
                         <outlet property="password" destination="CdC-CK-jGJ" id="WNp-dZ-XLs"/>
-                        <outlet property="passwordConfirmed" destination="7w7-8L-pUv" id="dsh-ze-cEM"/>
+                        <outlet property="passwordConfirm" destination="7w7-8L-pUv" id="Oqj-rq-2HX"/>
+                        <segue destination="QU6-4h-5Ge" kind="presentation" identifier="signupToHome" id="7wG-aP-OXc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGS-NC-RiD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -232,6 +233,17 @@
                     <view key="view" contentMode="scaleToFill" id="cPG-Bk-qfL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wB4-Q6-BpJ">
+                                <rect key="frame" x="124" y="388" width="127" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="LOG OUT"/>
+                                <connections>
+                                    <action selector="logout:" destination="QU6-4h-5Ge" eventType="touchUpInside" id="WPb-Ts-ldo"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Ovv-1v-y95"/>
                     </view>
@@ -242,6 +254,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="krx-rO-uZK"/>
+        <segue reference="7wG-aP-OXc"/>
     </inferredMetricsTieBreakers>
 </document>
