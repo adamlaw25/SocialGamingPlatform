@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		485F7D2D0806DF7D1186D22B /* Pods_SocialGamingPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F152C85185ADFDBDC657446 /* Pods_SocialGamingPlatform.framework */; };
 		5350B4712184CA49000E8CC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4702184CA49000E8CC4 /* AppDelegate.swift */; };
 		5350B4732184CA49000E8CC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4722184CA49000E8CC4 /* ViewController.swift */; };
 		5350B4762184CA49000E8CC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5350B4742184CA49000E8CC4 /* Main.storyboard */; };
@@ -15,6 +16,13 @@
 		5350B47E2184CA4A000E8CC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5350B47C2184CA4A000E8CC4 /* LaunchScreen.storyboard */; };
 		5350B4892184CA4A000E8CC4 /* SocialGamingPlatformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4882184CA4A000E8CC4 /* SocialGamingPlatformTests.swift */; };
 		5350B4942184CA4A000E8CC4 /* SocialGamingPlatformUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4932184CA4A000E8CC4 /* SocialGamingPlatformUITests.swift */; };
+		5350B4A22184CAEC000E8CC4 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4A12184CAEC000E8CC4 /* StartViewController.swift */; };
+		5350B4A42184CAFC000E8CC4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4A32184CAFC000E8CC4 /* LoginViewController.swift */; };
+		5350B4A62184CB0C000E8CC4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4A52184CB0C000E8CC4 /* SignUpViewController.swift */; };
+		5350B4A82184CB1E000E8CC4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4A72184CB1D000E8CC4 /* HomeViewController.swift */; };
+		5350B4AA2184CEBE000E8CC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5350B4A92184CEBE000E8CC4 /* GoogleService-Info.plist */; };
+		992EE7C255B2D5D1A21B9868 /* Pods_SocialGamingPlatformUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D9F4C65E2320FCD3DA14FC /* Pods_SocialGamingPlatformUITests.framework */; };
+		F086CCB3D24F1D77DAD940A9 /* Pods_SocialGamingPlatformTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F13CCF4F17C8A2C48D1E2A3 /* Pods_SocialGamingPlatformTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19D9F4C65E2320FCD3DA14FC /* Pods_SocialGamingPlatformUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialGamingPlatformUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F13CCF4F17C8A2C48D1E2A3 /* Pods_SocialGamingPlatformTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialGamingPlatformTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26E4D4E0649AC3EC4869E9CF /* Pods-SocialGamingPlatformTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialGamingPlatformTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialGamingPlatformTests/Pods-SocialGamingPlatformTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A217B1A14B238E6EB4ED52C /* Pods-SocialGamingPlatformTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialGamingPlatformTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialGamingPlatformTests/Pods-SocialGamingPlatformTests.release.xcconfig"; sourceTree = "<group>"; };
+		4F152C85185ADFDBDC657446 /* Pods_SocialGamingPlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialGamingPlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5350B46D2184CA49000E8CC4 /* SocialGamingPlatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialGamingPlatform.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5350B4702184CA49000E8CC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5350B4722184CA49000E8CC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +62,15 @@
 		5350B48F2184CA4A000E8CC4 /* SocialGamingPlatformUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialGamingPlatformUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5350B4932184CA4A000E8CC4 /* SocialGamingPlatformUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialGamingPlatformUITests.swift; sourceTree = "<group>"; };
 		5350B4952184CA4A000E8CC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5350B4A12184CAEC000E8CC4 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		5350B4A32184CAFC000E8CC4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5350B4A52184CB0C000E8CC4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		5350B4A72184CB1D000E8CC4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5350B4A92184CEBE000E8CC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		80F169151CDCDB057E201876 /* Pods-SocialGamingPlatform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialGamingPlatform.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialGamingPlatform/Pods-SocialGamingPlatform.debug.xcconfig"; sourceTree = "<group>"; };
+		A43CE36E8AC9DB4B7A581C13 /* Pods-SocialGamingPlatformUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialGamingPlatformUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialGamingPlatformUITests/Pods-SocialGamingPlatformUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B6AE16293D430B75897C099B /* Pods-SocialGamingPlatform.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialGamingPlatform.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialGamingPlatform/Pods-SocialGamingPlatform.release.xcconfig"; sourceTree = "<group>"; };
+		DBE55B18EA47227C7EAC2F46 /* Pods-SocialGamingPlatformUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialGamingPlatformUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialGamingPlatformUITests/Pods-SocialGamingPlatformUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				485F7D2D0806DF7D1186D22B /* Pods_SocialGamingPlatform.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F086CCB3D24F1D77DAD940A9 /* Pods_SocialGamingPlatformTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				992EE7C255B2D5D1A21B9868 /* Pods_SocialGamingPlatformUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +108,8 @@
 				5350B4872184CA4A000E8CC4 /* SocialGamingPlatformTests */,
 				5350B4922184CA4A000E8CC4 /* SocialGamingPlatformUITests */,
 				5350B46E2184CA49000E8CC4 /* Products */,
+				69B00671C83D91C0350A2C2C /* Pods */,
+				D8A7425EBD9C2106D81BD5CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +126,7 @@
 		5350B46F2184CA49000E8CC4 /* SocialGamingPlatform */ = {
 			isa = PBXGroup;
 			children = (
+				5350B4A92184CEBE000E8CC4 /* GoogleService-Info.plist */,
 				5350B4702184CA49000E8CC4 /* AppDelegate.swift */,
 				5350B4722184CA49000E8CC4 /* ViewController.swift */,
 				5350B4742184CA49000E8CC4 /* Main.storyboard */,
@@ -106,6 +134,10 @@
 				5350B47C2184CA4A000E8CC4 /* LaunchScreen.storyboard */,
 				5350B47F2184CA4A000E8CC4 /* Info.plist */,
 				5350B4772184CA49000E8CC4 /* SocialGamingPlatform.xcdatamodeld */,
+				5350B4A12184CAEC000E8CC4 /* StartViewController.swift */,
+				5350B4A32184CAFC000E8CC4 /* LoginViewController.swift */,
+				5350B4A52184CB0C000E8CC4 /* SignUpViewController.swift */,
+				5350B4A72184CB1D000E8CC4 /* HomeViewController.swift */,
 			);
 			path = SocialGamingPlatform;
 			sourceTree = "<group>";
@@ -128,6 +160,29 @@
 			path = SocialGamingPlatformUITests;
 			sourceTree = "<group>";
 		};
+		69B00671C83D91C0350A2C2C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				80F169151CDCDB057E201876 /* Pods-SocialGamingPlatform.debug.xcconfig */,
+				B6AE16293D430B75897C099B /* Pods-SocialGamingPlatform.release.xcconfig */,
+				26E4D4E0649AC3EC4869E9CF /* Pods-SocialGamingPlatformTests.debug.xcconfig */,
+				4A217B1A14B238E6EB4ED52C /* Pods-SocialGamingPlatformTests.release.xcconfig */,
+				A43CE36E8AC9DB4B7A581C13 /* Pods-SocialGamingPlatformUITests.debug.xcconfig */,
+				DBE55B18EA47227C7EAC2F46 /* Pods-SocialGamingPlatformUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D8A7425EBD9C2106D81BD5CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F152C85185ADFDBDC657446 /* Pods_SocialGamingPlatform.framework */,
+				1F13CCF4F17C8A2C48D1E2A3 /* Pods_SocialGamingPlatformTests.framework */,
+				19D9F4C65E2320FCD3DA14FC /* Pods_SocialGamingPlatformUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5350B4982184CA4A000E8CC4 /* Build configuration list for PBXNativeTarget "SocialGamingPlatform" */;
 			buildPhases = (
+				C30E317E34A59CA7151B21B5 /* [CP] Check Pods Manifest.lock */,
 				5350B4692184CA49000E8CC4 /* Sources */,
 				5350B46A2184CA49000E8CC4 /* Frameworks */,
 				5350B46B2184CA49000E8CC4 /* Resources */,
+				089A7E10AF8E6F3DB3A2D1CF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +209,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5350B49B2184CA4A000E8CC4 /* Build configuration list for PBXNativeTarget "SocialGamingPlatformTests" */;
 			buildPhases = (
+				9A88177E213D88A3ADACE438 /* [CP] Check Pods Manifest.lock */,
 				5350B4802184CA4A000E8CC4 /* Sources */,
 				5350B4812184CA4A000E8CC4 /* Frameworks */,
 				5350B4822184CA4A000E8CC4 /* Resources */,
@@ -170,6 +228,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5350B49E2184CA4A000E8CC4 /* Build configuration list for PBXNativeTarget "SocialGamingPlatformUITests" */;
 			buildPhases = (
+				BF6B586CCE76074D5BC017B0 /* [CP] Check Pods Manifest.lock */,
 				5350B48B2184CA4A000E8CC4 /* Sources */,
 				5350B48C2184CA4A000E8CC4 /* Frameworks */,
 				5350B48D2184CA4A000E8CC4 /* Resources */,
@@ -233,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5350B47E2184CA4A000E8CC4 /* LaunchScreen.storyboard in Resources */,
+				5350B4AA2184CEBE000E8CC4 /* GoogleService-Info.plist in Resources */,
 				5350B47B2184CA4A000E8CC4 /* Assets.xcassets in Resources */,
 				5350B4762184CA49000E8CC4 /* Main.storyboard in Resources */,
 			);
@@ -254,13 +314,112 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		089A7E10AF8E6F3DB3A2D1CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SocialGamingPlatform/Pods-SocialGamingPlatform-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocialGamingPlatform/Pods-SocialGamingPlatform-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A88177E213D88A3ADACE438 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SocialGamingPlatformTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF6B586CCE76074D5BC017B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SocialGamingPlatformUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C30E317E34A59CA7151B21B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SocialGamingPlatform-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5350B4692184CA49000E8CC4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5350B4A62184CB0C000E8CC4 /* SignUpViewController.swift in Sources */,
 				5350B4732184CA49000E8CC4 /* ViewController.swift in Sources */,
+				5350B4A22184CAEC000E8CC4 /* StartViewController.swift in Sources */,
 				5350B4712184CA49000E8CC4 /* AppDelegate.swift in Sources */,
+				5350B4A42184CAFC000E8CC4 /* LoginViewController.swift in Sources */,
+				5350B4A82184CB1E000E8CC4 /* HomeViewController.swift in Sources */,
 				5350B4792184CA49000E8CC4 /* SocialGamingPlatform.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,6 +593,7 @@
 		};
 		5350B4992184CA4A000E8CC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80F169151CDCDB057E201876 /* Pods-SocialGamingPlatform.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -452,6 +612,7 @@
 		};
 		5350B49A2184CA4A000E8CC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6AE16293D430B75897C099B /* Pods-SocialGamingPlatform.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -470,6 +631,7 @@
 		};
 		5350B49C2184CA4A000E8CC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26E4D4E0649AC3EC4869E9CF /* Pods-SocialGamingPlatformTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -491,6 +653,7 @@
 		};
 		5350B49D2184CA4A000E8CC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A217B1A14B238E6EB4ED52C /* Pods-SocialGamingPlatformTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +675,7 @@
 		};
 		5350B49F2184CA4A000E8CC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A43CE36E8AC9DB4B7A581C13 /* Pods-SocialGamingPlatformUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +696,7 @@
 		};
 		5350B4A02184CA4A000E8CC4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBE55B18EA47227C7EAC2F46 /* Pods-SocialGamingPlatformUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
