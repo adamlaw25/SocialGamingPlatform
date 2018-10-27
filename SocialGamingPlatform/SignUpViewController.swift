@@ -25,11 +25,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func signupAction(_ sender: Any) {
         if password.text != passwordConfirm.text{
-            let alertController = UIAlertController(title: "Password Incorrect", message: "Please re-type password", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            
-            alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
+            self.createAlert(title: "Password Incorrect", message: "Please re-type password", controller: self)
         }
         else{
             Auth.auth().createUser(withEmail: email.text!, password: password.text!){ (user, error) in
@@ -37,11 +33,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     self.performSegue(withIdentifier: "signupToHome", sender: self)
                 }
                 else{
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    
-                    alertController.addAction(defaultAction)
-                    self.present(alertController, animated: true, completion: nil)
+                    self.createAlert(title: "Sign up error", message: "Please confirm your information", controller: self)
                 }
             }
         }
@@ -50,6 +42,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func createAlert(title: String, message: String, controller: UIViewController) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        controller.present(alert, animated: true, completion: nil)
     }
     
     /*
