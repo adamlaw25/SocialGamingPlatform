@@ -24,7 +24,7 @@ class Card {
     static func generateCards() -> [Card] {
         var deck = [Card]()
         for i in 0..<4 {
-            for j in 0...13 {
+            for j in 1...13 {
                 deck.append(Card(suit: Suit(rawValue: i)!, digit: j))
             }
         }
@@ -149,7 +149,7 @@ class BJGameController {
     
     //produce a gameover notification
     func gameoverNotification() {
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "BlackJack Game Over"), object: self, userInfo: ["didDealerWin": !didDealerWin])
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "BlackJack Game Over"), object: self, userInfo: ["didDealerWin": didDealerWin])
     }
     
     //update the game state
@@ -196,7 +196,6 @@ class BJGameController {
                     else {
                         didDealerWin = true
                         gameState = .gameoverState
-                        //play again somehow
                         gameoverNotification()
                     }
                 }
