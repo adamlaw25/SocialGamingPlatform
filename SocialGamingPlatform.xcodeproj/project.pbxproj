@@ -21,7 +21,7 @@
 		5350B4A62184CB0C000E8CC4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4A52184CB0C000E8CC4 /* SignUpViewController.swift */; };
 		5350B4A82184CB1E000E8CC4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4A72184CB1D000E8CC4 /* HomeViewController.swift */; };
 		5350B4AA2184CEBE000E8CC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5350B4A92184CEBE000E8CC4 /* GoogleService-Info.plist */; };
-		95DF6BA82184DCA2001C0AF2 /* BJGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DF6BA72184DCA2001C0AF2 /* BJGameController.swift */; };
+		95DF6BAC2184DE7C001C0AF2 /* BJGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DF6BAB2184DE7C001C0AF2 /* BJGameController.swift */; };
 		992EE7C255B2D5D1A21B9868 /* Pods_SocialGamingPlatformUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D9F4C65E2320FCD3DA14FC /* Pods_SocialGamingPlatformUITests.framework */; };
 		F086CCB3D24F1D77DAD940A9 /* Pods_SocialGamingPlatformTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F13CCF4F17C8A2C48D1E2A3 /* Pods_SocialGamingPlatformTests.framework */; };
 /* End PBXBuildFile section */
@@ -69,7 +69,7 @@
 		5350B4A72184CB1D000E8CC4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5350B4A92184CEBE000E8CC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		80F169151CDCDB057E201876 /* Pods-SocialGamingPlatform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialGamingPlatform.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialGamingPlatform/Pods-SocialGamingPlatform.debug.xcconfig"; sourceTree = "<group>"; };
-		95DF6BA72184DCA2001C0AF2 /* BJGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BJGameController.swift; path = "../../../../../Desktop/Game - BlackJack/BJGameController.swift"; sourceTree = "<group>"; };
+		95DF6BAB2184DE7C001C0AF2 /* BJGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BJGameController.swift; sourceTree = "<group>"; };
 		A43CE36E8AC9DB4B7A581C13 /* Pods-SocialGamingPlatformUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialGamingPlatformUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialGamingPlatformUITests/Pods-SocialGamingPlatformUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B6AE16293D430B75897C099B /* Pods-SocialGamingPlatform.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialGamingPlatform.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialGamingPlatform/Pods-SocialGamingPlatform.release.xcconfig"; sourceTree = "<group>"; };
 		DBE55B18EA47227C7EAC2F46 /* Pods-SocialGamingPlatformUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialGamingPlatformUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialGamingPlatformUITests/Pods-SocialGamingPlatformUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 		5350B46F2184CA49000E8CC4 /* SocialGamingPlatform */ = {
 			isa = PBXGroup;
 			children = (
-				95DF6BA62184DC93001C0AF2 /* Game - BlackJack */,
+				95DF6BAA2184DE7C001C0AF2 /* Game - BlackJack */,
 				5350B4A92184CEBE000E8CC4 /* GoogleService-Info.plist */,
 				5350B4702184CA49000E8CC4 /* AppDelegate.swift */,
 				5350B4722184CA49000E8CC4 /* ViewController.swift */,
@@ -176,10 +176,10 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		95DF6BA62184DC93001C0AF2 /* Game - BlackJack */ = {
+		95DF6BAA2184DE7C001C0AF2 /* Game - BlackJack */ = {
 			isa = PBXGroup;
 			children = (
-				95DF6BA72184DCA2001C0AF2 /* BJGameController.swift */,
+				95DF6BAB2184DE7C001C0AF2 /* BJGameController.swift */,
 			);
 			path = "Game - BlackJack";
 			sourceTree = "<group>";
@@ -430,7 +430,7 @@
 				5350B4A62184CB0C000E8CC4 /* SignUpViewController.swift in Sources */,
 				5350B4732184CA49000E8CC4 /* ViewController.swift in Sources */,
 				5350B4A22184CAEC000E8CC4 /* StartViewController.swift in Sources */,
-				95DF6BA82184DCA2001C0AF2 /* BJGameController.swift in Sources */,
+				95DF6BAC2184DE7C001C0AF2 /* BJGameController.swift in Sources */,
 				5350B4712184CA49000E8CC4 /* AppDelegate.swift in Sources */,
 				5350B4A42184CAFC000E8CC4 /* LoginViewController.swift in Sources */,
 				5350B4A82184CB1E000E8CC4 /* HomeViewController.swift in Sources */,
