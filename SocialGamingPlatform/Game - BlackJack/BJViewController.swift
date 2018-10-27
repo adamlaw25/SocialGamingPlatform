@@ -20,12 +20,15 @@ class BJViewController: UIViewController {
     
     private var gameController: BJGameController
     
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     @IBOutlet weak var hitBtn: UIButton!
     
     @IBOutlet weak var standBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        scoreLabel.text = "Score: 0"
         restartGame()
     }
     
@@ -42,6 +45,7 @@ class BJViewController: UIViewController {
                 let message = (dealerWin as! Bool) ? "Dealer Won" : "You Won"
                 let alert = UIAlertController(title: "Game Over", message: message, preferredStyle: .alert)
                 let alertAction = UIAlertAction(title: "Play again", style: .default, handler: ({(_: UIAlertAction) -> Void in self.restartGame()}))
+                scoreLabel.text = "Score: " + String(gameController.playerScore)
                 alert.addAction(alertAction)
                 present(alert, animated: true, completion: nil)
             }

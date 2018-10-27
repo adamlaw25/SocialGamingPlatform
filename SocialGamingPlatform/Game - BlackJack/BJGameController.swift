@@ -58,6 +58,8 @@ class BJGameController {
     var gameState: BJGameState
     let maxPlayerCards = 5
     var didDealerWin: Bool
+    var playerScore: Int = 0
+    var scoreMultiplier: Int = 1
     
     init() {
         self.gameState = .playerState
@@ -117,7 +119,7 @@ class BJGameController {
             if playerCards[0].isAce() && playerCards[1].isValueTen() {
                 return true
             }
-            else if playerCards[0].isValueTen() && playerCards[1].isValueTen() {
+            else if playerCards[0].isValueTen() && playerCards[1].isAce() {
                 return true
             }
         }
@@ -158,12 +160,13 @@ class BJGameController {
             if isBlackJack() {
                 gameState = .gameoverState
                 didDealerWin = false
+                awardScore()
                 gameoverNotification()
             }
             else if areCardsOver21(playerCards) {
                 gameState = .gameoverState
                 didDealerWin = true
-                //play again somehow
+                awardScore()
                 gameoverNotification()
             }
             else if playerCards.count == maxPlayerCards {
@@ -174,13 +177,13 @@ class BJGameController {
             if areCardsOver21(dealerCards) {
                 gameState = .gameoverState
                 didDealerWin = false
-                //play again somehow
+                awardScore()
                 gameoverNotification()
             }
             else if dealerCards.count == maxPlayerCards {
                 gameState = .gameoverState
                 determineWinner()
-                //play again somehow
+                awardScore()
                 gameoverNotification()
             }
             else {
@@ -196,6 +199,7 @@ class BJGameController {
                     else {
                         didDealerWin = true
                         gameState = .gameoverState
+                        awardScore()
                         gameoverNotification()
                     }
                 }
@@ -203,6 +207,7 @@ class BJGameController {
         }
         else {
             determineWinner()
+            awardScore()
             gameoverNotification()
         }
     }
@@ -211,6 +216,21 @@ class BJGameController {
         let dealerScore = calculateBestScore(dealerCards)
         let playerScore = calculateBestScore(playerCards)
         didDealerWin = dealerScore >= playerScore
+    }
+    
+    func awardScore() {
+        if(isBlackJack()) {
+            playerScore += 50
+        }
+        if(!didDealerWin) {
+            if(playerCards.count == 5) {
+                playerScore += 50
+            }
+            playerScore += (calculateBestScore(playerCards) - calculateBestScore(dealerCards)) * scoreMultiplier
+        }
+        else {
+            playerScore -= calculateBestScore(dealerCards) - calculateBestScore(playerCards)
+        }
     }
     
     //reset the game
