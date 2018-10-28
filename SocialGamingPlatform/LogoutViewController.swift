@@ -30,4 +30,7 @@ class LogoutViewController: UIViewController {
         UIApplication.shared.keyWindow?.rootViewController = initial
     }
 
+    @IBAction func goBack(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

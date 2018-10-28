@@ -71,19 +71,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckr-HW-zGK">
-                                <rect key="frame" x="40" y="258" width="59" height="30"/>
+                                <rect key="frame" x="40" y="302" width="59" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mTA-Nn-LG5">
-                                <rect key="frame" x="40" y="394" width="105" height="30"/>
+                                <rect key="frame" x="40" y="438" width="105" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email address" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="WRb-YR-QRR">
-                                <rect key="frame" x="40" y="324" width="295" height="30"/>
+                                <rect key="frame" x="40" y="368" width="295" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -157,7 +157,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                 <state key="normal" title="No"/>
                                 <connections>
-                                    <segue destination="FwG-GV-9se" kind="presentation" id="KtV-If-z5j"/>
+                                    <action selector="goBack:" destination="JWZ-jG-7IT" eventType="touchUpInside" id="CY5-oE-nNQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Wd-hg-GvK">
@@ -167,7 +167,6 @@
                                 <state key="normal" title="Yes"/>
                                 <connections>
                                     <action selector="logout:" destination="JWZ-jG-7IT" eventType="touchUpInside" id="Bcm-Ck-Pit"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" id="i34-7y-ftJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -213,19 +212,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiH-Lf-RBa">
-                                <rect key="frame" x="40" y="182" width="59" height="30"/>
+                                <rect key="frame" x="40" y="226" width="59" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cy5-Wd-H3H">
-                                <rect key="frame" x="40" y="318" width="105" height="30"/>
+                                <rect key="frame" x="40" y="362" width="105" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email address" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="OaA-L8-ihS">
-                                <rect key="frame" x="40" y="248" width="295" height="30"/>
+                                <rect key="frame" x="40" y="292" width="295" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -237,7 +236,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Re-type password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTY-8h-wPv">
-                                <rect key="frame" x="40" y="472" width="198" height="30"/>
+                                <rect key="frame" x="40" y="516" width="198" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -599,10 +598,8 @@
         <image name="spade-13" width="118" height="176"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hKE-93-qN1"/>
+        <segue reference="tUw-eU-3gq"/>
         <segue reference="2F8-XX-bH9"/>
-        <segue reference="dTQ-Ri-z3k"/>
         <segue reference="3xP-zl-RWx"/>
-        <segue reference="i34-7y-ftJ"/>
     </inferredMetricsTieBreakers>
 </document>
