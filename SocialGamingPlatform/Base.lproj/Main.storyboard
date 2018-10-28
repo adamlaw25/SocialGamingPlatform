@@ -450,7 +450,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="66U-lV-yiu" kind="presentation" id="Zt5-T0-T2Y"/>
+                                    <action selector="goBack:" destination="Dx2-Ah-fgP" eventType="touchUpInside" id="M0g-ca-xrj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -564,7 +564,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Dx2-Ah-fgP" kind="presentation" id="tUw-eU-3gq"/>
+                                    <action selector="goBack:" destination="WZD-bq-AdW" eventType="touchUpInside" id="Cjm-3g-pOg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -598,8 +598,6 @@
         <image name="spade-13" width="118" height="176"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tUw-eU-3gq"/>
         <segue reference="2F8-XX-bH9"/>
-        <segue reference="3xP-zl-RWx"/>
     </inferredMetricsTieBreakers>
 </document>

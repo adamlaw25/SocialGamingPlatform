@@ -22,4 +22,9 @@ class BJMenuViewController: UIViewController {
     @IBAction func proceedToGame(_ sender: UIButton) {
         
     }
+    
+    @IBAction func goBack(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }

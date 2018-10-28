@@ -60,6 +60,7 @@ class BJViewController: UIViewController {
         UIImageView.transition(with: dealerCards[curDealerCardIndex], duration: 0.7, options: .transitionFlipFromRight, animations: nil, completion: nil)
         curDealerCardIndex += 1
         card = gameController.nextDealerCard()
+        UIImageView.transition(with: dealerCards[curDealerCardIndex], duration: 0.7, options: .transitionFlipFromRight, animations: nil, completion: nil)
         card.isFaceUp = false
         
         
@@ -107,6 +108,9 @@ class BJViewController: UIViewController {
         playDealerTurn()
     }
     
+    @IBAction func goBack(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     func playDealerTurn() {
         hitBtn.isEnabled = false
