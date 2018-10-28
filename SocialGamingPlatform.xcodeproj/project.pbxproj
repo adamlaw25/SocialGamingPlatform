@@ -21,6 +21,11 @@
 		5350B4AA2184CEBE000E8CC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5350B4A92184CEBE000E8CC4 /* GoogleService-Info.plist */; };
 		53EE1BF3218567B30026904F /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE1BF2218567B30026904F /* AlertHelper.swift */; };
 		53EE1BF521856DC30026904F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE1BF421856DC30026904F /* Game.swift */; };
+		53EE1C03218571830026904F /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE1C02218571830026904F /* StoreViewController.swift */; };
+		53EE1C05218571900026904F /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE1C04218571900026904F /* MessageViewController.swift */; };
+		53EE1C07218571A10026904F /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE1C06218571A10026904F /* Store.swift */; };
+		53EE1C09218571AD0026904F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE1C08218571AD0026904F /* Message.swift */; };
+		53EE1C0B218571B90026904F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE1C0A218571B90026904F /* User.swift */; };
 		95DF6BAC2184DE7C001C0AF2 /* BJGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DF6BAB2184DE7C001C0AF2 /* BJGameController.swift */; };
 		95DF6BAE2184E0AB001C0AF2 /* BJViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DF6BAD2184E0AB001C0AF2 /* BJViewController.swift */; };
 		95DF6BB12184FFEF001C0AF2 /* Connect4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DF6BB02184FFEF001C0AF2 /* Connect4ViewController.swift */; };
@@ -73,6 +78,11 @@
 		5350B4A92184CEBE000E8CC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		53EE1BF2218567B30026904F /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		53EE1BF421856DC30026904F /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		53EE1C02218571830026904F /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		53EE1C04218571900026904F /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		53EE1C06218571A10026904F /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		53EE1C08218571AD0026904F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		53EE1C0A218571B90026904F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		80F169151CDCDB057E201876 /* Pods-SocialGamingPlatform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialGamingPlatform.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialGamingPlatform/Pods-SocialGamingPlatform.debug.xcconfig"; sourceTree = "<group>"; };
 		95DF6BAB2184DE7C001C0AF2 /* BJGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BJGameController.swift; sourceTree = "<group>"; };
 		95DF6BAD2184E0AB001C0AF2 /* BJViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +201,7 @@
 		53EE1BF821856E280026904F /* User */ = {
 			isa = PBXGroup;
 			children = (
+				53EE1C0A218571B90026904F /* User.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -198,6 +209,7 @@
 		53EE1BF921856E330026904F /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				53EE1C06218571A10026904F /* Store.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -205,6 +217,7 @@
 		53EE1BFA21856E400026904F /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				53EE1C08218571AD0026904F /* Message.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -244,6 +257,7 @@
 		53EE1BFE21856FAB0026904F /* StoreController */ = {
 			isa = PBXGroup;
 			children = (
+				53EE1C02218571830026904F /* StoreViewController.swift */,
 			);
 			path = StoreController;
 			sourceTree = "<group>";
@@ -251,6 +265,7 @@
 		53EE1BFF21856FC20026904F /* MessageController */ = {
 			isa = PBXGroup;
 			children = (
+				53EE1C04218571900026904F /* MessageViewController.swift */,
 			);
 			path = MessageController;
 			sourceTree = "<group>";
@@ -549,13 +564,18 @@
 				5350B4A62184CB0C000E8CC4 /* SignUpViewController.swift in Sources */,
 				5350B4732184CA49000E8CC4 /* ViewController.swift in Sources */,
 				95DF6BB12184FFEF001C0AF2 /* Connect4ViewController.swift in Sources */,
+				53EE1C09218571AD0026904F /* Message.swift in Sources */,
+				53EE1C07218571A10026904F /* Store.swift in Sources */,
 				5350B4A22184CAEC000E8CC4 /* StartViewController.swift in Sources */,
+				53EE1C05218571900026904F /* MessageViewController.swift in Sources */,
 				95DF6BB321850228001C0AF2 /* BJMenuViewController.swift in Sources */,
 				95DF6BAC2184DE7C001C0AF2 /* BJGameController.swift in Sources */,
+				53EE1C03218571830026904F /* StoreViewController.swift in Sources */,
 				5350B4712184CA49000E8CC4 /* AppDelegate.swift in Sources */,
 				53EE1BF3218567B30026904F /* AlertHelper.swift in Sources */,
 				95DF6BB7218509AA001C0AF2 /* GameMenuTableTableViewController.swift in Sources */,
 				53EE1BF521856DC30026904F /* Game.swift in Sources */,
+				53EE1C0B218571B90026904F /* User.swift in Sources */,
 				5350B4792184CA49000E8CC4 /* SocialGamingPlatform.xcdatamodeld in Sources */,
 				95DF6BB92185548E001C0AF2 /* LogoutViewController.swift in Sources */,
 				95DF6BAE2184E0AB001C0AF2 /* BJViewController.swift in Sources */,
