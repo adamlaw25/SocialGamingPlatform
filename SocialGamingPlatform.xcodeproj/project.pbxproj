@@ -17,9 +17,10 @@
 		5350B4892184CA4A000E8CC4 /* SocialGamingPlatformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4882184CA4A000E8CC4 /* SocialGamingPlatformTests.swift */; };
 		5350B4942184CA4A000E8CC4 /* SocialGamingPlatformUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4932184CA4A000E8CC4 /* SocialGamingPlatformUITests.swift */; };
 		5350B4A22184CAEC000E8CC4 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4A12184CAEC000E8CC4 /* StartViewController.swift */; };
-		5350B4A42184CAFC000E8CC4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4A32184CAFC000E8CC4 /* LoginViewController.swift */; };
 		5350B4A62184CB0C000E8CC4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4A52184CB0C000E8CC4 /* SignUpViewController.swift */; };
 		5350B4AA2184CEBE000E8CC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5350B4A92184CEBE000E8CC4 /* GoogleService-Info.plist */; };
+		53EE1BF3218567B30026904F /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE1BF2218567B30026904F /* AlertHelper.swift */; };
+		53EE1BF521856DC30026904F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE1BF421856DC30026904F /* Game.swift */; };
 		95DF6BAC2184DE7C001C0AF2 /* BJGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DF6BAB2184DE7C001C0AF2 /* BJGameController.swift */; };
 		95DF6BAE2184E0AB001C0AF2 /* BJViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DF6BAD2184E0AB001C0AF2 /* BJViewController.swift */; };
 		95DF6BB12184FFEF001C0AF2 /* Connect4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DF6BB02184FFEF001C0AF2 /* Connect4ViewController.swift */; };
@@ -68,9 +69,10 @@
 		5350B4932184CA4A000E8CC4 /* SocialGamingPlatformUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialGamingPlatformUITests.swift; sourceTree = "<group>"; };
 		5350B4952184CA4A000E8CC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5350B4A12184CAEC000E8CC4 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		5350B4A32184CAFC000E8CC4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5350B4A52184CB0C000E8CC4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5350B4A92184CEBE000E8CC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		53EE1BF2218567B30026904F /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		53EE1BF421856DC30026904F /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		80F169151CDCDB057E201876 /* Pods-SocialGamingPlatform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialGamingPlatform.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialGamingPlatform/Pods-SocialGamingPlatform.debug.xcconfig"; sourceTree = "<group>"; };
 		95DF6BAB2184DE7C001C0AF2 /* BJGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BJGameController.swift; sourceTree = "<group>"; };
 		95DF6BAD2184E0AB001C0AF2 /* BJViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJViewController.swift; sourceTree = "<group>"; };
@@ -136,21 +138,15 @@
 		5350B46F2184CA49000E8CC4 /* SocialGamingPlatform */ = {
 			isa = PBXGroup;
 			children = (
-				95DF6BAF2184FF3F001C0AF2 /* Game - Connect 4 */,
-				95DF6BAA2184DE7C001C0AF2 /* Game - BlackJack */,
-				5350B4A92184CEBE000E8CC4 /* GoogleService-Info.plist */,
 				5350B4702184CA49000E8CC4 /* AppDelegate.swift */,
-				5350B4722184CA49000E8CC4 /* ViewController.swift */,
-				5350B4742184CA49000E8CC4 /* Main.storyboard */,
 				5350B47A2184CA4A000E8CC4 /* Assets.xcassets */,
-				5350B47C2184CA4A000E8CC4 /* LaunchScreen.storyboard */,
 				5350B47F2184CA4A000E8CC4 /* Info.plist */,
 				5350B4772184CA49000E8CC4 /* SocialGamingPlatform.xcdatamodeld */,
-				5350B4A12184CAEC000E8CC4 /* StartViewController.swift */,
-				5350B4A32184CAFC000E8CC4 /* LoginViewController.swift */,
-				5350B4A52184CB0C000E8CC4 /* SignUpViewController.swift */,
-				95DF6BB6218509AA001C0AF2 /* GameMenuTableTableViewController.swift */,
-				95DF6BB82185548E001C0AF2 /* LogoutViewController.swift */,
+				5350B4A92184CEBE000E8CC4 /* GoogleService-Info.plist */,
+				53EE1BF621856DE30026904F /* Model */,
+				53EE1BFB21856E5A0026904F /* Controller */,
+				53EE1C01218570660026904F /* Helper */,
+				53EE1C0021856FF40026904F /* Resources */,
 			);
 			path = SocialGamingPlatform;
 			sourceTree = "<group>";
@@ -173,6 +169,109 @@
 			path = SocialGamingPlatformUITests;
 			sourceTree = "<group>";
 		};
+		53EE1BF621856DE30026904F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				53EE1BF721856E180026904F /* Game */,
+				53EE1BF921856E330026904F /* Store */,
+				53EE1BFA21856E400026904F /* Message */,
+				53EE1BF821856E280026904F /* User */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		53EE1BF721856E180026904F /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				53EE1BF421856DC30026904F /* Game.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		53EE1BF821856E280026904F /* User */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		53EE1BF921856E330026904F /* Store */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		53EE1BFA21856E400026904F /* Message */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		53EE1BFB21856E5A0026904F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5350B4A12184CAEC000E8CC4 /* StartViewController.swift */,
+				5350B4A52184CB0C000E8CC4 /* SignUpViewController.swift */,
+				5350B4722184CA49000E8CC4 /* ViewController.swift */,
+				53EE1BFC21856E850026904F /* GameController */,
+				53EE1BFE21856FAB0026904F /* StoreController */,
+				53EE1BFF21856FC20026904F /* MessageController */,
+				53EE1BFD21856F180026904F /* AccountController */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		53EE1BFC21856E850026904F /* GameController */ = {
+			isa = PBXGroup;
+			children = (
+				95DF6BB6218509AA001C0AF2 /* GameMenuTableTableViewController.swift */,
+				95DF6BAF2184FF3F001C0AF2 /* Connect4GameController */,
+				95DF6BAA2184DE7C001C0AF2 /* BlackJackGameController */,
+			);
+			path = GameController;
+			sourceTree = "<group>";
+		};
+		53EE1BFD21856F180026904F /* AccountController */ = {
+			isa = PBXGroup;
+			children = (
+				95DF6BB82185548E001C0AF2 /* LogoutViewController.swift */,
+			);
+			path = AccountController;
+			sourceTree = "<group>";
+		};
+		53EE1BFE21856FAB0026904F /* StoreController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StoreController;
+			sourceTree = "<group>";
+		};
+		53EE1BFF21856FC20026904F /* MessageController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MessageController;
+			sourceTree = "<group>";
+		};
+		53EE1C0021856FF40026904F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5350B47C2184CA4A000E8CC4 /* LaunchScreen.storyboard */,
+				5350B4742184CA49000E8CC4 /* Main.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		53EE1C01218570660026904F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				53EE1BF2218567B30026904F /* AlertHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		69B00671C83D91C0350A2C2C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,22 +285,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		95DF6BAA2184DE7C001C0AF2 /* Game - BlackJack */ = {
+		95DF6BAA2184DE7C001C0AF2 /* BlackJackGameController */ = {
 			isa = PBXGroup;
 			children = (
 				95DF6BAB2184DE7C001C0AF2 /* BJGameController.swift */,
 				95DF6BAD2184E0AB001C0AF2 /* BJViewController.swift */,
 				95DF6BB221850228001C0AF2 /* BJMenuViewController.swift */,
 			);
-			path = "Game - BlackJack";
+			path = BlackJackGameController;
 			sourceTree = "<group>";
 		};
-		95DF6BAF2184FF3F001C0AF2 /* Game - Connect 4 */ = {
+		95DF6BAF2184FF3F001C0AF2 /* Connect4GameController */ = {
 			isa = PBXGroup;
 			children = (
 				95DF6BB02184FFEF001C0AF2 /* Connect4ViewController.swift */,
 			);
-			path = "Game - Connect 4";
+			path = Connect4GameController;
 			sourceTree = "<group>";
 		};
 		D8A7425EBD9C2106D81BD5CA /* Frameworks */ = {
@@ -454,8 +553,9 @@
 				95DF6BB321850228001C0AF2 /* BJMenuViewController.swift in Sources */,
 				95DF6BAC2184DE7C001C0AF2 /* BJGameController.swift in Sources */,
 				5350B4712184CA49000E8CC4 /* AppDelegate.swift in Sources */,
+				53EE1BF3218567B30026904F /* AlertHelper.swift in Sources */,
 				95DF6BB7218509AA001C0AF2 /* GameMenuTableTableViewController.swift in Sources */,
-				5350B4A42184CAFC000E8CC4 /* LoginViewController.swift in Sources */,
+				53EE1BF521856DC30026904F /* Game.swift in Sources */,
 				5350B4792184CA49000E8CC4 /* SocialGamingPlatform.xcdatamodeld in Sources */,
 				95DF6BB92185548E001C0AF2 /* LogoutViewController.swift in Sources */,
 				95DF6BAE2184E0AB001C0AF2 /* BJViewController.swift in Sources */,
