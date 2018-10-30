@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+class Message {
+	var message: String
+	// var time: timestamp
+	var sentSuccess: Bool
+
+	init(message: String, sentSuccess: Bool) {
+		self.message = message
+		self.sentSuccess = sentSuccess
+	}
+}
