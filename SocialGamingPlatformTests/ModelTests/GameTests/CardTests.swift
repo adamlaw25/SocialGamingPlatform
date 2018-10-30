@@ -11,15 +11,16 @@ import XCTest
 
 class CardTests: XCTestCase {
     
-    var deck : [Card]
+    var deck : [Card]!
     
-    var diamondAce : Card
+    var diamondAce : Card!
     
-    var heartTen : Card
+    var heartTen : Card!
     
-    var clubKing : Card
+    var clubKing : Card!
 
     override func setUp() {
+        super.setUp()
         deck = Card.generateCards()
         diamondAce = Card(suit: .diamond, digit: 1)
         heartTen = Card(suit: .heart, digit: 10)

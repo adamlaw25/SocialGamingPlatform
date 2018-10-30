@@ -9,11 +9,12 @@
 import Foundation
 
 class Game {
-	var points = 0
+    var points: Double
 	var player: User
 
 	init(player: User) {
 		self.player = player
+        self.points = 0.0
     }
 
     func hasWon(isWon: Bool) -> Bool {

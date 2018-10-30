@@ -24,6 +24,8 @@
 		9537F11A21890EAA0028E901 /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537F11921890EAA0028E901 /* StoreTests.swift */; };
 		9537F11F21890EED0028E901 /* PowerupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537F11E21890EED0028E901 /* PowerupTests.swift */; };
 		9537F12221890F070028E901 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537F12121890F070028E901 /* CardTests.swift */; };
+		9537F124218912D60028E901 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537F123218912D60028E901 /* GameTests.swift */; };
+		9537F1282189161E0028E901 /* BJGameControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537F1272189161E0028E901 /* BJGameControllerTests.swift */; };
 		955FF7392188E9B30019420D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955FF7352188E9B30019420D /* LaunchScreen.storyboard */; };
 		955FF73A2188E9B30019420D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955FF7372188E9B30019420D /* Main.storyboard */; };
 		955FF7462188E9EB0019420D /* MessageBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FF73D2188E9EB0019420D /* MessageBoard.swift */; };
@@ -98,6 +100,8 @@
 		9537F11921890EAA0028E901 /* StoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTests.swift; sourceTree = "<group>"; };
 		9537F11E21890EED0028E901 /* PowerupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerupTests.swift; sourceTree = "<group>"; };
 		9537F12121890F070028E901 /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
+		9537F123218912D60028E901 /* GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
+		9537F1272189161E0028E901 /* BJGameControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJGameControllerTests.swift; sourceTree = "<group>"; };
 		955FF7362188E9B30019420D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		955FF7382188E9B30019420D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		955FF73D2188E9EB0019420D /* MessageBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBoard.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 		5350B4872184CA4A000E8CC4 /* SocialGamingPlatformTests */ = {
 			isa = PBXGroup;
 			children = (
+				9537F129218916380028E901 /* ControllerTests */,
 				955FF75F2188EF4F0019420D /* ModelTests */,
 				5350B4882184CA4A000E8CC4 /* SocialGamingPlatformTests.swift */,
 				5350B48A2184CA4A000E8CC4 /* Info.plist */,
@@ -312,9 +317,34 @@
 		9537F12021890EF80028E901 /* GameTests */ = {
 			isa = PBXGroup;
 			children = (
+				9537F123218912D60028E901 /* GameTests.swift */,
 				9537F12121890F070028E901 /* CardTests.swift */,
 			);
 			path = GameTests;
+			sourceTree = "<group>";
+		};
+		9537F125218915FA0028E901 /* GameControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				9537F126218916050028E901 /* BlackJackGameControllerTests */,
+			);
+			path = GameControllerTests;
+			sourceTree = "<group>";
+		};
+		9537F126218916050028E901 /* BlackJackGameControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				9537F1272189161E0028E901 /* BJGameControllerTests.swift */,
+			);
+			path = BlackJackGameControllerTests;
+			sourceTree = "<group>";
+		};
+		9537F129218916380028E901 /* ControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				9537F125218915FA0028E901 /* GameControllerTests */,
+			);
+			path = ControllerTests;
 			sourceTree = "<group>";
 		};
 		955FF7342188E9B30019420D /* View */ = {
@@ -717,6 +747,8 @@
 				9537F11A21890EAA0028E901 /* StoreTests.swift in Sources */,
 				9537F11F21890EED0028E901 /* PowerupTests.swift in Sources */,
 				5350B4892184CA4A000E8CC4 /* SocialGamingPlatformTests.swift in Sources */,
+				9537F124218912D60028E901 /* GameTests.swift in Sources */,
+				9537F1282189161E0028E901 /* BJGameControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
