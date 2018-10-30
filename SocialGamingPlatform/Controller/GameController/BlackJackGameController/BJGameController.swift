@@ -25,18 +25,21 @@ class BJGameController {
         self.didDealerWin = false
     }
     
+    // distribute the next card to dealer
     func nextDealerCard() -> Card {
         let card = cards.removeFirst()
         dealerCards.append(card)
         return card
     }
     
+    // distribute the next card to player
     func nextPlayerCard() -> Card {
         let card = cards.removeFirst()
         playerCards.append(card)
         return card
     }
     
+    // retrieve the delear's card at index
     func dealerCardAt(index: Int) -> Card? {
         if index < dealerCards.count{
             return dealerCards[index]
@@ -46,6 +49,7 @@ class BJGameController {
         }
     }
     
+    // retrieve the player's card at index
     func playerCardAt(index: Int) -> Card? {
         if index < playerCards.count{
             return playerCards[index]
@@ -115,68 +119,65 @@ class BJGameController {
     
     //update the game state
     func updateGameState() {
-        if gameState == .playerState {
+        switch gameState {
+        case .playerState:
             if isBlackJack() {
-                gameState = .gameoverState
-                didDealerWin = false
-                awardScore()
-                gameoverNotification()
+                updateToGameover(didDealerWin: false)
             }
             else if areCardsOver21(playerCards) {
-                gameState = .gameoverState
-                didDealerWin = true
-                awardScore()
-                gameoverNotification()
+                updateToGameover(didDealerWin: true)
             }
             else if playerCards.count == maxPlayerCards {
                 gameState = .dealerState
             }
-        }
-        else if gameState == .dealerState {
+            break
+        case .dealerState:
             if areCardsOver21(dealerCards) {
-                gameState = .gameoverState
-                didDealerWin = false
-                awardScore()
-                gameoverNotification()
+                updateToGameover(didDealerWin: false)
             }
             else if dealerCards.count == maxPlayerCards {
                 gameState = .gameoverState
-                determineWinner()
-                awardScore()
-                gameoverNotification()
+                gameoverDetermineWinner()
             }
             else {
                 let dealerScore = calculateBestScore(dealerCards)
-                if dealerScore < 17 {
-                    //do nothing, still dealer's turn
-                }
-                else {
+                if dealerScore >= 17 {
                     let playerScore = calculateBestScore(playerCards)
-                    if playerScore > dealerScore {
-                        //do nothing
-                    }
-                    else {
-                        didDealerWin = true
-                        gameState = .gameoverState
-                        awardScore()
-                        gameoverNotification()
+                    if playerScore <= dealerScore {
+                        updateToGameover(didDealerWin: true)
                     }
                 }
             }
-        }
-        else {
-            determineWinner()
-            awardScore()
-            gameoverNotification()
+            break
+        case .gameoverState:
+            gameoverDetermineWinner()
+            break
         }
     }
     
+    // determine the current winner
     func determineWinner() {
         let dealerScore = calculateBestScore(dealerCards)
         let playerScore = calculateBestScore(playerCards)
         didDealerWin = dealerScore >= playerScore
     }
     
+    // update the game state to gameover
+    func updateToGameover(didDealerWin: Bool) {
+        gameState = .gameoverState
+        self.didDealerWin = didDealerWin
+        awardScore()
+        gameoverNotification()
+    }
+    
+    // determine winner when gameover
+    func gameoverDetermineWinner() {
+        determineWinner()
+        awardScore()
+        gameoverNotification()
+    }
+    
+    // calculate the award score
     func awardScore() {
         if(isBlackJack()) {
             playerScore += 50
