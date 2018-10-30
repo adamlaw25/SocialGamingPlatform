@@ -9,47 +9,6 @@
 import Foundation
 import UIKit
 
-//Card class to represent a card
-class Card {
-    var suit: Suit
-    var digit: Int
-    var isFaceUp = true
-    
-    init(suit: Suit, digit: Int) {
-        self.suit = suit
-        self.digit = digit
-    }
-    
-    //static function to generate a deck of cards
-    static func generateCards() -> [Card] {
-        var deck = [Card]()
-        for i in 0..<4 {
-            for j in 1...13 {
-                deck.append(Card(suit: Suit(rawValue: i)!, digit: j))
-            }
-        }
-        return deck
-    }
-    
-    //retrieve the card images from Assets folder
-    func getCardImage() -> UIImage? {
-        if isFaceUp {
-            return UIImage(named: "\(suit.toString())-\(digit).png")
-        }
-        else {
-            return UIImage(named: "card-back.png")
-        }
-    }
-    
-    func isAce() -> Bool {
-        return digit == 1
-    }
-    
-    func isValueTen() -> Bool {
-        return digit > 9
-    }
-}
-
 //GameController class for BlackJack game
 class BJGameController {
     private var cards = [Card]()
@@ -66,18 +25,21 @@ class BJGameController {
         self.didDealerWin = false
     }
     
+    // distribute the next card to dealer
     func nextDealerCard() -> Card {
         let card = cards.removeFirst()
         dealerCards.append(card)
         return card
     }
     
+    // distribute the next card to player
     func nextPlayerCard() -> Card {
         let card = cards.removeFirst()
         playerCards.append(card)
         return card
     }
     
+    // retrieve the delear's card at index
     func dealerCardAt(index: Int) -> Card? {
         if index < dealerCards.count{
             return dealerCards[index]
@@ -87,6 +49,7 @@ class BJGameController {
         }
     }
     
+    // retrieve the player's card at index
     func playerCardAt(index: Int) -> Card? {
         if index < playerCards.count{
             return playerCards[index]
@@ -156,68 +119,65 @@ class BJGameController {
     
     //update the game state
     func updateGameState() {
-        if gameState == .playerState {
+        switch gameState {
+        case .playerState:
             if isBlackJack() {
-                gameState = .gameoverState
-                didDealerWin = false
-                awardScore()
-                gameoverNotification()
+                updateToGameover(didDealerWin: false)
             }
             else if areCardsOver21(playerCards) {
-                gameState = .gameoverState
-                didDealerWin = true
-                awardScore()
-                gameoverNotification()
+                updateToGameover(didDealerWin: true)
             }
             else if playerCards.count == maxPlayerCards {
                 gameState = .dealerState
             }
-        }
-        else if gameState == .dealerState {
+            break
+        case .dealerState:
             if areCardsOver21(dealerCards) {
-                gameState = .gameoverState
-                didDealerWin = false
-                awardScore()
-                gameoverNotification()
+                updateToGameover(didDealerWin: false)
             }
             else if dealerCards.count == maxPlayerCards {
                 gameState = .gameoverState
-                determineWinner()
-                awardScore()
-                gameoverNotification()
+                gameoverDetermineWinner()
             }
             else {
                 let dealerScore = calculateBestScore(dealerCards)
-                if dealerScore < 17 {
-                    //do nothing, still dealer's turn
-                }
-                else {
+                if dealerScore >= 17 {
                     let playerScore = calculateBestScore(playerCards)
-                    if playerScore > dealerScore {
-                        //do nothing
-                    }
-                    else {
-                        didDealerWin = true
-                        gameState = .gameoverState
-                        awardScore()
-                        gameoverNotification()
+                    if playerScore <= dealerScore {
+                        updateToGameover(didDealerWin: true)
                     }
                 }
             }
-        }
-        else {
-            determineWinner()
-            awardScore()
-            gameoverNotification()
+            break
+        case .gameoverState:
+            gameoverDetermineWinner()
+            break
         }
     }
     
+    // determine the current winner
     func determineWinner() {
         let dealerScore = calculateBestScore(dealerCards)
         let playerScore = calculateBestScore(playerCards)
         didDealerWin = dealerScore >= playerScore
     }
     
+    // update the game state to gameover
+    func updateToGameover(didDealerWin: Bool) {
+        gameState = .gameoverState
+        self.didDealerWin = didDealerWin
+        awardScore()
+        gameoverNotification()
+    }
+    
+    // determine winner when gameover
+    func gameoverDetermineWinner() {
+        determineWinner()
+        awardScore()
+        gameoverNotification()
+    }
+    
+    // calculate the award score
     func awardScore() {
         if(isBlackJack()) {
             playerScore += 50
@@ -246,23 +206,6 @@ class BJGameController {
 //enum to represent different game state
 enum BJGameState: Int {
     case playerState = 0, dealerState, gameoverState
-}
-
-//enum to represent a suit
-enum Suit: Int {
-    case club = 0, spade, diamond, heart
-    func toString() -> String {
-        switch self {
-        case .club:
-            return "club"
-        case .spade:
-            return "spade"
-        case .diamond:
-            return "diamond"
-        case .heart:
-            return "heart"
-        }
-    }
 }
 
 //extension method to shuffle an array
