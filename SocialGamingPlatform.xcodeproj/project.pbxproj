@@ -19,6 +19,11 @@
 		53EE1BF3218567B30026904F /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE1BF2218567B30026904F /* AlertHelper.swift */; };
 		53EE1C03218571830026904F /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE1C02218571830026904F /* StoreViewController.swift */; };
 		53EE1C05218571900026904F /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE1C04218571900026904F /* MessageViewController.swift */; };
+		9537F11621890E5C0028E901 /* MessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537F11521890E5C0028E901 /* MessageTests.swift */; };
+		9537F11821890E980028E901 /* MessageBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537F11721890E980028E901 /* MessageBoardTests.swift */; };
+		9537F11A21890EAA0028E901 /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537F11921890EAA0028E901 /* StoreTests.swift */; };
+		9537F11F21890EED0028E901 /* PowerupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537F11E21890EED0028E901 /* PowerupTests.swift */; };
+		9537F12221890F070028E901 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537F12121890F070028E901 /* CardTests.swift */; };
 		955FF7392188E9B30019420D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955FF7352188E9B30019420D /* LaunchScreen.storyboard */; };
 		955FF73A2188E9B30019420D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955FF7372188E9B30019420D /* Main.storyboard */; };
 		955FF7462188E9EB0019420D /* MessageBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FF73D2188E9EB0019420D /* MessageBoard.swift */; };
@@ -88,6 +93,11 @@
 		53EE1C02218571830026904F /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		53EE1C04218571900026904F /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		80F169151CDCDB057E201876 /* Pods-SocialGamingPlatform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialGamingPlatform.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialGamingPlatform/Pods-SocialGamingPlatform.debug.xcconfig"; sourceTree = "<group>"; };
+		9537F11521890E5C0028E901 /* MessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTests.swift; sourceTree = "<group>"; };
+		9537F11721890E980028E901 /* MessageBoardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoardTests.swift; sourceTree = "<group>"; };
+		9537F11921890EAA0028E901 /* StoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTests.swift; sourceTree = "<group>"; };
+		9537F11E21890EED0028E901 /* PowerupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerupTests.swift; sourceTree = "<group>"; };
+		9537F12121890F070028E901 /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
 		955FF7362188E9B30019420D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		955FF7382188E9B30019420D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		955FF73D2188E9EB0019420D /* MessageBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBoard.swift; sourceTree = "<group>"; };
@@ -273,6 +283,40 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9537F11B21890EC20028E901 /* UserTests */ = {
+			isa = PBXGroup;
+			children = (
+				955FF7642188F71A0019420D /* UserTests.swift */,
+			);
+			path = UserTests;
+			sourceTree = "<group>";
+		};
+		9537F11C21890ED00028E901 /* MessageTests */ = {
+			isa = PBXGroup;
+			children = (
+				9537F11521890E5C0028E901 /* MessageTests.swift */,
+				9537F11721890E980028E901 /* MessageBoardTests.swift */,
+			);
+			path = MessageTests;
+			sourceTree = "<group>";
+		};
+		9537F11D21890EDE0028E901 /* StoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				9537F11921890EAA0028E901 /* StoreTests.swift */,
+				9537F11E21890EED0028E901 /* PowerupTests.swift */,
+			);
+			path = StoreTests;
+			sourceTree = "<group>";
+		};
+		9537F12021890EF80028E901 /* GameTests */ = {
+			isa = PBXGroup;
+			children = (
+				9537F12121890F070028E901 /* CardTests.swift */,
+			);
+			path = GameTests;
+			sourceTree = "<group>";
+		};
 		955FF7342188E9B30019420D /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,17 +375,12 @@
 		955FF75F2188EF4F0019420D /* ModelTests */ = {
 			isa = PBXGroup;
 			children = (
-				955FF7602188EF5A0019420D /* UserTests */,
+				9537F12021890EF80028E901 /* GameTests */,
+				9537F11D21890EDE0028E901 /* StoreTests */,
+				9537F11C21890ED00028E901 /* MessageTests */,
+				9537F11B21890EC20028E901 /* UserTests */,
 			);
 			path = ModelTests;
-			sourceTree = "<group>";
-		};
-		955FF7602188EF5A0019420D /* UserTests */ = {
-			isa = PBXGroup;
-			children = (
-				955FF7642188F71A0019420D /* UserTests.swift */,
-			);
-			path = UserTests;
 			sourceTree = "<group>";
 		};
 		955FF7632188F1AD0019420D /* BlackJack */ = {
@@ -672,6 +711,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				955FF7652188F71A0019420D /* UserTests.swift in Sources */,
+				9537F11621890E5C0028E901 /* MessageTests.swift in Sources */,
+				9537F11821890E980028E901 /* MessageBoardTests.swift in Sources */,
+				9537F12221890F070028E901 /* CardTests.swift in Sources */,
+				9537F11A21890EAA0028E901 /* StoreTests.swift in Sources */,
+				9537F11F21890EED0028E901 /* PowerupTests.swift in Sources */,
 				5350B4892184CA4A000E8CC4 /* SocialGamingPlatformTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

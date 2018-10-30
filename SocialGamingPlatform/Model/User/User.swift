@@ -11,7 +11,7 @@ import Foundation
 class User {
 	var email: String
 	var isOnline: Bool
-	var score: Int
+	var score: Double
 	var level: Int
 	var friends: [User]
 	var gameList: [String]
@@ -21,7 +21,7 @@ class User {
 		self.email = email
 		self.isOnline = false
 		// databases methods to retrieve data
-		self.score = 0
+		self.score = 0.0
 		self.level = 1
 		self.friends = []
 		self.gameList = ["BlackJack"]
@@ -37,8 +37,8 @@ class User {
     	self.friends += [friend]
     }
 
-    func addScore(score: Int) {
-    	self.score += score
+    func addScore(score: Double) {
+    	self.score += score * powerup.multiplier
     }
 
     func setStatus(isOnline: Bool) {

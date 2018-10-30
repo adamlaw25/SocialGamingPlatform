@@ -11,21 +11,22 @@ import XCTest
 
 class UserTests: XCTestCase {
     
-    var userUnderTest: User!
+    var testuser: User!
     
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         super.setUp()
-        userUnderTest = User(email: "test@test.com")
+        testuser = User(email: "test@test.com")
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        testuser.email = "test@test.com"
+        testuser.isOnline = false
+        testuser.score = 0.0
+        testuser.level = 1
+        testuser.friends = []
+        testuser.gameList = ["BlackJack"]
+        testuser.powerup = Powerup(multiplier: 1.0, timeLimit: 0)
     }
 
     func testPerformanceExample() {
@@ -33,6 +34,41 @@ class UserTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func test_levelUP() {
+        var levelBefore = testuser.level
+        testuser.levelUP()
+        XCTAssertEqual(levelBefore, testuser.level - 1)
+        tearDown()
+    }
+    
+    func test_addFriend() {
+        let user2 = User(email: "test2@test.com")
+        testuser.addFriend(friend: user2)
+        XCTAssertEqual(testuser.friends.count, 1)
+        XCTAssertEqual(testuser.friends[0].email, user2.email)
+        tearDown()
+    }
+    
+    func test_addScore() {
+        testuser.addScore(score: 30.0)
+        XCTAssertEqual(testuser.score, 30.0)
+        tearDown()
+    }
+    
+    func test_setStatus() {
+        testuser.setStatus(isOnline: true)
+        XCTAssertEqual(testuser.isOnline, true)
+        tearDown()
+    }
+    
+    func test_applyPowerup() {
+        let powerup = Powerup(multiplier: 2.0, timeLimit: 5)
+        testuser.applyPowerup(powerup: powerup)
+        testuser.addScore(score: 30.0)
+        XCTAssertEqual(testuser.score, 30.0*2.0)
+        tearDown()
     }
 
 }
