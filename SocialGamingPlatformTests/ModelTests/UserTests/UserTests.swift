@@ -1,17 +1,22 @@
 //
-//  LoginTests.swift
-//  LoginTests
+//  UserTests.swift
+//  SocialGamingPlatformTests
 //
 //  Created by Dennis Lin on 10/30/18.
 //  Copyright © 2018 Jiahao Luo. All rights reserved.
 //
 
 import XCTest
+@testable import SocialGamingPlatform
 
-class LoginTests: XCTestCase {
-
+class UserTests: XCTestCase {
+    
+    var userUnderTest: User!
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        userUnderTest = User(email: "test@test.com")
     }
 
     override func tearDown() {

@@ -28,8 +28,8 @@
 		955FF74A2188E9EB0019420D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FF7442188E9EB0019420D /* Store.swift */; };
 		955FF74B2188E9EB0019420D /* Powerup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FF7452188E9EB0019420D /* Powerup.swift */; };
 		955FF74E2188EA970019420D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955FF74D2188EA970019420D /* Assets.xcassets */; };
-		955FF7562188EE590019420D /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FF7552188EE590019420D /* LoginTests.swift */; };
 		955FF7622188EF9F0019420D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FF7612188EF9F0019420D /* Card.swift */; };
+		955FF7652188F71A0019420D /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FF7642188F71A0019420D /* UserTests.swift */; };
 		95DF6BAC2184DE7C001C0AF2 /* BJGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DF6BAB2184DE7C001C0AF2 /* BJGameController.swift */; };
 		95DF6BAE2184E0AB001C0AF2 /* BJViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DF6BAD2184E0AB001C0AF2 /* BJViewController.swift */; };
 		95DF6BB12184FFEF001C0AF2 /* Connect4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DF6BB02184FFEF001C0AF2 /* Connect4ViewController.swift */; };
@@ -98,9 +98,8 @@
 		955FF7452188E9EB0019420D /* Powerup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Powerup.swift; sourceTree = "<group>"; };
 		955FF74D2188EA970019420D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		955FF7532188EE590019420D /* LoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		955FF7552188EE590019420D /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
-		955FF7572188EE590019420D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		955FF7612188EF9F0019420D /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		955FF7642188F71A0019420D /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		95DF6BAB2184DE7C001C0AF2 /* BJGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BJGameController.swift; sourceTree = "<group>"; };
 		95DF6BAD2184E0AB001C0AF2 /* BJViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJViewController.swift; sourceTree = "<group>"; };
 		95DF6BB02184FFEF001C0AF2 /* Connect4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connect4ViewController.swift; sourceTree = "<group>"; };
@@ -153,7 +152,6 @@
 				5350B46F2184CA49000E8CC4 /* SocialGamingPlatform */,
 				5350B4872184CA4A000E8CC4 /* SocialGamingPlatformTests */,
 				5350B4922184CA4A000E8CC4 /* SocialGamingPlatformUITests */,
-				955FF7542188EE590019420D /* LoginTests */,
 				5350B46E2184CA49000E8CC4 /* Products */,
 				69B00671C83D91C0350A2C2C /* Pods */,
 				D8A7425EBD9C2106D81BD5CA /* Frameworks */,
@@ -330,15 +328,6 @@
 			path = Store;
 			sourceTree = "<group>";
 		};
-		955FF7542188EE590019420D /* LoginTests */ = {
-			isa = PBXGroup;
-			children = (
-				955FF7552188EE590019420D /* LoginTests.swift */,
-				955FF7572188EE590019420D /* Info.plist */,
-			);
-			path = LoginTests;
-			sourceTree = "<group>";
-		};
 		955FF75F2188EF4F0019420D /* ModelTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +339,7 @@
 		955FF7602188EF5A0019420D /* UserTests */ = {
 			isa = PBXGroup;
 			children = (
+				955FF7642188F71A0019420D /* UserTests.swift */,
 			);
 			path = UserTests;
 			sourceTree = "<group>";
@@ -681,6 +671,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				955FF7652188F71A0019420D /* UserTests.swift in Sources */,
 				5350B4892184CA4A000E8CC4 /* SocialGamingPlatformTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -697,7 +688,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				955FF7562188EE590019420D /* LoginTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
