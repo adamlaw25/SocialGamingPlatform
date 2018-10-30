@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+class Game {
+	var points = 0
+	var player: User
+
+	init(player: User) {
+		self.player = player
+    }
+
+    func hasWon(isWon: Bool) -> Bool {
+    	return isWon
+    }
+}
