@@ -11,9 +11,9 @@ import UIKit
 
 //GameController class for BlackJack game
 class BJGameController {
-    private var cards = [Card]()
-    private var playerCards = [Card]()
-    private var dealerCards = [Card]()
+    var cards = [Card]()
+    var playerCards = [Card]()
+    var dealerCards = [Card]()
     var gameState: BJGameState
     let maxPlayerCards = 5
     var didDealerWin: Bool
@@ -23,6 +23,15 @@ class BJGameController {
     init() {
         self.gameState = .playerState
         self.didDealerWin = false
+    }
+    
+    //reset the game
+    func resetGame() {
+        cards = Card.generateCards()
+        cards.shuffle()
+        playerCards = [Card]()
+        dealerCards = [Card]()
+        gameState = .playerState
     }
     
     // distribute the next card to dealer
@@ -191,15 +200,6 @@ class BJGameController {
         else {
             playerScore -= calculateBestScore(dealerCards) - calculateBestScore(playerCards)
         }
-    }
-    
-    //reset the game
-    func resetGame() {
-        cards = Card.generateCards()
-        cards.shuffle()
-        playerCards = [Card]()
-        dealerCards = [Card]()
-        gameState = .playerState
     }
 }
 

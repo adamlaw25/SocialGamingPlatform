@@ -60,8 +60,6 @@ class CardTests: XCTestCase {
                 numOfDiamond += 1
             case .heart:
                 numOfHeart += 1
-            default:
-                XCTFail()
             }
         }
         XCTAssertEqual(numOfClub, 13)

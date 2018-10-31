@@ -37,7 +37,7 @@ class UserTests: XCTestCase {
     }
     
     func test_levelUP() {
-        var levelBefore = testuser.level
+        let levelBefore = testuser.level
         testuser.levelUP()
         XCTAssertEqual(levelBefore, testuser.level - 1)
         tearDown()
