@@ -87,15 +87,7 @@ class BJGameController {
     
     //check if the cards are a blackjack combination
     func isBlackJack() -> Bool {
-        if playerCards.count == 2 {
-            if playerCards[0].isAce() && playerCards[1].isValueTen() {
-                return true
-            }
-            else if playerCards[0].isValueTen() && playerCards[1].isAce() {
-                return true
-            }
-        }
-        return false
+        return playerCards.count == 2 && ((playerCards[0].isAce() && playerCards[1].isValueTen()) || (playerCards[0].isValueTen() && playerCards[1].isAce()))
     }
     
     //calculate the best score of a combination of cards
@@ -172,7 +164,7 @@ class BJGameController {
     }
     
     // update the game state to gameover
-    func updateToGameover(didDealerWin: Bool) {
+    private func updateToGameover(didDealerWin: Bool) {
         gameState = .gameoverState
         self.didDealerWin = didDealerWin
         awardScore()
@@ -180,7 +172,7 @@ class BJGameController {
     }
     
     // determine winner when gameover
-    func gameoverDetermineWinner() {
+    private func gameoverDetermineWinner() {
         determineWinner()
         awardScore()
         gameoverNotification()

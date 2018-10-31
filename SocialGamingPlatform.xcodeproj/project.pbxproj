@@ -12,7 +12,6 @@
 		5350B4732184CA49000E8CC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4722184CA49000E8CC4 /* ViewController.swift */; };
 		5350B4792184CA49000E8CC4 /* SocialGamingPlatform.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4772184CA49000E8CC4 /* SocialGamingPlatform.xcdatamodeld */; };
 		5350B4892184CA4A000E8CC4 /* SocialGamingPlatformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4882184CA4A000E8CC4 /* SocialGamingPlatformTests.swift */; };
-		5350B4942184CA4A000E8CC4 /* SocialGamingPlatformUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4932184CA4A000E8CC4 /* SocialGamingPlatformUITests.swift */; };
 		5350B4A22184CAEC000E8CC4 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4A12184CAEC000E8CC4 /* StartViewController.swift */; };
 		5350B4A62184CB0C000E8CC4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5350B4A52184CB0C000E8CC4 /* SignUpViewController.swift */; };
 		5350B4AA2184CEBE000E8CC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5350B4A92184CEBE000E8CC4 /* GoogleService-Info.plist */; };
@@ -86,8 +85,6 @@
 		5350B4882184CA4A000E8CC4 /* SocialGamingPlatformTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialGamingPlatformTests.swift; sourceTree = "<group>"; };
 		5350B48A2184CA4A000E8CC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5350B48F2184CA4A000E8CC4 /* SocialGamingPlatformUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialGamingPlatformUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5350B4932184CA4A000E8CC4 /* SocialGamingPlatformUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialGamingPlatformUITests.swift; sourceTree = "<group>"; };
-		5350B4952184CA4A000E8CC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5350B4A12184CAEC000E8CC4 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		5350B4A52184CB0C000E8CC4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5350B4A92184CEBE000E8CC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -165,7 +162,6 @@
 			children = (
 				5350B46F2184CA49000E8CC4 /* SocialGamingPlatform */,
 				5350B4872184CA4A000E8CC4 /* SocialGamingPlatformTests */,
-				5350B4922184CA4A000E8CC4 /* SocialGamingPlatformUITests */,
 				5350B46E2184CA49000E8CC4 /* Products */,
 				69B00671C83D91C0350A2C2C /* Pods */,
 				D8A7425EBD9C2106D81BD5CA /* Frameworks */,
@@ -208,15 +204,6 @@
 				5350B48A2184CA4A000E8CC4 /* Info.plist */,
 			);
 			path = SocialGamingPlatformTests;
-			sourceTree = "<group>";
-		};
-		5350B4922184CA4A000E8CC4 /* SocialGamingPlatformUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5350B4932184CA4A000E8CC4 /* SocialGamingPlatformUITests.swift */,
-				5350B4952184CA4A000E8CC4 /* Info.plist */,
-			);
-			path = SocialGamingPlatformUITests;
 			sourceTree = "<group>";
 		};
 		53EE1BFB21856E5A0026904F /* Controller */ = {
@@ -756,7 +743,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5350B4942184CA4A000E8CC4 /* SocialGamingPlatformUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
