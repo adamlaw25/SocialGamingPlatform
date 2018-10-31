@@ -1,6 +1,6 @@
 //
-//  LoginTests.swift
-//  LoginTests
+//  MessageTests.swift
+//  SocialGamingPlatformTests
 //
 //  Created by Dennis Lin on 10/30/18.
 //  Copyright © 2018 Jiahao Luo. All rights reserved.
@@ -8,7 +8,9 @@
 
 import XCTest
 
-class LoginTests: XCTestCase {
+class MessageTests: XCTestCase {
+    
+    
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

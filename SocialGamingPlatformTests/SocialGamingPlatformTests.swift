@@ -11,12 +11,19 @@ import XCTest
 
 class SocialGamingPlatformTests: XCTestCase {
 
+    var controllerUnderTest: StartViewController!
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        controllerUnderTest = UIStoryboard(name: "Main",
+                                           bundle: nil).instantiateInitialViewController() as? StartViewController
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        controllerUnderTest = nil
+        super.tearDown()
     }
 
     func testExample() {
