@@ -8,11 +8,13 @@
 
 import Foundation
 
+//a class that represents the message board
 class MessageBoard {
 	var maxShownMessages = 10
 	var latestMessages: [Message]
 	var editingMessage: Message?
 
+    //contructor
 	init() {
 		self.latestMessages = []
 	}

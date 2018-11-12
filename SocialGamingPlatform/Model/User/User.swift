@@ -8,6 +8,7 @@
 
 import Foundation
 
+//a class that represents the user
 class User {
 	var email: String
 	var isOnline: Bool
@@ -29,22 +30,31 @@ class User {
         self.powerup = Powerup(multiplier: 1.0, timeLimit: 0)
     }
 
+    //increments the level by one
     func levelUP() {
     	self.level += 1
     }
 
+    //add a friend to this user
+    //input: another user object
     func addFriend(friend: User) {
     	self.friends += [friend]
     }
 
+    //add score to this user
+    //input: amount of score to be added
     func addScore(score: Double) {
     	self.score += score * powerup.multiplier
     }
 
+    //set the online status of this user
+    //input: online status
     func setStatus(isOnline: Bool) {
     	self.isOnline = isOnline
     }
 
+    //apply a powerup to this user
+    //input: a powerup
     func applyPowerup(powerup: Powerup) {
     	self.powerup = powerup
     }

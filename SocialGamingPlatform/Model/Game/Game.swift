@@ -8,6 +8,7 @@
 
 import Foundation
 
+//a class that represents a game
 class Game {
     var points: Double
 	var player: User
@@ -17,6 +18,8 @@ class Game {
         self.points = 0.0
     }
 
+    //check if the player has won
+    //input: a victory status
     func hasWon(isWon: Bool) -> Bool {
     	return isWon
     }

@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+//a class that represents the starting viewcontroller
 class StartViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var email: UITextField!
@@ -22,6 +23,7 @@ class StartViewController: UIViewController, UITextFieldDelegate {
         password.delegate = self
     }
     
+    //a button action that triggers the login
     @IBAction func loginAction(_ sender: Any) {
         Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
             if error == nil{
