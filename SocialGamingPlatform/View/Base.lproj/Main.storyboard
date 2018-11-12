@@ -266,10 +266,10 @@
             </objects>
             <point key="canvasLocation" x="4118" y="67"/>
         </scene>
-        <!--Connect4 View Controller-->
+        <!--Connect4 Menu View Controller-->
         <scene sceneID="uhy-UX-Eb6">
             <objects>
-                <viewController id="4YO-md-sIN" customClass="Connect4ViewController" customModule="SocialGamingPlatform" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4YO-md-sIN" customClass="Connect4MenuViewController" customModule="SocialGamingPlatform" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jZY-IW-u7U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
