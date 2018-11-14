@@ -21,7 +21,7 @@
 import Foundation
 
 enum Connect4GameState: Int {
-    case player_state = 0, computer_state, board_full, gameover
+    case player_state = 0, computer_state, gameover
 }
 
 enum Puck: Int {
@@ -33,14 +33,14 @@ class Connect4GameController {
     var game_board : [[Int]]
     var game_state : Connect4GameState
     var score : Int
-    var didDealerWin : Bool
+    var didComputerWin : Bool
     var score_multiplier : Int
     
     init() {
         self.game_board = Array(repeating: Array(repeating: 0, count: 6), count: 6)
         self.game_state = .player_state
         self.score = 0
-        self.didDealerWin = false
+        self.didComputerWin = false
         self.score_multiplier = 1
         printBoard()
     }
@@ -49,7 +49,7 @@ class Connect4GameController {
     func resetGame() {
         resetGameBoard()
         self.game_state = .player_state
-        self.didDealerWin = false
+        self.didComputerWin = false
     }
     
     //dropping a puck into the game board
@@ -66,7 +66,100 @@ class Connect4GameController {
         }
     }
     
-    func checkWinner() {
+    func has4ConnectedPuckOf(puck: Puck) -> Bool {
+        return has4Vertical(puck: puck) || has4Horizontal(puck: puck) || has4Diagonal(puck: puck)
+    }
+    
+    private func has4Vertical(puck: Puck) -> Bool {
+        let puck_num = puck.rawValue
+        var checksum = 0
+        for column in 0...5 {
+            for row in 0...2 {
+                if game_board[row][column] != puck_num {
+                    continue
+                }
+                checksum = game_board[row][column] + game_board[row+1][column]
+                    + game_board[row+2][column] + game_board[row+3][column]
+                if checksum == puck_num * 4 {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
+    private func has4Horizontal(puck: Puck) -> Bool {
+        let puck_num = puck.rawValue
+        var checksum = 0
+        for row in 0...5 {
+            for column in 0...2 {
+                if game_board[row][column] != puck_num {
+                    continue
+                }
+                checksum = game_board[row][column] + game_board[row][column+1]
+                    + game_board[row][column+2] + game_board[row][column+3]
+                if checksum == puck_num * 4 {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
+    private func has4Diagonal(puck: Puck) -> Bool {
+        let puck_num = puck.rawValue
+        var checksum = 0
+        var cur_index = 0
+        for row in 0...5 {
+            for column in 0...5 {
+                let diagonal = getDiagonalAt(row: row, column: column)
+                if diagonal.count < 4 {
+                    continue
+                }
+                while cur_index + 3 < diagonal.count {
+                    if diagonal[cur_index] != puck_num {
+                        continue
+                    }
+                    checksum = diagonal[cur_index] + diagonal[cur_index+1]
+                        + diagonal[cur_index+2] + diagonal[cur_index+3]
+                    if checksum == puck_num * 4 {
+                        return true
+                    }
+                    cur_index += 1
+                }
+            }
+        }
+        return false
+    }
+    
+    private func getDiagonalAt(row: Int, column: Int) -> [Int]{
+        //retrieve first diagonal: slope = 1
+        var diagonal = [Int]()
+        var i = row
+        var j = column
+        while (i >= 0) && (j <= 5) {
+            diagonal.append(game_board[i][j])
+            i-=1
+            j+=1
+        }
+        //retrieve second diagonal: slope = -1
+        i = row + 1
+        j = column - 1
+        while (i <= 5) && (j >= 0) {
+            diagonal.insert(game_board[i][j], at: 0)
+        }
+        return diagonal
+    }
+    
+    func awardScore() {
+        
+    }
+    
+    func gameOverNotification() {
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "Connect4 Game Over"), object: self, userInfo: ["didComputerWin": didComputerWin])
+    }
+    
+    func updateGameState() {
         
     }
     
