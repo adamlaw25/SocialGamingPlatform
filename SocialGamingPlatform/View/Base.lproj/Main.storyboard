@@ -580,6 +580,51 @@
                         <color key="backgroundColor" red="0.0" green="0.33024594750000003" blue="0.84646211140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Bmg-Lp-2iq"/>
                     </view>
+                    <connections>
+                        <outlet property="ColBtn1" destination="6eF-zc-zzE" id="ge3-y7-xX7"/>
+                        <outlet property="ColBtn2" destination="XWb-Ra-gUy" id="tYv-HI-lbz"/>
+                        <outlet property="ColBtn3" destination="x30-Ca-e2k" id="Kxg-w1-yiG"/>
+                        <outlet property="ColBtn4" destination="Cgs-t7-7NW" id="nIf-S3-trw"/>
+                        <outlet property="ColBtn5" destination="JCK-Ic-MKZ" id="qai-Cu-VEc"/>
+                        <outlet property="ColBtn6" destination="Mrr-p0-Tdr" id="uM1-8n-Jd4"/>
+                        <outlet property="scoreLabel" destination="F0x-rE-oZC" id="Aw5-xm-4ZH"/>
+                        <outletCollection property="Row1" destination="RAV-fs-eIH" collectionClass="NSMutableArray" id="2YN-ep-GcA"/>
+                        <outletCollection property="Row3" destination="yBR-Nb-CRA" collectionClass="NSMutableArray" id="hCZ-Xx-dx9"/>
+                        <outletCollection property="Row4" destination="HYh-UT-5Zl" collectionClass="NSMutableArray" id="iHf-q3-5A4"/>
+                        <outletCollection property="Row5" destination="66v-Dk-DlV" collectionClass="NSMutableArray" id="oWL-qP-Umw"/>
+                        <outletCollection property="Row6" destination="RNA-nb-MKS" collectionClass="NSMutableArray" id="zeU-wn-Jfj"/>
+                        <outletCollection property="Row1" destination="9Z1-wX-CvB" collectionClass="NSMutableArray" id="Klo-ss-TKn"/>
+                        <outletCollection property="Row1" destination="viu-u7-igv" collectionClass="NSMutableArray" id="L72-xs-a5P"/>
+                        <outletCollection property="Row1" destination="jn9-XU-BcD" collectionClass="NSMutableArray" id="XEl-Pe-CIW"/>
+                        <outletCollection property="Row1" destination="iql-mo-qxO" collectionClass="NSMutableArray" id="s7i-RU-OaY"/>
+                        <outletCollection property="Row1" destination="b5l-Sb-wgc" collectionClass="NSMutableArray" id="h5g-2o-gef"/>
+                        <outletCollection property="Row3" destination="ndf-H0-tVh" collectionClass="NSMutableArray" id="NDY-8V-fzd"/>
+                        <outletCollection property="Row3" destination="OFl-ab-1EK" collectionClass="NSMutableArray" id="rfR-81-F0x"/>
+                        <outletCollection property="Row3" destination="OOW-I2-w0g" collectionClass="NSMutableArray" id="yVS-Rp-Z8j"/>
+                        <outletCollection property="Row3" destination="M6k-B5-Qrr" collectionClass="NSMutableArray" id="Fxe-cK-MOf"/>
+                        <outletCollection property="Row3" destination="Oej-3B-v6m" collectionClass="NSMutableArray" id="cyV-3p-2is"/>
+                        <outletCollection property="Row4" destination="mN3-Ob-6vV" collectionClass="NSMutableArray" id="slK-SV-RY4"/>
+                        <outletCollection property="Row4" destination="Jfx-2d-2EB" collectionClass="NSMutableArray" id="pvR-yn-iso"/>
+                        <outletCollection property="Row4" destination="3be-bK-MzF" collectionClass="NSMutableArray" id="dZZ-sm-oFN"/>
+                        <outletCollection property="Row4" destination="Owk-dd-euV" collectionClass="NSMutableArray" id="Fll-kR-ZJZ"/>
+                        <outletCollection property="Row4" destination="x7D-1E-OLb" collectionClass="NSMutableArray" id="syc-ED-d1x"/>
+                        <outletCollection property="Row5" destination="4hB-Fa-ar2" collectionClass="NSMutableArray" id="r3C-9e-W63"/>
+                        <outletCollection property="Row5" destination="YjF-2y-ra0" collectionClass="NSMutableArray" id="mnb-bY-jat"/>
+                        <outletCollection property="Row5" destination="CAv-Rj-z7R" collectionClass="NSMutableArray" id="IHw-zx-nze"/>
+                        <outletCollection property="Row5" destination="DFg-fR-qKZ" collectionClass="NSMutableArray" id="sfE-Nz-pEo"/>
+                        <outletCollection property="Row5" destination="qx0-dP-yRG" collectionClass="NSMutableArray" id="UtI-c2-fk1"/>
+                        <outletCollection property="Row6" destination="Uqh-38-uwe" collectionClass="NSMutableArray" id="GmK-C8-cHw"/>
+                        <outletCollection property="Row6" destination="GbU-jO-vyg" collectionClass="NSMutableArray" id="p9I-ud-lhT"/>
+                        <outletCollection property="Row6" destination="uxx-Hr-zxq" collectionClass="NSMutableArray" id="aJo-WK-08s"/>
+                        <outletCollection property="Row6" destination="1ra-0r-d2P" collectionClass="NSMutableArray" id="xSa-6h-ob8"/>
+                        <outletCollection property="Row6" destination="eD4-vv-ZJT" collectionClass="NSMutableArray" id="8cg-Ph-T6Z"/>
+                        <outletCollection property="Row2" destination="WGu-Pl-bTi" collectionClass="NSMutableArray" id="vSE-xs-2xb"/>
+                        <outletCollection property="Row2" destination="nLt-3i-8mT" collectionClass="NSMutableArray" id="Iah-U6-mwH"/>
+                        <outletCollection property="Row2" destination="xEw-3d-FnT" collectionClass="NSMutableArray" id="rPV-5F-l1v"/>
+                        <outletCollection property="Row2" destination="EBH-jd-oPC" collectionClass="NSMutableArray" id="JJD-eL-fw3"/>
+                        <outletCollection property="Row2" destination="Qfz-Do-yW4" collectionClass="NSMutableArray" id="vFs-mj-sAY"/>
+                        <outletCollection property="Row2" destination="GQb-QJ-3gE" collectionClass="NSMutableArray" id="GDH-jl-39Z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4iv-9L-7JP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -893,6 +938,6 @@
         <image name="yellow_circle" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jbz-PD-2p4"/>
+        <segue reference="TSN-VO-JIc"/>
     </inferredMetricsTieBreakers>
 </document>
