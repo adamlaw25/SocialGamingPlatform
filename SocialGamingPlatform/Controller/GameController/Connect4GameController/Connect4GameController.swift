@@ -103,15 +103,14 @@ class Connect4GameController {
     
     private func has4Vertical(puck: Puck) -> Bool {
         let puck_num = puck.rawValue
-        var checksum = 0
         for column in 0...5 {
             for row in 0...2 {
                 if game_board[row][column] != puck_num {
                     continue
                 }
-                checksum = game_board[row][column] + game_board[row+1][column]
-                    + game_board[row+2][column] + game_board[row+3][column]
-                if checksum == puck_num * 4 {
+                if game_board[row][column] == game_board[row+1][column]
+                    && game_board[row+2][column] == game_board[row+3][column]
+                    && game_board[row+1][column] == game_board[row+2][column] {
                     return true
                 }
             }
@@ -121,15 +120,14 @@ class Connect4GameController {
     
     private func has4Horizontal(puck: Puck) -> Bool {
         let puck_num = puck.rawValue
-        var checksum = 0
         for row in 0...5 {
             for column in 0...2 {
                 if game_board[row][column] != puck_num {
                     continue
                 }
-                checksum = game_board[row][column] + game_board[row][column+1]
-                    + game_board[row][column+2] + game_board[row][column+3]
-                if checksum == puck_num * 4 {
+                if game_board[row][column] == game_board[row][column+1]
+                    && game_board[row][column+2] == game_board[row][column+3]
+                    && game_board[row][column+1] == game_board[row][column+2] {
                     return true
                 }
             }
@@ -138,33 +136,45 @@ class Connect4GameController {
     }
     
     private func has4Diagonal(puck: Puck) -> Bool {
-        let puck_num = puck.rawValue
-        var checksum = 0
-        var cur_index = 0
         for row in 0...5 {
             for column in 0...5 {
-                let diagonal = getDiagonalAt(row: row, column: column)
-                if diagonal.count < 4 {
+                let positive_diagonal = getPositiveDiagonal(row: row, column: column)
+                let negative_diagonal = getNegativeDiagonal(row: row, column: column)
+                if positive_diagonal.count < 4 && negative_diagonal.count < 4 {
                     continue
                 }
-                while cur_index + 3 < diagonal.count {
-                    if diagonal[cur_index] != puck_num {
-                        continue
-                    }
-                    checksum = diagonal[cur_index] + diagonal[cur_index+1]
-                        + diagonal[cur_index+2] + diagonal[cur_index+3]
-                    if checksum == puck_num * 4 {
-                        return true
-                    }
-                    cur_index += 1
+                if checkDiagonal(puck: puck, diagonal: positive_diagonal) ||
+                    checkDiagonal(puck: puck, diagonal: negative_diagonal) {
+                    return true
                 }
             }
         }
         return false
     }
     
-    private func getDiagonalAt(row: Int, column: Int) -> [Int]{
-        //retrieve first diagonal: slope = 1
+    private func checkDiagonal(puck: Puck, diagonal: [Int]) -> Bool {
+        let puck_num = puck.rawValue
+        var cur_index = 0
+        if diagonal.count < 4 {
+            return false
+        }
+        while cur_index + 3 < diagonal.count {
+            if diagonal[cur_index] != puck_num {
+                cur_index += 1
+                continue
+            }
+            if diagonal[cur_index] == diagonal[cur_index+1] &&
+                diagonal[cur_index+2] == diagonal[cur_index+3] &&
+                diagonal[cur_index+1] == diagonal[cur_index+2] {
+                return true
+            }
+            cur_index += 1
+        }
+        return false
+    }
+    
+    private func getPositiveDiagonal(row: Int, column: Int) -> [Int]{
+        //retrieve upper diagonal: slope = 1
         var diagonal = [Int]()
         var i = row
         var j = column
@@ -173,11 +183,34 @@ class Connect4GameController {
             i-=1
             j+=1
         }
-        //retrieve second diagonal: slope = -1
+        //retrieve lower diagonal: slope = 1
         i = row + 1
         j = column - 1
         while (i <= 5) && (j >= 0) {
             diagonal.insert(game_board[i][j], at: 0)
+            i+=1
+            j-=1
+        }
+        return diagonal
+    }
+    
+    private func getNegativeDiagonal(row: Int, column: Int) -> [Int]{
+        //retrieve upper diagonal: slope = -1
+        var diagonal = [Int]()
+        var i = row
+        var j = column
+        while (i >= 0) && (j >= 0) {
+            diagonal.append(game_board[i][j])
+            i-=1
+            j-=1
+        }
+        //retrieve lower diagonal: slope = -1
+        i = row + 1
+        j = column + 1
+        while (i <= 5) && (j <= 5) {
+            diagonal.insert(game_board[i][j], at: 0)
+            i+=1
+            j+=1
         }
         return diagonal
     }
@@ -204,6 +237,7 @@ class Connect4GameController {
             if isBoardFull() {
                 updateToGameOver(didComputerWin: false)
             }
+            game_state = .computer_state
             break
         case .computer_state:
             if has4ConnectedPuckOf(puck: .computer_puck) {
@@ -212,9 +246,11 @@ class Connect4GameController {
             if isBoardFull() {
                 updateToGameOver(didComputerWin: false)
             }
+            game_state = .player_state
             break
         case .gameover:
             determineWinner()
+            break
         }
     }
     

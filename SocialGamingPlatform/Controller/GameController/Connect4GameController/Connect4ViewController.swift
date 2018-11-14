@@ -82,8 +82,7 @@ class Connect4ViewController: UIViewController {
     func renderImages() {
         for row in 0...5 {
             for column in 0...5 {
-                let puck = game_controller.game_board[row][column]
-                switch puck {
+                switch game_controller.game_board[row][column] {
                 case 0:
                     image_board[row][column].image = UIImage(named: "grey_circle.png")
                     break
