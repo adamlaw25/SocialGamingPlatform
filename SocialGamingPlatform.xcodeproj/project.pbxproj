@@ -37,6 +37,7 @@
 		955FF74E2188EA970019420D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955FF74D2188EA970019420D /* Assets.xcassets */; };
 		955FF7622188EF9F0019420D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FF7612188EF9F0019420D /* Card.swift */; };
 		955FF7652188F71A0019420D /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FF7642188F71A0019420D /* UserTests.swift */; };
+		95C1E0A3219C2027007AEEA1 /* Connect4GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C1E0A2219C2027007AEEA1 /* Connect4GameController.swift */; };
 		95DF6BAC2184DE7C001C0AF2 /* BJGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DF6BAB2184DE7C001C0AF2 /* BJGameController.swift */; };
 		95DF6BAE2184E0AB001C0AF2 /* BJViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DF6BAD2184E0AB001C0AF2 /* BJViewController.swift */; };
 		95DF6BB12184FFEF001C0AF2 /* Connect4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DF6BB02184FFEF001C0AF2 /* Connect4ViewController.swift */; };
@@ -113,6 +114,7 @@
 		955FF7532188EE590019420D /* LoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		955FF7612188EF9F0019420D /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		955FF7642188F71A0019420D /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		95C1E0A2219C2027007AEEA1 /* Connect4GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connect4GameController.swift; sourceTree = "<group>"; };
 		95DF6BAB2184DE7C001C0AF2 /* BJGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BJGameController.swift; sourceTree = "<group>"; };
 		95DF6BAD2184E0AB001C0AF2 /* BJViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJViewController.swift; sourceTree = "<group>"; };
 		95DF6BB02184FFEF001C0AF2 /* Connect4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connect4ViewController.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 			children = (
 				95DF6BB02184FFEF001C0AF2 /* Connect4ViewController.swift */,
 				95115E352199F77C0090C720 /* Connect4MenuViewController.swift */,
+				95C1E0A2219C2027007AEEA1 /* Connect4GameController.swift */,
 			);
 			path = Connect4GameController;
 			sourceTree = "<group>";
@@ -704,6 +707,7 @@
 			files = (
 				5350B4A62184CB0C000E8CC4 /* SignUpViewController.swift in Sources */,
 				955FF7492188E9EB0019420D /* Game.swift in Sources */,
+				95C1E0A3219C2027007AEEA1 /* Connect4GameController.swift in Sources */,
 				5350B4732184CA49000E8CC4 /* ViewController.swift in Sources */,
 				95DF6BB12184FFEF001C0AF2 /* Connect4ViewController.swift in Sources */,
 				95115E362199F77C0090C720 /* Connect4MenuViewController.swift in Sources */,
