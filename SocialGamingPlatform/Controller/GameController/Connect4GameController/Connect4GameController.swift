@@ -35,6 +35,8 @@ class Connect4GameController {
     var score : Int
     var didComputerWin : Bool
     var score_multiplier : Int
+    var player_pucks : Int
+    var comp_pucks : Int
     
     init() {
         self.game_board = Array(repeating: Array(repeating: 0, count: 6), count: 6)
@@ -42,7 +44,8 @@ class Connect4GameController {
         self.score = 0
         self.didComputerWin = false
         self.score_multiplier = 1
-        printBoard()
+        player_pucks = 0
+        comp_pucks = 0
     }
     
     //reset the game
@@ -50,20 +53,53 @@ class Connect4GameController {
         resetGameBoard()
         self.game_state = .player_state
         self.didComputerWin = false
+        player_pucks = 0
+        comp_pucks = 0
+    }
+    
+    //private method resetting gameboard
+    private func resetGameBoard() {
+        self.game_board = Array(repeating: Array(repeating: 0, count: 6), count: 6)
     }
     
     //dropping a puck into the game board
     func dropPuck(column: Int) {
         let row_num = firstEmptyRow(column: column)
+        if row_num == -1 {
+            //throw error: column full
+            return
+        }
         if game_state == .player_state {
             dropPuckAt(row: row_num, column: column, puck: .player_puck)
+            player_pucks += 1
         }
         else if game_state == .computer_state {
             dropPuckAt(row: row_num, column: column, puck: .computer_puck)
+            comp_pucks += 1
         }
         else {
-            //throw error
+            //throw error: game already over
         }
+    }
+    
+    private func firstEmptyRow(column: Int) -> Int {
+        var empty_row = 7
+        for row in game_board {
+            if row[column] == 0 {
+                empty_row-=1
+            }
+            else {
+                break;
+            }
+        }
+        if empty_row == 7 {
+            return -1
+        }
+        return empty_row
+    }
+    
+    private func dropPuckAt(row: Int, column: Int, puck: Puck) {
+        game_board[row][column] = puck.rawValue
     }
     
     func has4ConnectedPuckOf(puck: Puck) -> Bool {
@@ -152,7 +188,12 @@ class Connect4GameController {
     }
     
     func awardScore() {
-        
+        if didComputerWin {
+            score -= 50
+        }
+        else {
+            score += score_multiplier * 50
+        }
     }
     
     func gameOverNotification() {
@@ -160,27 +201,55 @@ class Connect4GameController {
     }
     
     func updateGameState() {
-        
+        switch game_state {
+        case .player_state:
+            if has4ConnectedPuckOf(puck: .player_puck) {
+                updateToGameOver(didComputerWin: false)
+            }
+            if isBoardFull() {
+                updateToGameOver(didComputerWin: false)
+            }
+            break
+        case .computer_state:
+            if has4ConnectedPuckOf(puck: .computer_puck) {
+                updateToGameOver(didComputerWin: true)
+            }
+            if isBoardFull() {
+                updateToGameOver(didComputerWin: false)
+            }
+            break
+        case .gameover:
+            determineWinner()
+        }
     }
     
-    private func dropPuckAt(row: Int, column: Int, puck: Puck) {
-        game_board[row][column] = puck.rawValue
+    private func updateToGameOver(didComputerWin: Bool) {
+        game_state = .gameover
+        self.didComputerWin = didComputerWin
+        awardScore()
+        gameOverNotification()
     }
     
-    private func firstEmptyRow(column: Int) -> Int {
-        var empty_row = 7
-        for row in game_board {
-            if row[column] == 0 {
-                empty_row-=1
-            }
-            else {
-                break;
-            }
+    private func determineWinner() {
+        if has4ConnectedPuckOf(puck: .computer_puck) {
+            didComputerWin = true
         }
-        if empty_row == 7 {
-            return -1
+        else if has4ConnectedPuckOf(puck: .player_puck) {
+            didComputerWin = false
         }
-        return empty_row
+        else {
+            didComputerWin = false
+        }
+        awardScore()
+        gameOverNotification()
+    }
+    
+    private func isBoardFull() -> Bool {
+        return totalNumOfPucks() >= 36
+    }
+    
+    private func totalNumOfPucks() -> Int {
+        return player_pucks + comp_pucks
     }
     
     //for debugging purposes, print the entire gameboard in the console
@@ -188,11 +257,6 @@ class Connect4GameController {
         for array in game_board {
             print(array)
         }
-    }
-    
-    //private method resetting gameboard
-    private func resetGameBoard() {
-        self.game_board = Array(repeating: Array(repeating: 0, count: 6), count: 6)
     }
     
     
