@@ -65,7 +65,7 @@ class Connect4GameController {
     //dropping a puck into the game board
     func dropPuck(column: Int) {
         let row_num = firstEmptyRow(column: column)
-        if row_num == -1 {
+        if isColumnFull(column: column) {
             //throw error: column full
             return
         }
@@ -82,6 +82,10 @@ class Connect4GameController {
         }
     }
     
+    func isColumnFull(column: Int) -> Bool{
+        return firstEmptyRow(column: column) == -1
+    }
+    
     private func firstEmptyRow(column: Int) -> Int {
         var empty_row = -1
         for row in 0...5{
@@ -94,7 +98,7 @@ class Connect4GameController {
     
     private func dropPuckAt(row: Int, column: Int, puck: Puck) {
         game_board[row][column] = puck.rawValue
-        printBoard()
+        //printBoard()
     }
     
     func has4ConnectedPuckOf(puck: Puck) -> Bool {
@@ -288,6 +292,7 @@ class Connect4GameController {
         for array in game_board {
             print(array)
         }
+        print("\n")
     }
     
     

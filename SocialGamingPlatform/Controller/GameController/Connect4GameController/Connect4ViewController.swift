@@ -74,12 +74,17 @@ class Connect4ViewController: UIViewController {
         }
     }
     
-    func restartGame() {
+    private func restartGame() {
         game_controller.resetGame()
-        renderImages()
+        updateGameBoard()
     }
     
-    func renderImages() {
+    private func updateGameBoard() {
+        renderImages()
+        updateButtons()
+    }
+    
+    private func renderImages() {
         for row in 0...5 {
             for column in 0...5 {
                 switch game_controller.game_board[row][column] {
@@ -100,40 +105,61 @@ class Connect4ViewController: UIViewController {
         }
     }
     
+    private func updateButtons() {
+        if game_controller.isColumnFull(column: 0) {
+            ColBtn1.isEnabled = false
+        }
+        if game_controller.isColumnFull(column: 1) {
+            ColBtn2.isEnabled = false
+        }
+        if game_controller.isColumnFull(column: 2) {
+            ColBtn3.isEnabled = false
+        }
+        if game_controller.isColumnFull(column: 3) {
+            ColBtn4.isEnabled = false
+        }
+        if game_controller.isColumnFull(column: 4) {
+            ColBtn5.isEnabled = false
+        }
+        if game_controller.isColumnFull(column: 5) {
+            ColBtn6.isEnabled = false
+        }
+    }
+    
     
     @IBAction func dropAtCol1(_ sender: UIButton) {
         game_controller.dropPuck(column: 0)
-        renderImages()
+        updateGameBoard()
         game_controller.updateGameState()
     }
     
     @IBAction func dropAtCol2(_ sender: UIButton) {
         game_controller.dropPuck(column: 1)
-        renderImages()
+        updateGameBoard()
         game_controller.updateGameState()
     }
     
     @IBAction func dropAtCol3(_ sender: UIButton) {
         game_controller.dropPuck(column: 2)
-        renderImages()
+        updateGameBoard()
         game_controller.updateGameState()
     }
     
     @IBAction func dropAtCol4(_ sender: UIButton) {
         game_controller.dropPuck(column: 3)
-        renderImages()
+        updateGameBoard()
         game_controller.updateGameState()
     }
     
     @IBAction func dropAtCol5(_ sender: UIButton) {
         game_controller.dropPuck(column: 4)
-        renderImages()
+        updateGameBoard()
         game_controller.updateGameState()
     }
     
     @IBAction func dropAtCol6(_ sender: UIButton) {
         game_controller.dropPuck(column: 5)
-        renderImages()
+        updateGameBoard()
         game_controller.updateGameState()
     }
 
