@@ -15,7 +15,7 @@
         1 0 1 2 0 1
         2 0 2 1 2 2
         1 1 2 2 1 2
- * 0=empty; 1=player yellow puck; 2=computer red puck
+ * 0=empty; 1=player red puck; 2=computer yellow puck
  */
 
 import Foundation
@@ -83,23 +83,18 @@ class Connect4GameController {
     }
     
     private func firstEmptyRow(column: Int) -> Int {
-        var empty_row = 7
-        for row in game_board {
-            if row[column] == 0 {
-                empty_row-=1
+        var empty_row = -1
+        for row in 0...5{
+            if game_board[row][column] == 0 {
+                empty_row += 1
             }
-            else {
-                break;
-            }
-        }
-        if empty_row == 7 {
-            return -1
         }
         return empty_row
     }
     
     private func dropPuckAt(row: Int, column: Int, puck: Puck) {
         game_board[row][column] = puck.rawValue
+        printBoard()
     }
     
     func has4ConnectedPuckOf(puck: Puck) -> Bool {

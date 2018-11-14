@@ -49,11 +49,7 @@ class Connect4ViewController: UIViewController {
         image_board.append(Row4)
         image_board.append(Row5)
         image_board.append(Row6)
-        for imageViewRow in image_board {
-            for imageView in imageViewRow {
-                imageView.image = UIImage(named: "red_circle.png")
-            }
-        }
+        restartGame()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -80,9 +76,67 @@ class Connect4ViewController: UIViewController {
     
     func restartGame() {
         game_controller.resetGame()
-        
+        renderImages()
     }
     
+    func renderImages() {
+        for row in 0...5 {
+            for column in 0...5 {
+                let puck = game_controller.game_board[row][column]
+                switch puck {
+                case 0:
+                    image_board[row][column].image = UIImage(named: "grey_circle.png")
+                    break
+                case 1:
+                    image_board[row][column].image = UIImage(named: "red_circle.png")
+                    break
+                case 2:
+                    image_board[row][column].image = UIImage(named: "yellow_circle.png")
+                    break
+                default:
+                    image_board[row][column].image = UIImage(named: "grey_circle.png")
+                    break
+                }
+            }
+        }
+    }
+    
+    
+    @IBAction func dropAtCol1(_ sender: UIButton) {
+        game_controller.dropPuck(column: 0)
+        renderImages()
+        game_controller.updateGameState()
+    }
+    
+    @IBAction func dropAtCol2(_ sender: UIButton) {
+        game_controller.dropPuck(column: 1)
+        renderImages()
+        game_controller.updateGameState()
+    }
+    
+    @IBAction func dropAtCol3(_ sender: UIButton) {
+        game_controller.dropPuck(column: 2)
+        renderImages()
+        game_controller.updateGameState()
+    }
+    
+    @IBAction func dropAtCol4(_ sender: UIButton) {
+        game_controller.dropPuck(column: 3)
+        renderImages()
+        game_controller.updateGameState()
+    }
+    
+    @IBAction func dropAtCol5(_ sender: UIButton) {
+        game_controller.dropPuck(column: 4)
+        renderImages()
+        game_controller.updateGameState()
+    }
+    
+    @IBAction func dropAtCol6(_ sender: UIButton) {
+        game_controller.dropPuck(column: 5)
+        renderImages()
+        game_controller.updateGameState()
+    }
 
     @IBAction func goBack(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
