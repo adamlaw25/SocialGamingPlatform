@@ -17,6 +17,9 @@ class SliderMenuViewController: UIViewController {
     }
     
 
+    @IBAction func goBack(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

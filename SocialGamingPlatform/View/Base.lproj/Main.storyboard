@@ -281,6 +281,9 @@
                                 <state key="normal" title="Back">
                                     <color key="titleColor" red="0.99971860647201538" green="0.11260328441858292" blue="0.59120047092437744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="goBack:" destination="5Gp-Dl-k2s" eventType="touchUpInside" id="fhR-EY-oej"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Slider" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frN-ms-ki9">
                                 <rect key="frame" x="48" y="126" width="280" height="90"/>
@@ -296,6 +299,9 @@
                                 <state key="normal" title="Play!">
                                     <color key="titleColor" red="0.9997186065" green="0.1126032844" blue="0.59120047090000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="ahv-B7-zcv" kind="presentation" id="cUz-ch-yNw"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tile_one" translatesAutoresizingMaskIntoConstraints="NO" id="Sse-z8-Zif">
                                 <rect key="frame" x="30" y="285" width="100" height="100"/>
