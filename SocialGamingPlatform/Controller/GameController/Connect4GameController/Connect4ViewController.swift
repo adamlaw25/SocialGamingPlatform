@@ -40,8 +40,11 @@ class Connect4ViewController: UIViewController {
     
     @IBOutlet var Row6: [UIImageView]!
     
+    @IBOutlet weak var PlayAgain_btn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        PlayAgain_btn.isHidden = true
         scoreLabel.text = "Score: 0"
         image_board.append(Row1)
         image_board.append(Row2)
@@ -66,7 +69,7 @@ class Connect4ViewController: UIViewController {
             if let computerWin = userInfo["didComputerWin"]{
                 let message = (computerWin as! Bool) ? "Computer Won" : "You Won"
                 let alert = UIAlertController(title: "Game Over", message: message, preferredStyle: .alert)
-                let alertAction = UIAlertAction(title: "Play again", style: .default, handler: ({(_: UIAlertAction) -> Void in self.restartGame()}))
+                let alertAction = UIAlertAction(title: "Wait, let me see.", style: .default, handler: ({(_: UIAlertAction) -> Void in self.gameOverAlertAction()}))
                 scoreLabel.text = "Score: " + String(game_controller.score)
                 alert.addAction(alertAction)
                 present(alert, animated: true, completion: nil)
@@ -74,9 +77,38 @@ class Connect4ViewController: UIViewController {
         }
     }
     
+    @IBAction func play_again(_ sender: UIButton) {
+        restartGame()
+    }
+    
+    private func gameOverAlertAction() {
+        PlayAgain_btn.isHidden = false
+        disableAllButtons()
+    }
+    
+    private func disableAllButtons() {
+        ColBtn1.isEnabled = false
+        ColBtn2.isEnabled = false
+        ColBtn3.isEnabled = false
+        ColBtn4.isEnabled = false
+        ColBtn5.isEnabled = false
+        ColBtn6.isEnabled = false
+    }
+    
+    private func enableAllButtons() {
+        ColBtn1.isEnabled = true
+        ColBtn2.isEnabled = true
+        ColBtn3.isEnabled = true
+        ColBtn4.isEnabled = true
+        ColBtn5.isEnabled = true
+        ColBtn6.isEnabled = true
+    }
+    
     private func restartGame() {
         game_controller.resetGame()
         updateGameBoard()
+        PlayAgain_btn.isHidden = true
+        enableAllButtons()
     }
     
     private func updateGameBoard() {
