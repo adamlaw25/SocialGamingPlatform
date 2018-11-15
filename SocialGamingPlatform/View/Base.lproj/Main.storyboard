@@ -348,10 +348,10 @@
             </objects>
             <point key="canvasLocation" x="5037.6000000000004" y="49.50738916256158"/>
         </scene>
-        <!--View Controller-->
+        <!--Slider View Controller-->
         <scene sceneID="pPA-Q3-1aj">
             <objects>
-                <viewController id="ahv-B7-zcv" sceneMemberID="viewController">
+                <viewController id="ahv-B7-zcv" customClass="SliderViewController" customModule="SocialGamingPlatform" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pEh-E2-rZc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -392,14 +392,40 @@
                                 <rect key="frame" x="245" y="501" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TsZ-D9-bBB">
+                                <rect key="frame" x="305" y="211" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="question_mark"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCy-qc-khi">
+                                <rect key="frame" x="29" y="56" width="54" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.9997186065" green="0.1126032844" blue="0.59120047090000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBack:" destination="ahv-B7-zcv" eventType="touchUpInside" id="Ttv-FN-qzi"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUj-7z-BAu">
+                                <rect key="frame" x="185" y="53" width="160" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
+                                <color key="textColor" red="0.9997186065" green="0.1126032844" blue="0.59120047090000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93846184015274048" green="0.86653822660446167" blue="0.91449421644210815" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="oe4-3y-v3k"/>
                     </view>
+                    <connections>
+                        <outlet property="score_label" destination="yUj-7z-BAu" id="fOy-6c-Jjl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OK6-P5-9S7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5870" y="50"/>
+            <point key="canvasLocation" x="5869.6000000000004" y="49.50738916256158"/>
         </scene>
         <!--Connect4 Menu View Controller-->
         <scene sceneID="uhy-UX-Eb6">
@@ -1096,6 +1122,7 @@
         <image name="game_logo" width="32" height="32"/>
         <image name="grey_circle" width="48" height="48"/>
         <image name="msg_logo" width="32" height="32"/>
+        <image name="question_mark" width="192" height="192"/>
         <image name="red_circle" width="48" height="48"/>
         <image name="spade-1" width="118" height="176"/>
         <image name="spade-13" width="118" height="176"/>

@@ -38,6 +38,8 @@
 		955FF7622188EF9F0019420D /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FF7612188EF9F0019420D /* Card.swift */; };
 		955FF7652188F71A0019420D /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FF7642188F71A0019420D /* UserTests.swift */; };
 		95760D3F219DC68F0058B5B4 /* SliderMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95760D3E219DC68F0058B5B4 /* SliderMenuViewController.swift */; };
+		95760D41219DEE870058B5B4 /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95760D40219DEE870058B5B4 /* SliderViewController.swift */; };
+		95760D43219DF3B60058B5B4 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95760D42219DF3B60058B5B4 /* File.swift */; };
 		95C1E0A3219C2027007AEEA1 /* Connect4GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C1E0A2219C2027007AEEA1 /* Connect4GameController.swift */; };
 		95DF6BAC2184DE7C001C0AF2 /* BJGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DF6BAB2184DE7C001C0AF2 /* BJGameController.swift */; };
 		95DF6BAE2184E0AB001C0AF2 /* BJViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DF6BAD2184E0AB001C0AF2 /* BJViewController.swift */; };
@@ -116,6 +118,8 @@
 		955FF7612188EF9F0019420D /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		955FF7642188F71A0019420D /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		95760D3E219DC68F0058B5B4 /* SliderMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderMenuViewController.swift; sourceTree = "<group>"; };
+		95760D40219DEE870058B5B4 /* SliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
+		95760D42219DF3B60058B5B4 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		95C1E0A2219C2027007AEEA1 /* Connect4GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connect4GameController.swift; sourceTree = "<group>"; };
 		95DF6BAB2184DE7C001C0AF2 /* BJGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BJGameController.swift; sourceTree = "<group>"; };
 		95DF6BAD2184E0AB001C0AF2 /* BJViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJViewController.swift; sourceTree = "<group>"; };
@@ -229,8 +233,8 @@
 		53EE1BFC21856E850026904F /* GameController */ = {
 			isa = PBXGroup;
 			children = (
-				95760D3D219DC6700058B5B4 /* SliderGameController */,
 				95DF6BB6218509AA001C0AF2 /* GameMenuTableTableViewController.swift */,
+				95760D3D219DC6700058B5B4 /* SliderGameController */,
 				95DF6BAF2184FF3F001C0AF2 /* Connect4GameController */,
 				95DF6BAA2184DE7C001C0AF2 /* BlackJackGameController */,
 			);
@@ -419,6 +423,8 @@
 			isa = PBXGroup;
 			children = (
 				95760D3E219DC68F0058B5B4 /* SliderMenuViewController.swift */,
+				95760D40219DEE870058B5B4 /* SliderViewController.swift */,
+				95760D42219DF3B60058B5B4 /* File.swift */,
 			);
 			path = SliderGameController;
 			sourceTree = "<group>";
@@ -727,6 +733,7 @@
 				53EE1C05218571900026904F /* MessageViewController.swift in Sources */,
 				955FF74B2188E9EB0019420D /* Powerup.swift in Sources */,
 				95DF6BB321850228001C0AF2 /* BJMenuViewController.swift in Sources */,
+				95760D41219DEE870058B5B4 /* SliderViewController.swift in Sources */,
 				95DF6BAC2184DE7C001C0AF2 /* BJGameController.swift in Sources */,
 				955FF7482188E9EB0019420D /* User.swift in Sources */,
 				955FF7622188EF9F0019420D /* Card.swift in Sources */,
@@ -738,6 +745,7 @@
 				955FF74A2188E9EB0019420D /* Store.swift in Sources */,
 				95DF6BB92185548E001C0AF2 /* LogoutViewController.swift in Sources */,
 				955FF7472188E9EB0019420D /* Message.swift in Sources */,
+				95760D43219DF3B60058B5B4 /* File.swift in Sources */,
 				955FF7462188E9EB0019420D /* MessageBoard.swift in Sources */,
 				95DF6BAE2184E0AB001C0AF2 /* BJViewController.swift in Sources */,
 			);

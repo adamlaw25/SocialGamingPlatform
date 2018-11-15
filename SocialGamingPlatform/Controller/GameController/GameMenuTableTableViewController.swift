@@ -10,7 +10,7 @@ import UIKit
 
 class GameMenuTableTableViewController: UITableViewController {
     
-    var game : [String] = ["BlackJack", "Connect4"]
+    var game : [String] = ["BlackJack", "Connect4", "Slider"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
