@@ -396,6 +396,9 @@
                                 <rect key="frame" x="305" y="211" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="question_mark"/>
+                                <connections>
+                                    <action selector="instructions:" destination="ahv-B7-zcv" eventType="touchUpInside" id="XaB-xP-3MY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCy-qc-khi">
                                 <rect key="frame" x="29" y="56" width="54" height="39"/>

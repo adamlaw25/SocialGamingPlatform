@@ -26,7 +26,12 @@ class SliderGameController {
     }
     
     func shuffle() {
-        
+        let directions = ["UP", "DOWN", "LEFT", "DOWN"]
+        let random_number  = Int.random(in: 0...3)
+        for _ in 0...20 {
+            move(direction: directions[random_number])
+            updateBlankTile()
+        }
     }
     
     func move(direction: String) {
@@ -69,11 +74,18 @@ class SliderGameController {
         }
     }
     
-    private func findBlankTile() {
+    func hasWon() -> Bool {
+        return board[0] == [1,2,3] &&
+            board[1] == [4,5,6] &&
+            board[2] == [7,8,0]
+    }
+    
+    private func updateBlankTile() {
         for row in 0...2 {
             for column in 0...2 {
                 if board[row][column] == 0 {
-                    
+                    blanktile_row = row
+                    blanktile_column = column
                 }
             }
         }

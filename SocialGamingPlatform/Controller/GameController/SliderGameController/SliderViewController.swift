@@ -13,12 +13,17 @@ class SliderViewController: UIViewController {
     
     @IBOutlet weak var score_label: UILabel!
     
-
+    var game_controller : SliderGameController
     
+    required init?(coder aDecoder: NSCoder) {
+        game_controller = SliderGameController()
+        super.init(aDecoder)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        score_label.text = "Score: 0"
         let swipeUp = UISwipeGestureRecognizer(target: self, action: Selector(("swipeResponse:")))
         swipeUp.direction = UISwipeGestureRecognizer.Direction.up
         self.view.addGestureRecognizer(swipeUp)
@@ -55,6 +60,9 @@ class SliderViewController: UIViewController {
     
     
     
+    @IBAction func instructions(_ sender: UIButton) {
+        
+    }
     
     @IBAction func goBack(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
