@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+//a class that represents the signup view controller
 class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var email: UITextField!

@@ -41,10 +41,12 @@ class Card {
         }
     }
     
+    //check if the current card is an ace
     func isAce() -> Bool {
         return digit == 1
     }
     
+    //check if the current card has value Ten
     func isValueTen() -> Bool {
         return digit > 9
     }

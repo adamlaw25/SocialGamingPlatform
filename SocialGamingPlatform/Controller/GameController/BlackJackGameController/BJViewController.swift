@@ -8,6 +8,7 @@
 
 import UIKit
 
+//a class that represents the blackjack view controller
 class BJViewController: UIViewController {
     
     var curPlayerCardIndex = 0
@@ -39,6 +40,7 @@ class BJViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: aSelector, name: NSNotification.Name(rawValue: "BlackJack Game Over"), object: gameController)
     }
     
+    //a function to trigger the gameover notification
     @objc func handleNotificationGameDidEnd(_ notification: Notification) {
         if let userInfo = notification.userInfo{
             if let dealerWin = userInfo["didDealerWin"]{
@@ -52,6 +54,7 @@ class BJViewController: UIViewController {
         }
     }
     
+    //a function to restart the game
     func restartGame() {
         gameController.resetGame()
         curPlayerCardIndex = 0
@@ -77,6 +80,8 @@ class BJViewController: UIViewController {
         hitBtn.isEnabled = true
         standBtn.isEnabled = true
     }
+    
+    //a function to render the card images
     
     func renderCards() {
         for i in 0 ..< gameController.maxPlayerCards{

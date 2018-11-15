@@ -10,7 +10,7 @@ import UIKit
 
 class GameMenuTableTableViewController: UITableViewController {
     
-    var game : [String] = ["BlackJack"]
+    var game : [String] = ["BlackJack", "Connect4", "Slider"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,12 +40,23 @@ class GameMenuTableTableViewController: UITableViewController {
         cell.imageView?.image = UIImage(named: "\(game[indexPath.row].lowercased()).png")
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
+        let selected_game = game[indexPath.row].lowercased()
+        let segue_name = "to_\(selected_game)_menu"
+        self.performSegue(withIdentifier: segue_name, sender: nil)
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //if user wants to edit a member
         if segue.identifier == "toBJMenu" {
             let indexPath = tableView.indexPathForSelectedRow
             let menuVC = segue.destination as! BJMenuViewController
+        }
+        else if segue.identifier == "toConnect4Menu" {
+            let indexPath = tableView.indexPathForSelectedRow
+            let menuVC = segue.destination as! Connect4MenuViewController
         }
     }
 }
