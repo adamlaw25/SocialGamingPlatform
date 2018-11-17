@@ -942,8 +942,9 @@
 			baseConfigurationReference = 80F169151CDCDB057E201876 /* Pods-SocialGamingPlatform.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BJ4HJPSB44;
+				DEVELOPMENT_TEAM = VPH6MPD7K5;
 				INFOPLIST_FILE = SocialGamingPlatform/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -951,6 +952,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jxl1305.case.edu.SocialGamingPlatform;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -961,8 +963,9 @@
 			baseConfigurationReference = B6AE16293D430B75897C099B /* Pods-SocialGamingPlatform.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BJ4HJPSB44;
+				DEVELOPMENT_TEAM = VPH6MPD7K5;
 				INFOPLIST_FILE = SocialGamingPlatform/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -970,6 +973,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jxl1305.case.edu.SocialGamingPlatform;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
