@@ -22,11 +22,11 @@ class UserTests: XCTestCase {
     override func tearDown() {
         testuser.email = "test@test.com"
         testuser.isOnline = false
-        testuser.score = 0.0
+        testuser.score = 0
         testuser.level = 1
         testuser.friends = []
         testuser.gameList = ["BlackJack"]
-        testuser.powerup = Powerup(multiplier: 1.0, timeLimit: 0)
+        testuser.powerup = Powerup(multiplier: 1, timeLimit: 0)
     }
 
     func testPerformanceExample() {
@@ -52,8 +52,8 @@ class UserTests: XCTestCase {
     }
     
     func test_addScore() {
-        testuser.addScore(score: 30.0)
-        XCTAssertEqual(testuser.score, 30.0)
+        testuser.addScore(newScore: 30)
+        XCTAssertEqual(testuser.score, 30)
         tearDown()
     }
     
@@ -64,10 +64,10 @@ class UserTests: XCTestCase {
     }
     
     func test_applyPowerup() {
-        let powerup = Powerup(multiplier: 2.0, timeLimit: 5)
+        let powerup = Powerup(multiplier: 2, timeLimit: 5)
         testuser.applyPowerup(powerup: powerup)
-        testuser.addScore(score: 30.0)
-        XCTAssertEqual(testuser.score, 30.0*2.0)
+        testuser.addScore(newScore: 30)
+        XCTAssertEqual(testuser.score, 30*2)
         tearDown()
     }
 

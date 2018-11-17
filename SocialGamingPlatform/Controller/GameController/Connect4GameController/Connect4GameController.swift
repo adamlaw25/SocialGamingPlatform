@@ -77,16 +77,13 @@ class Connect4GameController {
             dropPuckAt(row: row_num, column: column, puck: .computer_puck)
             comp_pucks += 1
         }
-        else {
-            //throw error: game already over
-        }
     }
     
     func isColumnFull(column: Int) -> Bool{
         return firstEmptyRow(column: column) == -1
     }
     
-    private func firstEmptyRow(column: Int) -> Int {
+    func firstEmptyRow(column: Int) -> Int {
         var empty_row = -1
         for row in 0...5{
             if game_board[row][column] == 0 {
@@ -98,7 +95,6 @@ class Connect4GameController {
     
     private func dropPuckAt(row: Int, column: Int, puck: Puck) {
         game_board[row][column] = puck.rawValue
-        //printBoard()
     }
     
     func has4ConnectedPuckOf(puck: Puck) -> Bool {
@@ -228,7 +224,7 @@ class Connect4GameController {
         }
     }
     
-    func gameOverNotification() {
+    private func gameOverNotification() {
         NotificationCenter.default.post(name: Notification.Name(rawValue: "Connect4 Game Over"), object: self, userInfo: ["didComputerWin": didComputerWin])
     }
     
