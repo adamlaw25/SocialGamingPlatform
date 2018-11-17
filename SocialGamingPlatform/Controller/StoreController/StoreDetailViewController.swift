@@ -26,6 +26,7 @@ class StoreDetailViewController: UIViewController {
         detail.text = String((storeItem?.detail)!)
     }
     
+    // action to buy item
     @IBAction func buyItem(_ sender: Any) {
         let alert = UIAlertController(title: "price: " + String((storeItem?.price)!), message: "Are you sure to buy?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "YES", style: .default, handler:  { (action) -> Void in
