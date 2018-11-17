@@ -9,11 +9,11 @@
 import Foundation
 
 class Powerup {
-	var multiplier: Double
+	var multiplier: Int
 	var timeLimit: Int
 	// var expirationTime: timestamp
 
-	init(multiplier: Double, timeLimit: Int){
+	init(multiplier: Int, timeLimit: Int){
 		self.multiplier = multiplier
 		self.timeLimit = timeLimit
 	}

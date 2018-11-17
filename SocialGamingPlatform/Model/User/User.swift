@@ -12,7 +12,7 @@ import Foundation
 class User {
 	var email: String
 	var isOnline: Bool
-	var score: Double
+	var score: Int
 	var level: Int
 	var friends: [User]
 	var gameList: [String]
@@ -22,12 +22,12 @@ class User {
 		self.email = email
 		self.isOnline = false
 		// databases methods to retrieve data
-		self.score = 0.0
+		self.score = 0
 		self.level = 1
 		self.friends = []
 		self.gameList = ["BlackJack"]
         //Default powerup
-        self.powerup = Powerup(multiplier: 1.0, timeLimit: 0)
+        self.powerup = Powerup(multiplier: 1, timeLimit: 0)
     }
 
     //increments the level by one
@@ -43,8 +43,8 @@ class User {
 
     //add score to this user
     //input: amount of score to be added
-    func addScore(score: Double) {
-    	self.score += score * powerup.multiplier
+    func addScore(newScore: Int) {
+    	self.score += newScore * powerup.multiplier
     }
 
     //set the online status of this user

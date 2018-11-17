@@ -8,14 +8,39 @@
 
 import UIKit
 
-class StoreViewController: UIViewController {
-
+class StoreViewController: UITableViewController {
+    var storelist = StoreItemList()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableView.reloadData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return storelist.items.count
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //if user wants to edit a member
+        if segue.identifier == "to_item_detail" {
+            let itemDetailViewController = segue.destination as! StoreDetailViewController
+            itemDetailViewController.storeItem = storelist.items[(tableView.indexPathForSelectedRow?.row)!]
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "storelist", for: indexPath)
+        cell.textLabel!.text = storelist.items[indexPath.row].name + " \n" + String(storelist.items[indexPath.row].price)
+        return cell
+    }
 
     /*
     // MARK: - Navigation
