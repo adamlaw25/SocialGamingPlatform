@@ -7,13 +7,30 @@
 //
 
 import UIKit
+import Firebase
 
 class StoreViewController: UITableViewController {
     var storelist = StoreItemList()
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
+        let uid = Auth.auth().currentUser?.uid
+        ref = Database.database().reference(withPath: "users/\(uid!)")
+//        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+//            let value = snapshot.value as? NSDictionary
+//            let gameList = (value?["gameList"] as? [String])!
+//            for game in gameList {
+//                for item in self.storelist.items {
+//                    if (game == item.name) {
+//                        self.storelist.remove(item: item)
+//                    }
+//                }
+//            }
+//        }) { (error) in
+//            print(error.localizedDescription)
+//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -22,6 +39,19 @@ class StoreViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let gameList = (value?["gameList"] as? [String])!
+            for game in gameList {
+                for item in self.storelist.items {
+                    if (game == item.name) {
+                        self.storelist.remove(item: item)
+                    }
+                }
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,4 +82,14 @@ class StoreViewController: UITableViewController {
     }
     */
 
+}
+
+extension Array where Element: Equatable {
+    
+    // Remove first collection element that is equal to the given `object`:
+    mutating func remove(object: Element) {
+        if let index = index(of: object) {
+            remove(at: index)
+        }
+    }
 }

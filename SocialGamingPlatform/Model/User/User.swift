@@ -14,7 +14,7 @@ class User {
 	var isOnline: Bool
 	var score: Int
 	var level: Int
-	var friends: [User]
+	var friends: [String]
 	var gameList: [String]
 	var powerup: Powerup
 
@@ -24,7 +24,7 @@ class User {
 		// databases methods to retrieve data
 		self.score = 0
 		self.level = 1
-		self.friends = []
+		self.friends = ["test"]
 		self.gameList = ["BlackJack"]
         //Default powerup
         self.powerup = Powerup(multiplier: 1, timeLimit: 0)
@@ -37,7 +37,7 @@ class User {
 
     //add a friend to this user
     //input: another user object
-    func addFriend(friend: User) {
+    func addFriend(friend: String) {
     	self.friends += [friend]
     }
 
@@ -57,5 +57,32 @@ class User {
     //input: a powerup
     func applyPowerup(powerup: Powerup) {
     	self.powerup = powerup
+    }
+}
+
+extension User : Serializable {
+    var properties: Array<String> {
+        return ["email", "isOnline", "score", "level", "friends", "gameList", "powerup"]
+    }
+    
+    func valueForKey(key: String) -> Any? {
+        switch key {
+        case "email":
+            return email
+        case "isOnline":
+            return isOnline
+        case "score":
+            return score
+        case "level":
+            return level
+        case "friends":
+            return friends
+        case "gameList":
+            return gameList
+        case "powerup":
+            return powerup
+        default:
+            return nil
+        }
     }
 }

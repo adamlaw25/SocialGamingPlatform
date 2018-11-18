@@ -21,6 +21,7 @@
 		7D4F7AE421A0B18900C77003 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F7AE321A0B18900C77003 /* StoreDetailViewController.swift */; };
 		7D4F7AE621A0B86900C77003 /* StoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F7AE521A0B86900C77003 /* StoreItem.swift */; };
 		7D4F7AE821A0BAD900C77003 /* StoreItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F7AE721A0BAD900C77003 /* StoreItemList.swift */; };
+		7D4F7AEA21A0CF2100C77003 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F7AE921A0CF2100C77003 /* Serializable.swift */; };
 		95115E362199F77C0090C720 /* Connect4MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95115E352199F77C0090C720 /* Connect4MenuViewController.swift */; };
 		9537F11621890E5C0028E901 /* MessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537F11521890E5C0028E901 /* MessageTests.swift */; };
 		9537F11821890E980028E901 /* MessageBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537F11721890E980028E901 /* MessageBoardTests.swift */; };
@@ -102,6 +103,7 @@
 		7D4F7AE321A0B18900C77003 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
 		7D4F7AE521A0B86900C77003 /* StoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItem.swift; sourceTree = "<group>"; };
 		7D4F7AE721A0BAD900C77003 /* StoreItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemList.swift; sourceTree = "<group>"; };
+		7D4F7AE921A0CF2100C77003 /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		80F169151CDCDB057E201876 /* Pods-SocialGamingPlatform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialGamingPlatform.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialGamingPlatform/Pods-SocialGamingPlatform.debug.xcconfig"; sourceTree = "<group>"; };
 		95115E352199F77C0090C720 /* Connect4MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connect4MenuViewController.swift; sourceTree = "<group>"; };
 		9537F11521890E5C0028E901 /* MessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTests.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				53EE1BF2218567B30026904F /* AlertHelper.swift */,
+				7D4F7AE921A0CF2100C77003 /* Serializable.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -737,6 +740,7 @@
 				95C1E0A3219C2027007AEEA1 /* Connect4GameController.swift in Sources */,
 				5350B4732184CA49000E8CC4 /* ViewController.swift in Sources */,
 				95DF6BB12184FFEF001C0AF2 /* Connect4ViewController.swift in Sources */,
+				7D4F7AEA21A0CF2100C77003 /* Serializable.swift in Sources */,
 				95115E362199F77C0090C720 /* Connect4MenuViewController.swift in Sources */,
 				5350B4A22184CAEC000E8CC4 /* StartViewController.swift in Sources */,
 				53EE1C05218571900026904F /* MessageViewController.swift in Sources */,

@@ -18,3 +18,20 @@ class Powerup {
 		self.timeLimit = timeLimit
 	}
 }
+
+extension Powerup : Serializable {
+    var properties: Array<String> {
+        return ["multiplier", "timeLimit"]
+    }
+    
+    func valueForKey(key: String) -> Any? {
+        switch key {
+        case "multiplier":
+            return multiplier
+        case "timeLimit":
+            return timeLimit
+        default:
+            return nil
+        }
+    }
+}
