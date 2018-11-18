@@ -234,19 +234,23 @@ class Connect4GameController {
             if has4ConnectedPuckOf(puck: .player_puck) {
                 updateToGameOver(didComputerWin: false)
             }
-            if isBoardFull() {
+            else if isBoardFull() {
                 updateToGameOver(didComputerWin: false)
             }
-            game_state = .computer_state
+            else {
+                game_state = .computer_state
+            }
             break
         case .computer_state:
             if has4ConnectedPuckOf(puck: .computer_puck) {
                 updateToGameOver(didComputerWin: true)
             }
-            if isBoardFull() {
+            else if isBoardFull() {
                 updateToGameOver(didComputerWin: false)
             }
-            game_state = .player_state
+            else {
+                game_state = .player_state
+            }
             break
         case .gameover:
             determineWinner()

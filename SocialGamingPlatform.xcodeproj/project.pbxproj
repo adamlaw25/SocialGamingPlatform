@@ -44,6 +44,7 @@
 		95760D41219DEE870058B5B4 /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95760D40219DEE870058B5B4 /* SliderViewController.swift */; };
 		95760D43219DF3B60058B5B4 /* SliderGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95760D42219DF3B60058B5B4 /* SliderGameController.swift */; };
 		95760D4721A0CB810058B5B4 /* Connect4GameControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95760D4621A0CB810058B5B4 /* Connect4GameControllerTests.swift */; };
+		95760D4921A102720058B5B4 /* SliderGameControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95760D4821A102720058B5B4 /* SliderGameControllerTests.swift */; };
 		95C1E0A3219C2027007AEEA1 /* Connect4GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C1E0A2219C2027007AEEA1 /* Connect4GameController.swift */; };
 		95DF6BAC2184DE7C001C0AF2 /* BJGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DF6BAB2184DE7C001C0AF2 /* BJGameController.swift */; };
 		95DF6BAE2184E0AB001C0AF2 /* BJViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DF6BAD2184E0AB001C0AF2 /* BJViewController.swift */; };
@@ -128,6 +129,7 @@
 		95760D40219DEE870058B5B4 /* SliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
 		95760D42219DF3B60058B5B4 /* SliderGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderGameController.swift; sourceTree = "<group>"; };
 		95760D4621A0CB810058B5B4 /* Connect4GameControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connect4GameControllerTests.swift; sourceTree = "<group>"; };
+		95760D4821A102720058B5B4 /* SliderGameControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderGameControllerTests.swift; sourceTree = "<group>"; };
 		95C1E0A2219C2027007AEEA1 /* Connect4GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connect4GameController.swift; sourceTree = "<group>"; };
 		95DF6BAB2184DE7C001C0AF2 /* BJGameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BJGameController.swift; sourceTree = "<group>"; };
 		95DF6BAD2184E0AB001C0AF2 /* BJViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJViewController.swift; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 		95760D4521A0CB340058B5B4 /* SliderGameControllerTests */ = {
 			isa = PBXGroup;
 			children = (
+				95760D4821A102720058B5B4 /* SliderGameControllerTests.swift */,
 			);
 			path = SliderGameControllerTests;
 			sourceTree = "<group>";
@@ -791,6 +794,7 @@
 				9537F11821890E980028E901 /* MessageBoardTests.swift in Sources */,
 				95760D4721A0CB810058B5B4 /* Connect4GameControllerTests.swift in Sources */,
 				9537F12221890F070028E901 /* CardTests.swift in Sources */,
+				95760D4921A102720058B5B4 /* SliderGameControllerTests.swift in Sources */,
 				9537F11A21890EAA0028E901 /* StoreTests.swift in Sources */,
 				9537F11F21890EED0028E901 /* PowerupTests.swift in Sources */,
 				5350B4892184CA4A000E8CC4 /* SocialGamingPlatformTests.swift in Sources */,

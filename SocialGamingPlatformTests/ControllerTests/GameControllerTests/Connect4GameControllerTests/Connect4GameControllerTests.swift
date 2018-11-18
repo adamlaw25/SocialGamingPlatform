@@ -172,9 +172,13 @@ class Connect4GameControllerTests: XCTestCase {
     }
     
     func test_updateGameState() {
+        //test player_state case
+        
+        //if player has 4 connected pucks
         controller.game_state = .player_state
         controller.score = 0
         controller.score_multiplier = 1
+        controller.player_pucks = 4
         controller.game_board = [   [0,0,0,0,0,0],
                                     [0,0,0,0,0,0],
                                     [0,0,1,0,0,0],
@@ -182,16 +186,105 @@ class Connect4GameControllerTests: XCTestCase {
                                     [0,0,1,0,0,0],
                                     [0,0,1,0,0,0]]
         controller.updateGameState()
+        XCTAssertTrue(controller.has4ConnectedPuckOf(puck: .player_puck))
         XCTAssertEqual(controller.game_state, .gameover)
         XCTAssertFalse(controller.didComputerWin)
         XCTAssertEqual(controller.score, 50)
+        //if the board is full
+        controller.game_state = .player_state
         controller.score = 0
-        controller.score_multiplier = 1
-        controller.game_board = [   [0,0,1,0,0,0],
+        controller.player_pucks = 18
+        controller.comp_pucks = 18
+        controller.game_board = [   [2,1,2,1,2,1],
+                                    [2,1,2,1,2,1],
+                                    [2,1,2,1,2,1],
+                                    [1,2,1,2,1,2],
+                                    [1,2,1,2,1,2],
+                                    [1,2,1,2,1,2]]
+        controller.updateGameState()
+        XCTAssertFalse(controller.has4ConnectedPuckOf(puck: .player_puck))
+        XCTAssertEqual(controller.game_state, .gameover)
+        XCTAssertFalse(controller.didComputerWin)
+        XCTAssertEqual(controller.score, 50)
+        //if the player does not have 4 connected pucks
+        controller.score = 0
+        controller.game_state = .player_state
+        controller.player_pucks = 3
+        controller.comp_pucks = 3
+        controller.game_board = [   [0,0,0,0,0,0],
+                                    [0,0,0,0,0,0],
+                                    [0,0,0,0,0,0],
+                                    [0,0,1,0,0,0],
+                                    [0,0,1,0,0,0],
+                                    [0,0,1,2,2,2]]
+        controller.updateGameState()
+        XCTAssertFalse(controller.has4ConnectedPuckOf(puck: .player_puck))
+        XCTAssertEqual(controller.game_state, .computer_state)
+        XCTAssertFalse(controller.didComputerWin)
+        XCTAssertEqual(controller.score, 0)
+        //test computer_state case
+        
+        //if the computer has 4 connected pucks
+        controller.game_state = .computer_state
+        controller.score = 0
+        controller.comp_pucks = 4
+        controller.game_board = [   [0,0,0,0,0,0],
+                                    [0,0,0,0,0,0],
+                                    [0,0,2,0,0,0],
+                                    [0,0,2,0,0,0],
+                                    [0,0,2,0,0,0],
+                                    [0,0,2,0,0,0]]
+        controller.updateGameState()
+        XCTAssertTrue(controller.has4ConnectedPuckOf(puck: .computer_puck))
+        XCTAssertEqual(controller.game_state, .gameover)
+        XCTAssertTrue(controller.didComputerWin)
+        XCTAssertEqual(controller.score, -50)
+        //if the board is full
+        controller.game_state = .computer_state
+        controller.score = 0
+        controller.player_pucks = 18
+        controller.comp_pucks = 18
+        controller.game_board = [   [2,1,2,1,2,1],
+                                    [2,1,2,1,2,1],
+                                    [2,1,2,1,2,1],
+                                    [1,2,1,2,1,2],
+                                    [1,2,1,2,1,2],
+                                    [1,2,1,2,1,2]]
+        controller.updateGameState()
+        XCTAssertFalse(controller.has4ConnectedPuckOf(puck: .computer_puck))
+        XCTAssertEqual(controller.game_state, .gameover)
+        XCTAssertFalse(controller.didComputerWin)
+        XCTAssertEqual(controller.score, 50)
+        //if the computer does not have 4 connected pucks
+        controller.score = 0
+        controller.game_state = .computer_state
+        controller.player_pucks = 3
+        controller.comp_pucks = 3
+        controller.game_board = [   [0,0,0,0,0,0],
+                                    [0,0,0,0,0,0],
+                                    [0,0,0,0,0,0],
+                                    [0,0,1,0,0,0],
+                                    [0,0,1,0,0,0],
+                                    [0,0,1,2,2,2]]
+        controller.updateGameState()
+        XCTAssertFalse(controller.has4ConnectedPuckOf(puck: .computer_puck))
+        XCTAssertEqual(controller.game_state, .player_state)
+        XCTAssertFalse(controller.didComputerWin)
+        XCTAssertEqual(controller.score, 0)
+        //test gameover case
+        
+        //if the game is over
+        controller.game_state = .gameover
+        controller.score = 0
+        controller.game_board = [   [0,0,0,0,0,0],
+                                    [0,0,0,0,0,0],
                                     [0,0,1,0,0,0],
                                     [0,0,1,0,0,0],
                                     [0,0,1,0,0,0],
-                                    [0,0,1,0,0,0],
-                                    [0,0,1,0,0,0]]
+                                    [0,0,1,2,2,2]]
+        controller.updateGameState()
+        XCTAssertEqual(controller.game_state, .gameover)
+        XCTAssertFalse(controller.didComputerWin)
+        XCTAssertEqual(controller.score, 50)
     }
 }

@@ -42,6 +42,10 @@ class SliderGameController {
             directions = getCurrentAvailableMoves()
             random_number = Int.random(in: 0..<directions.count)
         }
+        //if the shuffle turns out the same as goal state, reshuffle
+        if n > 0 && board == [[1,2,3], [4,5,6], [7,8,0]] {
+            shuffle(n: n)
+        }
     }
     
     private func getCurrentAvailableMoves() -> [String] {
