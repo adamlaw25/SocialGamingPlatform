@@ -24,7 +24,7 @@ class User {
 		// databases methods to retrieve data
 		self.score = 0
 		self.level = 1
-		self.friends = ["test"]
+		self.friends = []
 		self.gameList = ["BlackJack"]
         //Default powerup
         self.powerup = Powerup(multiplier: 1, timeLimit: 0)

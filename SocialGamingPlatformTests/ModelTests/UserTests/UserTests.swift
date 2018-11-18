@@ -44,10 +44,10 @@ class UserTests: XCTestCase {
     }
     
     func test_addFriend() {
-        let user2 = User(email: "test2@test.com")
+        let user2 = "test2@test.com"
         testuser.addFriend(friend: user2)
         XCTAssertEqual(testuser.friends.count, 1)
-        XCTAssertEqual(testuser.friends[0].email, user2.email)
+        XCTAssertEqual(testuser.friends[0], user2)
         tearDown()
     }
     
