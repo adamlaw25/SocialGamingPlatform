@@ -18,19 +18,6 @@ class StoreViewController: UITableViewController {
         tableView.reloadData()
         let uid = Auth.auth().currentUser?.uid
         ref = Database.database().reference(withPath: "users/\(uid!)")
-//        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-//            let value = snapshot.value as? NSDictionary
-//            let gameList = (value?["gameList"] as? [String])!
-//            for game in gameList {
-//                for item in self.storelist.items {
-//                    if (game == item.name) {
-//                        self.storelist.remove(item: item)
-//                    }
-//                }
-//            }
-//        }) { (error) in
-//            print(error.localizedDescription)
-//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

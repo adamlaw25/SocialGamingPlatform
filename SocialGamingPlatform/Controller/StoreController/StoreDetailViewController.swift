@@ -21,6 +21,8 @@ class StoreDetailViewController: UIViewController {
     
     @IBOutlet weak var detail: UITextView!
     
+    @IBOutlet weak var buyButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         detail.isEditable = false
@@ -41,7 +43,7 @@ class StoreDetailViewController: UIViewController {
     
     // action to buy item
     @IBAction func buyItem(_ sender: Any) {
-        if score > (storeItem?.price)! {
+        if score >= (storeItem?.price)! {
             let alert = UIAlertController(title: "price: " + String((storeItem?.price)!), message: "Are you sure to buy?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "YES", style: .default, handler:  { (action) -> Void in
                 // unlock game
@@ -67,6 +69,7 @@ class StoreDetailViewController: UIViewController {
         let updateGameList = ["gameList": self.gameList]
         self.ref.updateChildValues(updateGameList as [AnyHashable : Any])
         deductScore()
+        buyButton.isEnabled = false
     }
     
     func buyPowerup() {
