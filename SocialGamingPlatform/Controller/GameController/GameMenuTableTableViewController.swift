@@ -16,7 +16,6 @@ class GameMenuTableTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.reloadData()
         let uid = Auth.auth().currentUser?.uid
         ref = Database.database().reference(withPath: "users/\(uid!)")
         reloadGameList()

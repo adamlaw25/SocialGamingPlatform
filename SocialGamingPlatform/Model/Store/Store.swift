@@ -2,7 +2,7 @@
 //  Store.swift
 //  SocialGamingPlatform
 //
-//  Created by Adam Luo on 11/17/18.
+//  Created by Adam Luo on 11/20/18.
 //  Copyright © 2018 Jiahao Luo. All rights reserved.
 //
 

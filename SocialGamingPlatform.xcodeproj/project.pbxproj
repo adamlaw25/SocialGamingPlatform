@@ -18,9 +18,9 @@
 		53EE1BF3218567B30026904F /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE1BF2218567B30026904F /* AlertHelper.swift */; };
 		53EE1C03218571830026904F /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE1C02218571830026904F /* StoreViewController.swift */; };
 		53EE1C05218571900026904F /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE1C04218571900026904F /* MessageViewController.swift */; };
+		7D199DD821A50C8700E03E44 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D199DD721A50C8700E03E44 /* Store.swift */; };
 		7D4F7AE421A0B18900C77003 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F7AE321A0B18900C77003 /* StoreDetailViewController.swift */; };
 		7D4F7AE621A0B86900C77003 /* StoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F7AE521A0B86900C77003 /* StoreItem.swift */; };
-		7D4F7AE821A0BAD900C77003 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F7AE721A0BAD900C77003 /* Store.swift */; };
 		7D4F7AEA21A0CF2100C77003 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F7AE921A0CF2100C77003 /* Serializable.swift */; };
 		7D4F7AEC21A11BBB00C77003 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F7AEB21A11BBB00C77003 /* AccountViewController.swift */; };
 		95115E362199F77C0090C720 /* Connect4MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95115E352199F77C0090C720 /* Connect4MenuViewController.swift */; };
@@ -102,9 +102,9 @@
 		53EE1BF2218567B30026904F /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		53EE1C02218571830026904F /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		53EE1C04218571900026904F /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		7D199DD721A50C8700E03E44 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		7D4F7AE321A0B18900C77003 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
 		7D4F7AE521A0B86900C77003 /* StoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItem.swift; sourceTree = "<group>"; };
-		7D4F7AE721A0BAD900C77003 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		7D4F7AE921A0CF2100C77003 /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
 		7D4F7AEB21A11BBB00C77003 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		80F169151CDCDB057E201876 /* Pods-SocialGamingPlatform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialGamingPlatform.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialGamingPlatform/Pods-SocialGamingPlatform.debug.xcconfig"; sourceTree = "<group>"; };
@@ -413,7 +413,7 @@
 			children = (
 				955FF7452188E9EB0019420D /* Powerup.swift */,
 				7D4F7AE521A0B86900C77003 /* StoreItem.swift */,
-				7D4F7AE721A0BAD900C77003 /* Store.swift */,
+				7D199DD721A50C8700E03E44 /* Store.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -771,6 +771,7 @@
 				7D4F7AE621A0B86900C77003 /* StoreItem.swift in Sources */,
 				95DF6BB321850228001C0AF2 /* BJMenuViewController.swift in Sources */,
 				95760D41219DEE870058B5B4 /* SliderViewController.swift in Sources */,
+				7D199DD821A50C8700E03E44 /* Store.swift in Sources */,
 				95DF6BAC2184DE7C001C0AF2 /* BJGameController.swift in Sources */,
 				955FF7482188E9EB0019420D /* User.swift in Sources */,
 				955FF7622188EF9F0019420D /* Card.swift in Sources */,
@@ -779,7 +780,6 @@
 				5350B4712184CA49000E8CC4 /* AppDelegate.swift in Sources */,
 				53EE1BF3218567B30026904F /* AlertHelper.swift in Sources */,
 				95DF6BB7218509AA001C0AF2 /* GameMenuTableTableViewController.swift in Sources */,
-				7D4F7AE821A0BAD900C77003 /* Store.swift in Sources */,
 				5350B4792184CA49000E8CC4 /* SocialGamingPlatform.xcdatamodeld in Sources */,
 				95DF6BB92185548E001C0AF2 /* LogoutViewController.swift in Sources */,
 				955FF7472188E9EB0019420D /* Message.swift in Sources */,

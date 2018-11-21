@@ -10,14 +10,15 @@ import UIKit
 import Firebase
 
 class StoreViewController: UITableViewController {
-    var store = Store()
+    var storelist: Store!
     var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.reloadData()
+        storelist = Store()
         let uid = Auth.auth().currentUser?.uid
         ref = Database.database().reference(withPath: "users/\(uid!)")
+        reloadItemList()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -25,37 +26,41 @@ class StoreViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+        reloadItemList()
+    }
+    
+    func reloadItemList() {
+        self.ref.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let gameList = (value?["gameList"] as? [String])!
             for game in gameList {
-                for item in self.store.items {
+                for item in self.storelist.items {
                     if (game == item.name) {
-                        self.store.remove(item: item)
+                        self.storelist.remove(item: item)
                     }
                 }
             }
+            self.tableView.reloadData()
         }) { (error) in
             print(error.localizedDescription)
         }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return store.items.count
+        return storelist.items.count
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //if user wants to edit a member
         if segue.identifier == "to_item_detail" {
             let itemDetailViewController = segue.destination as! StoreDetailViewController
-            itemDetailViewController.storeItem = store.items[(tableView.indexPathForSelectedRow?.row)!]
+            itemDetailViewController.storeItem = storelist.items[(tableView.indexPathForSelectedRow?.row)!]
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "store", for: indexPath)
-        cell.textLabel!.text = store.items[indexPath.row].name + " \n" + String(store.items[indexPath.row].price)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "storelist", for: indexPath)
+        cell.textLabel!.text = storelist.items[indexPath.row].name + " \n" + String(storelist.items[indexPath.row].price)
         return cell
     }
 
