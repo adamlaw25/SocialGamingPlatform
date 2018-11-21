@@ -51,7 +51,6 @@ class StoreViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //if user wants to edit a member
         if segue.identifier == "to_item_detail" {
             let itemDetailViewController = segue.destination as! StoreDetailViewController
             itemDetailViewController.storeItem = storelist.items[(tableView.indexPathForSelectedRow?.row)!]

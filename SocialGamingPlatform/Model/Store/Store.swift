@@ -14,10 +14,10 @@ class Store {
     var ref: DatabaseReference!
     
     init() {
-        addItems()
-        
         let uid = Auth.auth().currentUser?.uid
         ref = Database.database().reference(withPath: "users/\(uid!)")
+        
+        addItems()
         
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
@@ -35,17 +35,34 @@ class Store {
     }
     
     func addItems() {
-        let powerup1 = Powerup(multiplier: 2, timeLimit: 3600)
-        let powerup2 = Powerup(multiplier: 3, timeLimit: 3600)
-        let item1 = StoreItem(name: "2x Power Up", price: 20, detail: nil, power: powerup1)
-        let item2 = StoreItem(name: "3x Power Up", price: 30, detail: nil, power: powerup2)
-        items.append(item1)
-        items.append(item2)
-        
-        let item3 = StoreItem(name: "Connect4", price: 30, detail: "The great Connect4 game", power: nil)
-        let item4 = StoreItem(name: "Slider", price: 30, detail: "The great Slider game", power: nil)
-        items.append(item3)
-        items.append(item4)
+        let ref2 = Database.database().reference(withPath: "items")
+        ref2.observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            
+            // add the powerups from database
+            let powerups = (value?["powerups"] as? NSDictionary)!
+            for powerup in powerups {
+                let powerupValue = (powerup.value as? NSDictionary)!
+                let name = (powerupValue["name"] as? String)!
+                let multiplier = (powerupValue["multiplier"] as? Int)!
+                let price = (powerupValue["price"] as? Int)!
+                let timeLimit = (powerupValue["timeLimit"] as? Int)!
+                let item = StoreItem(name: name, price: price, detail: nil, power: Powerup(multiplier: multiplier, timeLimit: timeLimit))
+                self.items.append(item)
+            }
+            
+            // add the games from database
+            let games = (value?["games"] as? NSDictionary)!
+            for game in games {
+                let gameValue = (game.value as? NSDictionary)!
+                let name = (gameValue["name"] as? String)!
+                let price = (gameValue["price"] as? Int)!
+                let item = StoreItem(name: name, price: price, detail: "Enjoy the \(name) game!", power: nil)
+                self.items.append(item)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     
     func remove(item: StoreItem) {
