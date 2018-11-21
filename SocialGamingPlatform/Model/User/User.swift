@@ -21,7 +21,6 @@ class User {
 	init(email: String) {
 		self.email = email
 		self.isOnline = false
-		// databases methods to retrieve data
 		self.score = 0
 		self.level = 1
 		self.friends = []

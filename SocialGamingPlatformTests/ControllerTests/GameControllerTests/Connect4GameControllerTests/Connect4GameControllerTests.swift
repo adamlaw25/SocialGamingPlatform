@@ -12,7 +12,6 @@ import XCTest
 class Connect4GameControllerTests: XCTestCase {
     
     var controller : Connect4GameController!
-    
 
     override func setUp() {
         controller = Connect4GameController()

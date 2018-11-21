@@ -202,6 +202,4 @@ class BJGameControllerTests: XCTestCase {
         XCTAssertEqual(bjcontroller.playerScore, -2)
     }
     
-    
-
 }
