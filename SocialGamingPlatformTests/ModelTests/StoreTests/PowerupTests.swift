@@ -8,27 +8,32 @@
 //
 
 import XCTest
+@testable import SocialGamingPlatform
 
 class PowerupTests: XCTestCase {
 
+    var testpowerup: Powerup!
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        testpowerup = Powerup(multiplier: 2, timeLimit: 3600)
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        testpowerup = Powerup(multiplier: 2, timeLimit: 3600)
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func test_init() {
+        XCTAssertEqual(testpowerup.multiplier, 2)
+        XCTAssertEqual(testpowerup.timeLimit, 3600)
+        tearDown()
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_serializable() {
+        let powerupDict = testpowerup.toDictionary()
+        XCTAssertEqual((powerupDict["multiplier"] as! Int), testpowerup.multiplier)
+        XCTAssertEqual((powerupDict["timeLimit"] as! Int), testpowerup.timeLimit)
+        XCTAssertNil(powerupDict["nil"])
     }
-
 }

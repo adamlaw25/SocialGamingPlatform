@@ -26,10 +26,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func signupAction(_ sender: Any) {
         let alert = AlertHelper()
-        if password.text != passwordConfirm.text{
+        if password.text != passwordConfirm.text {
             alert.createAlert(title: "Password Incorrect", message: "Please re-type password", fromController: self)
         }
-        else{
+        else {
             Auth.auth().createUser(withEmail: email.text!, password: password.text!){ (user, error) in
                 if error == nil {
                     let user = User(email: self.email.text!)

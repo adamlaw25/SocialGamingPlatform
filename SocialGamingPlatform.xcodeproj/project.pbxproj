@@ -19,6 +19,7 @@
 		53EE1C03218571830026904F /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE1C02218571830026904F /* StoreViewController.swift */; };
 		53EE1C05218571900026904F /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE1C04218571900026904F /* MessageViewController.swift */; };
 		7D199DD821A50C8700E03E44 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D199DD721A50C8700E03E44 /* Store.swift */; };
+		7D199DDA21A5573600E03E44 /* StoreItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D199DD921A5573600E03E44 /* StoreItemTests.swift */; };
 		7D4F7AE421A0B18900C77003 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F7AE321A0B18900C77003 /* StoreDetailViewController.swift */; };
 		7D4F7AE621A0B86900C77003 /* StoreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F7AE521A0B86900C77003 /* StoreItem.swift */; };
 		7D4F7AEA21A0CF2100C77003 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F7AE921A0CF2100C77003 /* Serializable.swift */; };
@@ -103,6 +104,7 @@
 		53EE1C02218571830026904F /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		53EE1C04218571900026904F /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		7D199DD721A50C8700E03E44 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		7D199DD921A5573600E03E44 /* StoreItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemTests.swift; sourceTree = "<group>"; };
 		7D4F7AE321A0B18900C77003 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
 		7D4F7AE521A0B86900C77003 /* StoreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItem.swift; sourceTree = "<group>"; };
 		7D4F7AE921A0CF2100C77003 /* Serializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Serializable.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 			children = (
 				9537F11921890EAA0028E901 /* StoreTests.swift */,
 				9537F11E21890EED0028E901 /* PowerupTests.swift */,
+				7D199DD921A5573600E03E44 /* StoreItemTests.swift */,
 			);
 			path = StoreTests;
 			sourceTree = "<group>";
@@ -799,6 +802,7 @@
 				95760D4721A0CB810058B5B4 /* Connect4GameControllerTests.swift in Sources */,
 				9537F12221890F070028E901 /* CardTests.swift in Sources */,
 				95760D4921A102720058B5B4 /* SliderGameControllerTests.swift in Sources */,
+				7D199DDA21A5573600E03E44 /* StoreItemTests.swift in Sources */,
 				9537F11A21890EAA0028E901 /* StoreTests.swift in Sources */,
 				9537F11F21890EED0028E901 /* PowerupTests.swift in Sources */,
 				5350B4892184CA4A000E8CC4 /* SocialGamingPlatformTests.swift in Sources */,

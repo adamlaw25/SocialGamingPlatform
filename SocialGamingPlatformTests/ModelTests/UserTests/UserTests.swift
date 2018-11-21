@@ -70,5 +70,19 @@ class UserTests: XCTestCase {
         XCTAssertEqual(testuser.score, 30*2)
         tearDown()
     }
+    
+    func test_serializable() {
+        let userDict = testuser.toDictionary()
+        XCTAssertEqual((userDict["email"] as! String), testuser.email)
+        XCTAssertEqual((userDict["isOnline"] as! Bool), testuser.isOnline)
+        XCTAssertEqual((userDict["score"] as! Int), testuser.score)
+        XCTAssertEqual((userDict["level"] as! Int), testuser.level)
+        XCTAssertEqual((userDict["friends"] as! [String]), testuser.friends)
+        XCTAssertEqual((userDict["gameList"] as! [String]), testuser.gameList)
+        let powerup = userDict["powerup"] as! NSDictionary
+        XCTAssertEqual(powerup["multiplier"] as! Int, testuser.powerup.multiplier)
+        XCTAssertEqual(powerup["timeLimit"] as! Int, testuser.powerup.timeLimit)
+        XCTAssertNil(powerup["nil"])
+    }
 
 }
