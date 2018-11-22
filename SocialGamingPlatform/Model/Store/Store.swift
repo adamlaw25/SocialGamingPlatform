@@ -18,20 +18,7 @@ class Store {
         ref = Database.database().reference(withPath: "users/\(uid!)")
         
         addItems()
-        
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as? NSDictionary
-            let gameList = (value?["gameList"] as? [String])!
-            for game in gameList {
-                for item in self.items {
-                    if (game == item.name) {
-                        self.remove(item: item)
-                    }
-                }
-            }
-        }) { (error) in
-            print(error.localizedDescription)
-        }
+        removeExistingGames()
     }
     
     func addItems() {
@@ -59,6 +46,22 @@ class Store {
                 let price = (gameValue["price"] as? Int)!
                 let item = StoreItem(name: name, price: price, detail: "Enjoy the \(name) game!", power: nil)
                 self.items.append(item)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    func removeExistingGames() {
+        self.ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let gameList = (value?["gameList"] as? [String])!
+            for game in gameList {
+                for item in self.items {
+                    if (game == item.name) {
+                        self.remove(item: item)
+                    }
+                }
             }
         }) { (error) in
             print(error.localizedDescription)
