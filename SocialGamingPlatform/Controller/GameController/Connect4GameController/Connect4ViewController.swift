@@ -161,46 +161,41 @@ class Connect4ViewController: UIViewController {
     
     @IBAction func dropAtCol1(_ sender: UIButton) {
         game_controller.dropPuck(column: 0)
-        updateGameBoard()
-        game_controller.updateGameState()
+        computerMove()
     }
     
     @IBAction func dropAtCol2(_ sender: UIButton) {
         game_controller.dropPuck(column: 1)
-        updateGameBoard()
-        game_controller.updateGameState()
+        computerMove()
     }
     
     @IBAction func dropAtCol3(_ sender: UIButton) {
         game_controller.dropPuck(column: 2)
-        updateGameBoard()
-        game_controller.updateGameState()
+        computerMove()
     }
     
     @IBAction func dropAtCol4(_ sender: UIButton) {
         game_controller.dropPuck(column: 3)
-        updateGameBoard()
-        game_controller.updateGameState()
+        computerMove()
     }
     
     @IBAction func dropAtCol5(_ sender: UIButton) {
         game_controller.dropPuck(column: 4)
-        updateGameBoard()
-        game_controller.updateGameState()
+        computerMove()
     }
     
     @IBAction func dropAtCol6(_ sender: UIButton) {
         game_controller.dropPuck(column: 5)
-        updateGameBoard()
-        game_controller.updateGameState()
+        computerMove()
     }
 
     @IBAction func goBack(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
-
     
-    
+    private func computerMove() {
+        updateGameBoard()
+    }
     
 
 }

@@ -72,14 +72,117 @@ class Connect4GameController {
         if game_state == .player_state {
             dropPuckAt(row: row_num, column: column, puck: .player_puck)
             player_pucks += 1
+            game_state = .computer_state
+            updateGameState()
         }
         else if game_state == .computer_state {
             dropPuckAt(row: row_num, column: column, puck: .computer_puck)
             comp_pucks += 1
+            game_state = .player_state
+            updateGameState()
         }
     }
     
-    func isColumnFull(column: Int) -> Bool{
+    func computerMove() {
+        let column = calcNextPuck()
+        dropPuck(column: column)
+    }
+    
+    private func calcNextPuck() -> Int {
+        if vertBlockIndex(puck: 1) != -1 {
+            print("Computer will do a vertical block")
+            return vertBlockIndex(puck: 1)
+        }
+        else if checkNextMoveVictory() != -1 {
+            print("Computer will go for the win")
+            return checkNextMoveVictory()
+        }
+        else if horBlockIndex(puck: 1) != -1 {
+            print("Computer will do a horizontal block")
+            return horBlockIndex(puck: 1)
+        }
+        print("Computer will do a random move")
+        return randomMove()
+    }
+    
+    private func horBlockIndex(puck: Int) -> Int {
+        for row in stride(from: 5, to: 0, by: -1) {
+            for i in 0...4 {
+                if game_board[row][i] == game_board[row][i+1]
+                    && game_board[row][i] == puck {
+                    if i > 0 && game_board[row][i-1] == 0 {
+                        if row == 5 || game_board[row+1][i-1] != 0 {
+                            return i-1
+                        }
+                    }
+                    else if i < 4 && game_board[row][i+2] == 0 {
+                        if row == 5 || game_board[row+1][i+2] != 0 {
+                            return i+2
+                        }
+                    }
+                }
+            }
+        }
+        return -1
+    }
+    
+    private func vertBlockIndex(puck: Int) -> Int {
+        for column in 0...5 {
+            for i in stride(from: 5, to: 2, by: -1) {
+                if game_board[i][column] == game_board[i-1][column]
+                    && game_board[i-1][column] == game_board[i-2][column]
+                    && game_board[i-1][column] == puck {
+                    if i > 2 {
+                        if game_board[i-3][column] == 0 {
+                            return column
+                        }
+                    }
+                    else {
+                        continue
+                    }
+                }
+            }
+        }
+        return -1
+    }
+    
+    private func randomMove() -> Int {
+        var num = Int.random(in: 0...5)
+        while isColumnFull(column: num) {
+            num = Int.random(in: 0...5)
+        }
+        return num
+    }
+    
+    private func checkNextMoveVictory() -> Int {
+        if vertBlockIndex(puck: 2) != -1 {
+            return vertBlockIndex(puck: 2)
+        }
+        for row in 0...5 {
+            for i in 0...3 {
+                if game_board[row][i] == game_board[row][i+1]
+                    && game_board[row][i+1] == game_board[row][i+2]
+                    && game_board[row][i] == 2 {
+                    if i > 0 {
+                        if game_board[row][i-1] == 0  && firstEmptyRow(column: i) == row {
+                            return i-1
+                        }
+                    }
+                    else if i < 3 {
+                        if game_board[row][i+2] == 0 && firstEmptyRow(column: i) == row {
+                            return i+2
+                        }
+                    }
+                    else {
+                        continue
+                    }
+                }
+            }
+        }
+        return -1
+    }
+    
+    func isColumnFull(column: Int) -> Bool {
         return firstEmptyRow(column: column) == -1
     }
     
@@ -231,24 +334,13 @@ class Connect4GameController {
     func updateGameState() {
         switch game_state {
         case .player_state:
-            if has4ConnectedPuckOf(puck: .player_puck) {
-                updateToGameOver(didComputerWin: false)
-            }
-            else if isBoardFull() {
-                updateToGameOver(didComputerWin: false)
-            }
-            else {
+            if !isGameOver() {
                 game_state = .computer_state
             }
             break
         case .computer_state:
-            if has4ConnectedPuckOf(puck: .computer_puck) {
-                updateToGameOver(didComputerWin: true)
-            }
-            else if isBoardFull() {
-                updateToGameOver(didComputerWin: false)
-            }
-            else {
+            if !isGameOver() {
+                computerMove()
                 game_state = .player_state
             }
             break
@@ -256,6 +348,22 @@ class Connect4GameController {
             determineWinner()
             break
         }
+    }
+    
+    private func isGameOver() -> Bool {
+        if has4ConnectedPuckOf(puck: .player_puck) {
+            updateToGameOver(didComputerWin: false)
+            return true
+        }
+        else if has4ConnectedPuckOf(puck: .computer_puck) {
+            updateToGameOver(didComputerWin: true)
+            return true
+        }
+        else if isBoardFull() {
+            updateToGameOver(didComputerWin: false)
+            return true
+        }
+        return false
     }
     
     private func updateToGameOver(didComputerWin: Bool) {
