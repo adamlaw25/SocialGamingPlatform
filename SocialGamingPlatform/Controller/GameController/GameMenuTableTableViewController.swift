@@ -32,7 +32,8 @@ class GameMenuTableTableViewController: UITableViewController {
     func reloadGameList() {
         self.ref.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
-            self.gameList = (value?["gameList"] as? [String])!
+            self.gameList = ["connect4"]
+            //self.gameList = (value?["gameList"] as? [String])!
             self.tableView.reloadData()
         }) { (error) in
             print(error.localizedDescription)
