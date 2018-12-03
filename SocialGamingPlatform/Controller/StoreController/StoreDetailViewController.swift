@@ -68,7 +68,8 @@ class StoreDetailViewController: UIViewController {
         self.gameList.append((self.storeItem?.name)!)
         let updateGameList = ["gameList": self.gameList]
         self.ref.updateChildValues(updateGameList as [AnyHashable : Any])
-        deductScore()
+        UpdateAccount.reduceScore(decrease: (storeItem?.price)!)
+        self.score -= (storeItem?.price)!
         buyButton.isEnabled = false
     }
     
@@ -76,12 +77,8 @@ class StoreDetailViewController: UIViewController {
         let powerup = (self.storeItem?.powerUp)!
         let newPowerup = ["powerup": ["multiplier": powerup.multiplier, "timeLimit": powerup.timeLimit]]
         self.ref.updateChildValues(newPowerup)
-        deductScore()
-    }
-    
-    func deductScore() {
-        self.score -= (self.storeItem?.price)!
-        self.ref.updateChildValues(["score": self.score])
+        UpdateAccount.reduceScore(decrease: (storeItem?.price)!)
+        self.score -= (storeItem?.price)!
     }
     
 }

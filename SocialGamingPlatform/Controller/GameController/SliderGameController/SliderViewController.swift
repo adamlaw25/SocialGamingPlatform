@@ -135,6 +135,7 @@ class SliderViewController: UIViewController {
     }
     
     @IBAction func goBack(_ sender: UIButton) {
+        UpdateAccount.increaseScore(increase: game_controller.score)
         quitGame()
     }
     

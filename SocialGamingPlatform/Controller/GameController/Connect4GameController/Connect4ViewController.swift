@@ -190,6 +190,7 @@ class Connect4ViewController: UIViewController {
     }
 
     @IBAction func goBack(_ sender: UIButton) {
+        UpdateAccount.increaseScore(increase: game_controller.score)
         dismiss(animated: true, completion: nil)
     }
     

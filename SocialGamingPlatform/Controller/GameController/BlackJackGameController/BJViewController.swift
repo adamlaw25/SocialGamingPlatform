@@ -114,6 +114,7 @@ class BJViewController: UIViewController {
     }
     
     @IBAction func goBack(_ sender: Any) {
+        UpdateAccount.increaseScore(increase: gameController.playerScore)
         dismiss(animated: true, completion: nil)
     }
     
