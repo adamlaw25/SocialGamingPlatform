@@ -32,8 +32,7 @@ class GameMenuTableTableViewController: UITableViewController {
     func reloadGameList() {
         self.ref.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
-            self.gameList = ["connect4"]
-            //self.gameList = (value?["gameList"] as? [String])!
+            self.gameList = (value?["gameList"] as? [String])!
             self.tableView.reloadData()
         }) { (error) in
             print(error.localizedDescription)
@@ -60,17 +59,5 @@ class GameMenuTableTableViewController: UITableViewController {
         let selected_game = gameList[indexPath.row].lowercased()
         let segue_name = "to_\(selected_game)_menu"
         self.performSegue(withIdentifier: segue_name, sender: nil)
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //if user wants to edit a member
-        if segue.identifier == "toBJMenu" {
-            let indexPath = tableView.indexPathForSelectedRow
-            let menuVC = segue.destination as! BJMenuViewController
-        }
-        else if segue.identifier == "toConnect4Menu" {
-            let indexPath = tableView.indexPathForSelectedRow
-            let menuVC = segue.destination as! Connect4MenuViewController
-        }
     }
 }

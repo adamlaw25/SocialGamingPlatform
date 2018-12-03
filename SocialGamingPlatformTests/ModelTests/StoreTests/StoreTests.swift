@@ -40,13 +40,13 @@ class StoreTests: XCTestCase {
 //    }
     
     func test_addItems() {
-        var teststore = Store()
+        let teststore = Store()
         teststore.addItems()
         XCTAssertEqual(teststore.items.count, 0)
     }
 //
     func test_removeExistingGames() {
-        var teststore = Store()
+        let teststore = Store()
         teststore.addItems()
         teststore.removeExistingGames()
         XCTAssertEqual(teststore.items.count, 0)
