@@ -7,17 +7,13 @@
 //
 
 import UIKit
-import Firebase
 
 class GameMenuTableTableViewController: UITableViewController {
     
     var gameList : [String] = []
-    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let uid = Auth.auth().currentUser?.uid
-        ref = Database.database().reference(withPath: "users/\(uid!)")
         reloadGameList()
     }
     
@@ -30,7 +26,7 @@ class GameMenuTableTableViewController: UITableViewController {
     }
     
     func reloadGameList() {
-        self.ref.observeSingleEvent(of: .value, with: { (snapshot) in
+        Constants.refs.currentUser.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             self.gameList = (value?["gameList"] as? [String])!
             self.tableView.reloadData()

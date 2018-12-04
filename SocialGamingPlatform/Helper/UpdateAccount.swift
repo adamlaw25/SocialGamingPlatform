@@ -10,39 +10,39 @@ import Foundation
 import Firebase
 
 class UpdateAccount {
+    // increase score method which multiplies the increase score with the multiplier
     static func increaseScore(increase: Int) {
-        let uid = Auth.auth().currentUser?.uid
-        let ref = Database.database().reference(withPath: "users/\(uid!)")
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+        let user = Constants.refs.currentUser
+        user.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let score = (value?["score"] as? Int)!
             let powerup = (value?["powerup"] as? NSDictionary)!
             let multiplier = (powerup["multiplier"] as? Int)!
-            ref.updateChildValues(["score": score + increase * multiplier])
+            user.updateChildValues(["score": score + increase * multiplier])
         }) { (error) in
             print(error.localizedDescription)
         }
     }
     
+    // decrease score method which does not multiply the multiplier
     static func reduceScore(decrease: Int) {
-        let uid = Auth.auth().currentUser?.uid
-        let ref = Database.database().reference(withPath: "users/\(uid!)")
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+        let user = Constants.refs.currentUser
+        user.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let score = (value?["score"] as? Int)!
-            ref.updateChildValues(["score": score - decrease])
+            user.updateChildValues(["score": score - decrease])
         }) { (error) in
             print(error.localizedDescription)
         }
     }
     
+    // increase the user level by 1
     static func levelUp() {
-        let uid = Auth.auth().currentUser?.uid
-        let ref = Database.database().reference(withPath: "users/\(uid!)")
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+        let user = Constants.refs.currentUser
+        user.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let level = (value?["level"] as? Int)!
-            ref.updateChildValues(["level": level + 1])
+            user.updateChildValues(["level": level + 1])
         }) { (error) in
             print(error.localizedDescription)
         }

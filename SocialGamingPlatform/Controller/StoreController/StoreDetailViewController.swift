@@ -7,11 +7,9 @@
 //
 
 import UIKit
-import Firebase
 
 class StoreDetailViewController: UIViewController {
     var storeItem: StoreItem?
-    var ref: DatabaseReference!
     var gameList: [String]!
     var score: Int!
     
@@ -30,9 +28,7 @@ class StoreDetailViewController: UIViewController {
         navigation.title = (storeItem?.name)!
         price.text = String((storeItem?.price)!)
         detail.text = String((storeItem?.detail)!)
-        let uid = Auth.auth().currentUser?.uid
-        ref = Database.database().reference(withPath: "users/\(uid!)")
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+        Constants.refs.currentUser.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             self.gameList = (value?["gameList"] as? [String])!
             self.score = (value?["score"] as? Int)!
@@ -60,14 +56,14 @@ class StoreDetailViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         } else {
             let alert = AlertHelper()
-            alert.createAlert(title: "Score not enough", message: "Current score(\(score!)) is less than price \((storeItem?.price)!). Go play some more games!", fromController: self)
+            alert.createAlert(title: "Score not enough", message: "Current score (\(score!)) is less than price \((storeItem?.price)!). Go play some more games!", fromController: self)
         }
     }
     
     func unlockGame() {
         self.gameList.append((self.storeItem?.name)!)
         let updateGameList = ["gameList": self.gameList]
-        self.ref.updateChildValues(updateGameList as [AnyHashable : Any])
+        Constants.refs.currentUser.updateChildValues(updateGameList as [AnyHashable : Any])
         UpdateAccount.reduceScore(decrease: (storeItem?.price)!)
         self.score -= (storeItem?.price)!
         buyButton.isEnabled = false
@@ -76,7 +72,7 @@ class StoreDetailViewController: UIViewController {
     func buyPowerup() {
         let powerup = (self.storeItem?.powerUp)!
         let newPowerup = ["powerup": ["multiplier": powerup.multiplier, "timeLimit": powerup.timeLimit]]
-        self.ref.updateChildValues(newPowerup)
+        Constants.refs.currentUser.updateChildValues(newPowerup)
         UpdateAccount.reduceScore(decrease: (storeItem?.price)!)
         self.score -= (storeItem?.price)!
     }

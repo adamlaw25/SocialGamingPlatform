@@ -33,8 +33,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             Auth.auth().createUser(withEmail: email.text!, password: password.text!){ (user, error) in
                 if error == nil {
                     let user = User(email: self.email.text!)
-                    let ref = Database.database().reference(withPath: "users")
-                    ref.child((Auth.auth().currentUser?.uid)!).setValue(user.toDictionary())
+                    let users = Constants.refs.users
+                    users.child((Auth.auth().currentUser?.uid)!).setValue(user.toDictionary())
                     self.performSegue(withIdentifier: "signupToHome", sender: self)
                 }
                 else{

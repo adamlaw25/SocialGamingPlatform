@@ -7,17 +7,13 @@
 //
 
 import UIKit
-import Firebase
 
 class StoreViewController: UITableViewController {
     var storelist: Store!
-    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         storelist = Store()
-        let uid = Auth.auth().currentUser?.uid
-        ref = Database.database().reference(withPath: "users/\(uid!)")
         reloadItemList()
     }
     
@@ -30,7 +26,7 @@ class StoreViewController: UITableViewController {
     }
     
     func reloadItemList() {
-        self.ref.observeSingleEvent(of: .value, with: { (snapshot) in
+        Constants.refs.currentUser.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let gameList = (value?["gameList"] as? [String])!
             for game in gameList {

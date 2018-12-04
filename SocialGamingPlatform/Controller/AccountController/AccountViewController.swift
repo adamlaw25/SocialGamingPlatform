@@ -16,12 +16,9 @@ class AccountViewController: UIViewController {
     @IBOutlet weak var score: UILabel!
     @IBOutlet weak var multiplier: UILabel!
     @IBOutlet weak var timeLimit: UILabel!
-    var ref: DatabaseReference!
     @IBOutlet weak var levelUpButton: UIButton!
     
     override func viewDidLoad() {
-        let uid = Auth.auth().currentUser?.uid
-        self.ref = Database.database().reference(withPath: "users/\(uid!)")
         reloadInfo()
     }
     
@@ -30,7 +27,7 @@ class AccountViewController: UIViewController {
     }
     
     func reloadInfo() {
-        self.ref.observeSingleEvent(of: .value, with: { (snapshot) in
+        Constants.refs.currentUser.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             self.email.text = (value?["email"] as? String)!
             let levelValue = (value?["level"] as? Int)!
