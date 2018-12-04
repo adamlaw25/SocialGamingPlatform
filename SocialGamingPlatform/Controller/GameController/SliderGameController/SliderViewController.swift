@@ -127,7 +127,6 @@ class SliderViewController: UIViewController {
         }
     }
     
-    
     @IBAction func instructions(_ sender: UIButton) {
         for label in instructions_label {
             label.isHidden = !label.isHidden

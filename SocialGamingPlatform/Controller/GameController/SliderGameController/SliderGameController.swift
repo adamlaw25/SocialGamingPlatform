@@ -138,6 +138,7 @@ class SliderGameController {
     
     private func awardScore() {
         self.score += ((100 - numOfMoves) * score_multipler)
+        self.score = self.score >= 0 ? self.score : 0
     }
     
     func gameOverNotification() {

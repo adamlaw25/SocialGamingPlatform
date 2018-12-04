@@ -320,7 +320,7 @@ class Connect4GameController {
     
     func awardScore() {
         if didComputerWin {
-            score -= 50
+            score = score >= 50 ? score - 50 : 0
         }
         else {
             score += score_multiplier * 50

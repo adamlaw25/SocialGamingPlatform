@@ -30,7 +30,7 @@ class UpdateAccount {
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let score = (value?["score"] as? Int)!
-            ref.updateChildValues(["score": score + decrease])
+            ref.updateChildValues(["score": score - decrease])
         }) { (error) in
             print(error.localizedDescription)
         }

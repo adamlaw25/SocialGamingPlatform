@@ -180,10 +180,10 @@ class BJGameController {
     
     // calculate the award score
     func awardScore() {
-        if(isBlackJack()) {
+        if isBlackJack() {
             playerScore += 50
         }
-        if(!didDealerWin) {
+        if !didDealerWin {
             if(playerCards.count == 5) {
                 playerScore += 50
             }
@@ -191,6 +191,9 @@ class BJGameController {
         }
         else {
             playerScore -= calculateBestScore(dealerCards) - calculateBestScore(playerCards)
+        }
+        if playerScore < 0 {
+            playerScore = 0
         }
     }
 }
