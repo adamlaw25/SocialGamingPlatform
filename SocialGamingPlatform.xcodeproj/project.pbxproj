@@ -19,6 +19,7 @@
 		53EE1C03218571830026904F /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE1C02218571830026904F /* StoreViewController.swift */; };
 		53EE1C05218571900026904F /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE1C04218571900026904F /* MessageViewController.swift */; };
 		7D15B1DE21B6650400144B1A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D15B1DD21B6650400144B1A /* Constants.swift */; };
+		7D15B1E021B68B5200144B1A /* DatabaseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D15B1DF21B68B5200144B1A /* DatabaseRepresentation.swift */; };
 		7D199DD821A50C8700E03E44 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D199DD721A50C8700E03E44 /* Store.swift */; };
 		7D199DDA21A5573600E03E44 /* StoreItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D199DD921A5573600E03E44 /* StoreItemTests.swift */; };
 		7D4F7AE421A0B18900C77003 /* StoreDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4F7AE321A0B18900C77003 /* StoreDetailViewController.swift */; };
@@ -97,8 +98,8 @@
 		53EE1BF2218567B30026904F /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		53EE1C02218571830026904F /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		53EE1C04218571900026904F /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
-		7D15B1DC21B6624500144B1A /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		7D15B1DD21B6650400144B1A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7D15B1DF21B68B5200144B1A /* DatabaseRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepresentation.swift; sourceTree = "<group>"; };
 		7D199DD721A50C8700E03E44 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		7D199DD921A5573600E03E44 /* StoreItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemTests.swift; sourceTree = "<group>"; };
 		7D4F7AE321A0B18900C77003 /* StoreDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailViewController.swift; sourceTree = "<group>"; };
@@ -170,7 +171,6 @@
 		5350B4642184CA49000E8CC4 = {
 			isa = PBXGroup;
 			children = (
-				7D15B1DC21B6624500144B1A /* Bridging-Header.h */,
 				5350B46F2184CA49000E8CC4 /* SocialGamingPlatform */,
 				5350B4872184CA4A000E8CC4 /* SocialGamingPlatformTests */,
 				5350B46E2184CA49000E8CC4 /* Products */,
@@ -384,6 +384,7 @@
 			children = (
 				955FF73D2188E9EB0019420D /* MessageBoard.swift */,
 				955FF73E2188E9EB0019420D /* Message.swift */,
+				7D15B1DF21B68B5200144B1A /* DatabaseRepresentation.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -630,10 +631,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SocialGamingPlatform/Pods-SocialGamingPlatform-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
-				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
+				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -641,10 +649,17 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -722,6 +737,7 @@
 				95DF6BB321850228001C0AF2 /* BJMenuViewController.swift in Sources */,
 				95760D41219DEE870058B5B4 /* SliderViewController.swift in Sources */,
 				7D199DD821A50C8700E03E44 /* Store.swift in Sources */,
+				7D15B1E021B68B5200144B1A /* DatabaseRepresentation.swift in Sources */,
 				95DF6BAC2184DE7C001C0AF2 /* BJGameController.swift in Sources */,
 				955FF7482188E9EB0019420D /* User.swift in Sources */,
 				955FF7622188EF9F0019420D /* Card.swift in Sources */,
@@ -932,7 +948,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jxl1305.case.edu.SocialGamingPlatform;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -954,7 +970,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jxl1305.case.edu.SocialGamingPlatform;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

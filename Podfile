@@ -8,7 +8,8 @@ target 'SocialGamingPlatform' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
-  pod 'JSQMessagesViewController'
+  pod 'Firebase/Firestore'
+  pod 'MessageKit'
 
   # Pods for SocialGamingPlatform
 

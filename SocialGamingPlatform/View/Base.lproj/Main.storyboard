@@ -322,6 +322,23 @@
             </objects>
             <point key="canvasLocation" x="3943" y="916"/>
         </scene>
+        <!--Message-->
+        <scene sceneID="HaQ-0Z-HZ4">
+            <objects>
+                <navigationController id="pd0-zL-TjL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Message" image="msg_logo" id="yvJ-L0-yPC"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tnO-W1-NyX">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Utu-ol-X1z" kind="relationship" relationship="rootViewController" id="NPH-Cw-dGG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R5X-4f-CDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3020" y="918"/>
+        </scene>
         <!--Item Detail-->
         <scene sceneID="Kcy-a1-6Lg">
             <objects>
@@ -1512,22 +1529,6 @@
             </objects>
             <point key="canvasLocation" x="2140" y="917.73399014778329"/>
         </scene>
-        <!--Message-->
-        <scene sceneID="lza-ix-GVb">
-            <objects>
-                <viewController id="Ofn-6V-DcB" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="oFd-dC-vgb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="E06-bq-FDI"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Message" image="msg_logo" id="hfs-0f-JJf"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XCR-UE-B1a" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2954" y="918"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rwM-Ga-KUa">
             <objects>
@@ -1540,7 +1541,7 @@
                     <connections>
                         <segue destination="66U-lV-yiu" kind="relationship" relationship="viewControllers" id="3xP-zl-RWx"/>
                         <segue destination="Tm6-i4-n7l" kind="relationship" relationship="viewControllers" id="b68-kG-FTR"/>
-                        <segue destination="Ofn-6V-DcB" kind="relationship" relationship="viewControllers" id="f7j-LK-JQe"/>
+                        <segue destination="pd0-zL-TjL" kind="relationship" relationship="viewControllers" id="V9Y-He-ZKc"/>
                         <segue destination="FwG-GV-9se" kind="relationship" relationship="viewControllers" id="dTQ-Ri-z3k"/>
                     </connections>
                 </tabBarController>
@@ -1813,6 +1814,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0rJ-0y-Oyj" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5871" y="-1516"/>
+        </scene>
+        <!--Message-->
+        <scene sceneID="y6l-ub-unN">
+            <objects>
+                <viewController id="Utu-ol-X1z" customClass="ViewController" customModule="SocialGamingPlatform" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Li9-47-clA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gc4-fm-acM">
+                                <rect key="frame" x="121" y="389" width="147" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Go to Chat!"/>
+                                <connections>
+                                    <segue destination="Xaq-dj-2Pw" kind="show" id="ASt-Af-AFM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="IKO-OC-deT"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Message" image="msg_logo" id="VOO-q2-Ke5"/>
+                    <navigationItem key="navigationItem" id="59T-Qb-FVR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a0d-gw-0h7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3020" y="1685"/>
+        </scene>
+        <!--Message View Controller-->
+        <scene sceneID="jYs-Bi-DpJ">
+            <objects>
+                <viewController id="Xaq-dj-2Pw" customClass="MessageViewController" customModule="SocialGamingPlatform" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oda-Ho-BU1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="3Ty-rF-Ibz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VR7-9V-l7V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3942" y="1685"/>
         </scene>
     </scenes>
     <resources>

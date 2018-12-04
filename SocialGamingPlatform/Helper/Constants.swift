@@ -15,8 +15,9 @@ struct Constants
     {
         static let databaseRoot = Database.database().reference()
         static let databaseChats = databaseRoot.child("messages")
-        static let currentUserid = Auth.auth().currentUser?.uid
-        static let currentUser = Database.database().reference(withPath: "users/\(currentUserid!)")
-        static let users = Database.database().reference(withPath: "users")
+        static let users = databaseRoot.child("users")
+        static let currentUserid = (Auth.auth().currentUser?.uid)!
+        static let currentUserEmail = (Auth.auth().currentUser?.email)!
+        static let currentUser = users.child("\(currentUserid)")
     }
 }
