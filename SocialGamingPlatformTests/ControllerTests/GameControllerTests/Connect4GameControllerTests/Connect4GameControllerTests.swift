@@ -237,7 +237,7 @@ class Connect4GameControllerTests: XCTestCase {
         XCTAssertTrue(controller.has4ConnectedPuckOf(puck: .computer_puck))
         XCTAssertEqual(controller.game_state, .gameover)
         XCTAssertTrue(controller.didComputerWin)
-        XCTAssertEqual(controller.score, -50)
+        XCTAssertEqual(controller.score, 0)
         //if the board is full
         controller.game_state = .computer_state
         controller.score = 0

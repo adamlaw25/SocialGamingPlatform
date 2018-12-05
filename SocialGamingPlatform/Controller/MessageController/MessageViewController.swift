@@ -65,6 +65,13 @@ class MessageViewController: MessagesViewController {
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
+        
+        if let layout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout {
+            layout.textMessageSizeCalculator.incomingMessageTopLabelAlignment = .init(textAlignment: .left, textInsets: .zero)
+            layout.textMessageSizeCalculator.outgoingMessageTopLabelAlignment = .init(textAlignment: .right, textInsets: .zero)
+            layout.textMessageSizeCalculator.outgoingAvatarSize = .zero
+            layout.textMessageSizeCalculator.incomingAvatarSize = .zero
+        }
     }
     
 //    override func viewDidAppear(_ animated: Bool) {
@@ -133,7 +140,7 @@ class MessageViewController: MessagesViewController {
 extension MessageViewController: MessagesDisplayDelegate {
     
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return isFromCurrentSender(message: message) ? UIColor.blue : UIColor.gray
+        return isFromCurrentSender(message: message) ? UIColor.blue : UIColor.green
     }
     
     func shouldDisplayHeader(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> Bool {
@@ -145,11 +152,32 @@ extension MessageViewController: MessagesDisplayDelegate {
         return .bubbleTail(corner, .curved)
     }
     
+    // sender name label
+    func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+        let name = message.sender.displayName
+        return NSAttributedString(
+            string: name,
+            attributes: [
+                .font: UIFont.preferredFont(forTextStyle: .caption1),
+                .foregroundColor: UIColor(white: 0.3, alpha: 1)
+            ]
+        )
+    }
+    
+    func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 20
+    }
+    
+    // time sent label
+    func cellTopLabelAttributedText(for message: MessageType,
+                                    at indexPath: IndexPath) -> NSAttributedString? {
+        
+        return NSAttributedString(string: MessageKitDateFormatter.shared.string(from: message.sentDate), attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10), NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+    }
     
     func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
         return 12
     }
-    
 }
 
 extension MessageViewController: MessagesLayoutDelegate {
@@ -172,53 +200,35 @@ extension MessageViewController: MessagesLayoutDelegate {
 // MARK: - MessagesDataSource
 
 extension MessageViewController: MessagesDataSource {
+    // return the number of sections
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
         return messages.count
     }
     
-    // 1
+    // return the current sender
     func currentSender() -> Sender {
         return Sender(id: Constants.refs.getCurrentUserID(), displayName: Constants.refs.getCurrentUserEmail())
     }
     
-    // 2
+    // return the number of messages
     func numberOfMessages(in messagesCollectionView: MessagesCollectionView) -> Int {
         return messages.count
     }
     
-    // 3
+    // return the sepecific message
     func messageForItem(at indexPath: IndexPath,
                         in messagesCollectionView: MessagesCollectionView) -> MessageType {
         
         return messages[indexPath.section]
     }
-    
-    // 4
-    func cellTopLabelAttributedText(for message: MessageType,
-                                    at indexPath: IndexPath) -> NSAttributedString? {
-        
-        let name = message.sender.displayName
-        print("nameeeeeee")
-        print(name)
-        return NSAttributedString(
-            string: name,
-            attributes: [
-                .font: UIFont.preferredFont(forTextStyle: .caption1),
-                .foregroundColor: UIColor(white: 0.3, alpha: 1)
-            ]
-        )
-    }
 }
 
 extension MessageViewController: MessageInputBarDelegate {
     
+    // save the input as content message
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
-        // 1
         let message = Message(content: text)
-        
-        // 2
         save(message)
-        
         inputBar.inputTextView.text = ""
     }
     

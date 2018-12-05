@@ -19,7 +19,8 @@ class StoreItem {
         self.price = price
         if power != nil {
             self.powerUp = power
-            self.detail = "multiplier: " + String(powerUp!.multiplier) + "\ntime limit: " + String(powerUp!.timeLimit)
+            self.detail = "multiplier: " + String(powerUp!.multiplier)
+//            self.detail = "multiplier: " + String(powerUp!.multiplier) + "\ntime limit: " + String(powerUp!.timeLimit)
         } else {
             self.detail = detail!
         }

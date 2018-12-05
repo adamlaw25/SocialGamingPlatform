@@ -75,6 +75,8 @@ class StoreDetailViewController: UIViewController {
         Constants.refs.getCurrentUser().updateChildValues(newPowerup)
         UpdateAccount.reduceScore(decrease: (storeItem?.price)!)
         self.score -= (storeItem?.price)!
+        // disable the button
+        buyButton.isEnabled = false
     }
     
 }
