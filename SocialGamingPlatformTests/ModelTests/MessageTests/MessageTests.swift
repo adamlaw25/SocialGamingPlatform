@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import MessageKit
+import FirebaseFirestore
 @testable import SocialGamingPlatform
 
 class MessageTests: XCTestCase {
@@ -15,17 +17,21 @@ class MessageTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        testmessage = Message(message: "message", sentSuccess: true)
+        testmessage = Message(content: "test")
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func test_init() {
-        XCTAssertEqual(testmessage.message, "message")
-        XCTAssertEqual(testmessage.sentSuccess, true)
+    func testLoacal() {
+        XCTAssertEqual(testmessage.content, "test")
+        XCTAssertNil(testmessage.id)
+        XCTAssertTrue(testmessage == testmessage)
+        XCTAssertFalse(testmessage > testmessage)
+        let representation = testmessage.representation
+        XCTAssertEqual(representation["content"] as! String, testmessage.content)
+        XCTAssertEqual(representation["senderID"] as! String, Constants.refs.getCurrentUserID())
     }
-    
 
 }

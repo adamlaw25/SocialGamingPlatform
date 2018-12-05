@@ -19,6 +19,11 @@ class MessageViewController: MessagesViewController {
     private let storage = Storage.storage().reference()
     
     private var messages: [Message] = []
+    
+    func getMessages() -> [Message] {
+        return messages
+    }
+    
     private var messageListener: ListenerRegistration?
     
     deinit {
@@ -50,6 +55,8 @@ class MessageViewController: MessagesViewController {
             }
         }
         
+        self.navigationItem.title = "Chat room"
+        
         maintainPositionOnKeyboardFrameChanged = true
         messageInputBar.inputTextView.tintColor = UIColor.black
         messageInputBar.sendButton.setTitleColor(UIColor.black, for: .normal)
@@ -59,6 +66,13 @@ class MessageViewController: MessagesViewController {
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//
+//        let testMessage = Message(content: "What upppppppp!")
+//        insertNewMessage(testMessage)
+//    }
     
     private func handleDocumentChange(_ change: DocumentChange) {
         guard let message = Message(document: change.document) else {
@@ -70,6 +84,17 @@ class MessageViewController: MessagesViewController {
             insertNewMessage(message)
         default:
             break
+        }
+    }
+    
+    private func save(_ message: Message) {
+        reference?.addDocument(data: message.representation) { error in
+            if let e = error {
+                print("Error sending message: \(e.localizedDescription)")
+                return
+            }
+            
+            self.messagesCollectionView.scrollToBottom()
         }
     }
     
@@ -92,7 +117,6 @@ class MessageViewController: MessagesViewController {
             }
         }
     }
-    
 
     /*
     // MARK: - Navigation
@@ -109,7 +133,7 @@ class MessageViewController: MessagesViewController {
 extension MessageViewController: MessagesDisplayDelegate {
     
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return isFromCurrentSender(message: message) ? UIColor.black : UIColor.red
+        return isFromCurrentSender(message: message) ? UIColor.blue : UIColor.gray
     }
     
     func shouldDisplayHeader(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> Bool {
@@ -119,6 +143,11 @@ extension MessageViewController: MessagesDisplayDelegate {
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
         let corner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
         return .bubbleTail(corner, .curved)
+    }
+    
+    
+    func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 12
     }
     
 }
@@ -149,7 +178,7 @@ extension MessageViewController: MessagesDataSource {
     
     // 1
     func currentSender() -> Sender {
-        return Sender(id: Constants.refs.currentUserid, displayName: Constants.refs.currentUserEmail)
+        return Sender(id: Constants.refs.getCurrentUserID(), displayName: Constants.refs.getCurrentUserEmail())
     }
     
     // 2
@@ -169,6 +198,8 @@ extension MessageViewController: MessagesDataSource {
                                     at indexPath: IndexPath) -> NSAttributedString? {
         
         let name = message.sender.displayName
+        print("nameeeeeee")
+        print(name)
         return NSAttributedString(
             string: name,
             attributes: [
@@ -182,6 +213,12 @@ extension MessageViewController: MessagesDataSource {
 extension MessageViewController: MessageInputBarDelegate {
     
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
+        // 1
+        let message = Message(content: text)
+        
+        // 2
+        save(message)
+        
         inputBar.inputTextView.text = ""
     }
     

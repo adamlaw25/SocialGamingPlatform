@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import FirebaseAuth
 
 struct Constants
 {
@@ -16,8 +17,17 @@ struct Constants
         static let databaseRoot = Database.database().reference()
         static let databaseChats = databaseRoot.child("messages")
         static let users = databaseRoot.child("users")
-        static let currentUserid = (Auth.auth().currentUser?.uid)!
-        static let currentUserEmail = (Auth.auth().currentUser?.email)!
-        static let currentUser = users.child("\(currentUserid)")
+        static func getCurrentUserID() -> String {
+            return (Auth.auth().currentUser?.uid)!
+        }
+        static func getCurrentUserEmail() -> String {
+            return (Auth.auth().currentUser?.email)!
+        }
+        static func getCurrentUser() -> DatabaseReference {
+            return users.child("\(getCurrentUserID())")
+        }
+//        static let currentUserid = (Auth.auth().currentUser?.uid)!
+//        static let currentUserEmail = (Auth.auth().currentUser?.email)!
+//        static let currentUser = users.child("\(currentUserid)")
     }
 }

@@ -28,7 +28,7 @@ class StoreDetailViewController: UIViewController {
         navigation.title = (storeItem?.name)!
         price.text = String((storeItem?.price)!)
         detail.text = String((storeItem?.detail)!)
-        Constants.refs.currentUser.observeSingleEvent(of: .value, with: { (snapshot) in
+        Constants.refs.getCurrentUser().observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             self.gameList = (value?["gameList"] as? [String])!
             self.score = (value?["score"] as? Int)!
@@ -63,7 +63,7 @@ class StoreDetailViewController: UIViewController {
     func unlockGame() {
         self.gameList.append((self.storeItem?.name)!)
         let updateGameList = ["gameList": self.gameList]
-        Constants.refs.currentUser.updateChildValues(updateGameList as [AnyHashable : Any])
+        Constants.refs.getCurrentUser().updateChildValues(updateGameList as [AnyHashable : Any])
         UpdateAccount.reduceScore(decrease: (storeItem?.price)!)
         self.score -= (storeItem?.price)!
         buyButton.isEnabled = false
@@ -72,7 +72,7 @@ class StoreDetailViewController: UIViewController {
     func buyPowerup() {
         let powerup = (self.storeItem?.powerUp)!
         let newPowerup = ["powerup": ["multiplier": powerup.multiplier, "timeLimit": powerup.timeLimit]]
-        Constants.refs.currentUser.updateChildValues(newPowerup)
+        Constants.refs.getCurrentUser().updateChildValues(newPowerup)
         UpdateAccount.reduceScore(decrease: (storeItem?.price)!)
         self.score -= (storeItem?.price)!
     }

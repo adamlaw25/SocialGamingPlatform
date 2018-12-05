@@ -199,7 +199,7 @@ class BJGameControllerTests: XCTestCase {
         bjcontroller.playerScore = 0
         bjcontroller.didDealerWin = true
         bjcontroller.awardScore()
-        XCTAssertEqual(bjcontroller.playerScore, -2)
+        XCTAssertEqual(bjcontroller.playerScore, 0)
     }
     
 }

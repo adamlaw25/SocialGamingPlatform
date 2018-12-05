@@ -26,7 +26,7 @@ class GameMenuTableTableViewController: UITableViewController {
     }
     
     func reloadGameList() {
-        Constants.refs.currentUser.observeSingleEvent(of: .value, with: { (snapshot) in
+        Constants.refs.getCurrentUser().observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             self.gameList = (value?["gameList"] as? [String])!
             self.tableView.reloadData()

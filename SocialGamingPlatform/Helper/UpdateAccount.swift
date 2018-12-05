@@ -12,7 +12,7 @@ import Firebase
 class UpdateAccount {
     // increase score method which multiplies the increase score with the multiplier
     static func increaseScore(increase: Int) {
-        let user = Constants.refs.currentUser
+        let user = Constants.refs.getCurrentUser()
         user.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let score = (value?["score"] as? Int)!
@@ -26,7 +26,7 @@ class UpdateAccount {
     
     // decrease score method which does not multiply the multiplier
     static func reduceScore(decrease: Int) {
-        let user = Constants.refs.currentUser
+        let user = Constants.refs.getCurrentUser()
         user.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let score = (value?["score"] as? Int)!
@@ -38,7 +38,7 @@ class UpdateAccount {
     
     // increase the user level by 1
     static func levelUp() {
-        let user = Constants.refs.currentUser
+        let user = Constants.refs.getCurrentUser()
         user.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let level = (value?["level"] as? Int)!

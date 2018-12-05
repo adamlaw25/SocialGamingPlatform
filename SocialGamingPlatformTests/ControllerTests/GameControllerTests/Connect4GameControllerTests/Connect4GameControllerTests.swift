@@ -163,7 +163,7 @@ class Connect4GameControllerTests: XCTestCase {
         controller.score_multiplier = 2
         controller.didComputerWin = true
         controller.awardScore()
-        XCTAssertEqual(controller.score, -50)
+        XCTAssertEqual(controller.score, 0)
         controller.score = 0
         controller.didComputerWin = false
         controller.awardScore()

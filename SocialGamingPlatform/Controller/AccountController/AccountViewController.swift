@@ -27,7 +27,7 @@ class AccountViewController: UIViewController {
     }
     
     func reloadInfo() {
-        Constants.refs.currentUser.observeSingleEvent(of: .value, with: { (snapshot) in
+        Constants.refs.getCurrentUser().observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             self.email.text = (value?["email"] as? String)!
             let levelValue = (value?["level"] as? Int)!

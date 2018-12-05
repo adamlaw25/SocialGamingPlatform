@@ -28,7 +28,7 @@ struct Message: MessageType {
     var downloadURL: URL? = nil
     
     init(content: String) {
-        sender = Sender(id: Constants.refs.currentUserid, displayName: Constants.refs.currentUserEmail)
+        sender = Sender(id: Constants.refs.getCurrentUserID(), displayName: Constants.refs.getCurrentUserEmail())
         self.content = content
         sentDate = Date()
         id = nil
