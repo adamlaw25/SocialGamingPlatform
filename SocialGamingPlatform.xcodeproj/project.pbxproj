@@ -29,7 +29,6 @@
 		7D7FF45621B50FE60018F768 /* UpdateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7FF45521B50FE60018F768 /* UpdateAccount.swift */; };
 		95115E362199F77C0090C720 /* Connect4MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95115E352199F77C0090C720 /* Connect4MenuViewController.swift */; };
 		9537F11621890E5C0028E901 /* MessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537F11521890E5C0028E901 /* MessageTests.swift */; };
-		9537F11821890E980028E901 /* MessageBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537F11721890E980028E901 /* MessageBoardTests.swift */; };
 		9537F11A21890EAA0028E901 /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537F11921890EAA0028E901 /* StoreTests.swift */; };
 		9537F11F21890EED0028E901 /* PowerupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537F11E21890EED0028E901 /* PowerupTests.swift */; };
 		9537F12221890F070028E901 /* CardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537F12121890F070028E901 /* CardTests.swift */; };
@@ -37,7 +36,6 @@
 		9537F1282189161E0028E901 /* BJGameControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9537F1272189161E0028E901 /* BJGameControllerTests.swift */; };
 		955FF7392188E9B30019420D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955FF7352188E9B30019420D /* LaunchScreen.storyboard */; };
 		955FF73A2188E9B30019420D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955FF7372188E9B30019420D /* Main.storyboard */; };
-		955FF7462188E9EB0019420D /* MessageBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FF73D2188E9EB0019420D /* MessageBoard.swift */; };
 		955FF7472188E9EB0019420D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FF73E2188E9EB0019420D /* Message.swift */; };
 		955FF7482188E9EB0019420D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FF7402188E9EB0019420D /* User.swift */; };
 		955FF7492188E9EB0019420D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955FF7422188E9EB0019420D /* Game.swift */; };
@@ -110,7 +108,6 @@
 		80F169151CDCDB057E201876 /* Pods-SocialGamingPlatform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialGamingPlatform.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialGamingPlatform/Pods-SocialGamingPlatform.debug.xcconfig"; sourceTree = "<group>"; };
 		95115E352199F77C0090C720 /* Connect4MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connect4MenuViewController.swift; sourceTree = "<group>"; };
 		9537F11521890E5C0028E901 /* MessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTests.swift; sourceTree = "<group>"; };
-		9537F11721890E980028E901 /* MessageBoardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoardTests.swift; sourceTree = "<group>"; };
 		9537F11921890EAA0028E901 /* StoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTests.swift; sourceTree = "<group>"; };
 		9537F11E21890EED0028E901 /* PowerupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerupTests.swift; sourceTree = "<group>"; };
 		9537F12121890F070028E901 /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
@@ -118,7 +115,6 @@
 		9537F1272189161E0028E901 /* BJGameControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BJGameControllerTests.swift; sourceTree = "<group>"; };
 		955FF7362188E9B30019420D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		955FF7382188E9B30019420D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		955FF73D2188E9EB0019420D /* MessageBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBoard.swift; sourceTree = "<group>"; };
 		955FF73E2188E9EB0019420D /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		955FF7402188E9EB0019420D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		955FF7422188E9EB0019420D /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -267,6 +263,7 @@
 		53EE1C01218570660026904F /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				7D15B1DF21B68B5200144B1A /* DatabaseRepresentation.swift */,
 				53EE1BF2218567B30026904F /* AlertHelper.swift */,
 				7D4F7AE921A0CF2100C77003 /* Serializable.swift */,
 				7D7FF45521B50FE60018F768 /* UpdateAccount.swift */,
@@ -309,7 +306,6 @@
 			isa = PBXGroup;
 			children = (
 				9537F11521890E5C0028E901 /* MessageTests.swift */,
-				9537F11721890E980028E901 /* MessageBoardTests.swift */,
 			);
 			path = MessageTests;
 			sourceTree = "<group>";
@@ -382,9 +378,7 @@
 		955FF73C2188E9EB0019420D /* Message */ = {
 			isa = PBXGroup;
 			children = (
-				955FF73D2188E9EB0019420D /* MessageBoard.swift */,
 				955FF73E2188E9EB0019420D /* Message.swift */,
-				7D15B1DF21B68B5200144B1A /* DatabaseRepresentation.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -750,7 +744,6 @@
 				95DF6BB92185548E001C0AF2 /* LogoutViewController.swift in Sources */,
 				955FF7472188E9EB0019420D /* Message.swift in Sources */,
 				95760D43219DF3B60058B5B4 /* SliderGameController.swift in Sources */,
-				955FF7462188E9EB0019420D /* MessageBoard.swift in Sources */,
 				95DF6BAE2184E0AB001C0AF2 /* BJViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -761,7 +754,6 @@
 			files = (
 				955FF7652188F71A0019420D /* UserTests.swift in Sources */,
 				9537F11621890E5C0028E901 /* MessageTests.swift in Sources */,
-				9537F11821890E980028E901 /* MessageBoardTests.swift in Sources */,
 				95760D4721A0CB810058B5B4 /* Connect4GameControllerTests.swift in Sources */,
 				9537F12221890F070028E901 /* CardTests.swift in Sources */,
 				95760D4921A102720058B5B4 /* SliderGameControllerTests.swift in Sources */,

@@ -36,9 +36,7 @@ class Card {
         if isFaceUp {
             return UIImage(named: "\(suit.toString())-\(digit).png")
         }
-        else {
-            return UIImage(named: "card-back.png")
-        }
+        return UIImage(named: "card-back.png")
     }
     
     //check if the current card is an ace

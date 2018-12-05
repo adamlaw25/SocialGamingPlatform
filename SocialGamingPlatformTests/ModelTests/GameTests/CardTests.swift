@@ -63,6 +63,8 @@ class CardTests: XCTestCase {
     
     func test_getCardImage() {
         XCTAssertTrue(heartTen.getCardImage()!.isEqual(UIImage(named: "heart-10.png")))
+        heartTen.isFaceUp = false
+        XCTAssertTrue(heartTen.getCardImage()!.isEqual(UIImage(named: "card-back.png")))
     }
     
     func test_isAce() {

@@ -27,7 +27,8 @@ class StoreItemTests: XCTestCase {
     func test_init() {
         XCTAssertEqual(test_storeitem1.name, "test")
         XCTAssertEqual(test_storeitem1.price, 10)
-        XCTAssertEqual(test_storeitem1.detail, "multiplier: 20\ntime limit: 30")
+//        XCTAssertEqual(test_storeitem1.detail, "multiplier: 20\ntime limit: 30")
+        XCTAssertEqual(test_storeitem1.detail, "multiplier: 20")
         XCTAssertEqual(test_storeitem1.powerUp?.multiplier, 20)
         XCTAssertEqual(test_storeitem1.powerUp?.timeLimit, 30)
         XCTAssertEqual(test_storeitem2.detail, "detail")

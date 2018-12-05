@@ -35,5 +35,6 @@ class PowerupTests: XCTestCase {
         XCTAssertEqual((powerupDict["multiplier"] as! Int), testpowerup.multiplier)
         XCTAssertEqual((powerupDict["timeLimit"] as! Int), testpowerup.timeLimit)
         XCTAssertNil(powerupDict["nil"])
+        XCTAssertNil(testpowerup.valueForKey(key: "nil"))
     }
 }

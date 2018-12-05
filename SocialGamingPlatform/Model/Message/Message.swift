@@ -17,7 +17,7 @@ struct Message: MessageType {
     let sentDate: Date
     let sender: Sender
     
-    var kind: MessageKind {
+    internal var kind: MessageKind {
         return .text(content)
     }
     
@@ -27,6 +27,7 @@ struct Message: MessageType {
     
     var downloadURL: URL? = nil
     
+    // initialize the message with content
     init(content: String) {
         sender = Sender(id: Constants.refs.getCurrentUserID(), displayName: Constants.refs.getCurrentUserEmail())
         self.content = content
@@ -34,6 +35,7 @@ struct Message: MessageType {
         id = nil
     }
     
+    // initialize the message from a query in the Firebase database
     init?(document: QueryDocumentSnapshot) {
         let data = document.data()
         
@@ -65,6 +67,7 @@ struct Message: MessageType {
     
 }
 
+// the representation for logging in the database
 extension Message: DatabaseRepresentation {
     
     var representation: [String : Any] {

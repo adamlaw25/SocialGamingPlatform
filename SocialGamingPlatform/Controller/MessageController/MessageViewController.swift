@@ -42,8 +42,10 @@ class MessageViewController: MessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // the database reference on Firebase
         reference = db.collection(["messages"].joined(separator: "/"))
         
+        // set a listener for real-time updating
         messageListener = reference?.addSnapshotListener { querySnapshot, error in
             guard let snapshot = querySnapshot else {
                 print("Error listening for channel updates: \(error?.localizedDescription ?? "No error")")
@@ -55,6 +57,7 @@ class MessageViewController: MessagesViewController {
             }
         }
         
+        // UI settings for the chat room
         self.navigationItem.title = "Chat room"
         
         maintainPositionOnKeyboardFrameChanged = true
@@ -74,13 +77,7 @@ class MessageViewController: MessagesViewController {
         }
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//
-//        let testMessage = Message(content: "What upppppppp!")
-//        insertNewMessage(testMessage)
-//    }
-    
+    // method to handle the displaying of the messages
     private func handleDocumentChange(_ change: DocumentChange) {
         guard let message = Message(document: change.document) else {
             return
@@ -94,6 +91,7 @@ class MessageViewController: MessagesViewController {
         }
     }
     
+    // method to save new user outgoing message
     private func save(_ message: Message) {
         reference?.addDocument(data: message.representation) { error in
             if let e = error {
@@ -105,6 +103,7 @@ class MessageViewController: MessagesViewController {
         }
     }
     
+    // method to insert a message to the message board
     private func insertNewMessage(_ message: Message) {
         guard !messages.contains(message) else {
             return
@@ -137,6 +136,7 @@ class MessageViewController: MessagesViewController {
 
 }
 
+// delegate for displaying the chat room
 extension MessageViewController: MessagesDisplayDelegate {
     
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
@@ -168,7 +168,7 @@ extension MessageViewController: MessagesDisplayDelegate {
         return 20
     }
     
-    // time sent label
+    // sent date label
     func cellTopLabelAttributedText(for message: MessageType,
                                     at indexPath: IndexPath) -> NSAttributedString? {
         
@@ -180,6 +180,7 @@ extension MessageViewController: MessagesDisplayDelegate {
     }
 }
 
+// the layout delegate for the chat room
 extension MessageViewController: MessagesLayoutDelegate {
     
     func avatarSize(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGSize {
@@ -197,8 +198,7 @@ extension MessageViewController: MessagesLayoutDelegate {
     
 }
 
-// MARK: - MessagesDataSource
-
+// the data source delegate for returning the messages
 extension MessageViewController: MessagesDataSource {
     // return the number of sections
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
@@ -223,6 +223,7 @@ extension MessageViewController: MessagesDataSource {
     }
 }
 
+// the user input set-up
 extension MessageViewController: MessageInputBarDelegate {
     
     // save the input as content message

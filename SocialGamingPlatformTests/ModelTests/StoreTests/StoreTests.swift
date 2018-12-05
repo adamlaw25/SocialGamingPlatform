@@ -32,11 +32,11 @@ class StoreTests: XCTestCase {
 //                XCTAssertEqual(teststore.items.count, 0)
 //            }
 //        }
-//        let teststore = Store()
-//        print("rrrrrrrrr")
-//        print(teststore.ref)
-//        teststore.addItems()
-//        XCTAssertEqual(teststore.items.count, 0)
+////        let teststore = Store()
+////        print("rrrrrrrrr")
+////        print(teststore.ref)
+////        teststore.addItems()
+////        XCTAssertEqual(teststore.items.count, 0)
 //    }
     
     func test_addItems() {

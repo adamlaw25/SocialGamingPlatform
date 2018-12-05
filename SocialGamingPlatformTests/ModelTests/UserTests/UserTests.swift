@@ -83,6 +83,7 @@ class UserTests: XCTestCase {
         XCTAssertEqual(powerup["multiplier"] as! Int, testuser.powerup.multiplier)
         XCTAssertEqual(powerup["timeLimit"] as! Int, testuser.powerup.timeLimit)
         XCTAssertNil(powerup["nil"])
+        XCTAssertNil(testuser.valueForKey(key: "nil"))
     }
 
 }

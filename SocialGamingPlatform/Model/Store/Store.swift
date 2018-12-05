@@ -11,19 +11,14 @@ import Firebase
 
 class Store {
     var items : [StoreItem] = []
-    var ref: DatabaseReference!
     
     init() {
-        let uid = Auth.auth().currentUser?.uid
-        ref = Database.database().reference(withPath: "users/\(uid!)")
-        
         addItems()
         removeExistingGames()
     }
     
     func addItems() {
-        let ref2 = Database.database().reference(withPath: "items")
-        ref2.observeSingleEvent(of: .value, with: { (snapshot) in
+        Constants.refs.databaseItems.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             
             // add the powerups from database
@@ -53,7 +48,7 @@ class Store {
     }
     
     func removeExistingGames() {
-        self.ref.observeSingleEvent(of: .value, with: { (snapshot) in
+        Constants.refs.getCurrentUser().observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let gameList = (value?["gameList"] as? [String])!
             for game in gameList {
