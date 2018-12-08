@@ -33,62 +33,62 @@ class Connect4GameControllerTests: XCTestCase {
         tearDown()
     }
     
-    func test_dropPuck() {
-        //test adding player puck
-        controller.game_state = .player_state
-        controller.dropPuck(column: 0)
-        XCTAssertEqual(controller.game_board,
-                       [   [0,0,0,0,0,0],
-                           [0,0,0,0,0,0],
-                           [0,0,0,0,0,0],
-                           [0,0,0,0,0,0],
-                           [0,0,0,0,0,0],
-                           [1,0,0,0,0,0]])
-        XCTAssertEqual(controller.player_pucks, 1)
-        XCTAssertEqual(controller.comp_pucks, 0)
-        //test adding computer puck
-        controller.game_state = .computer_state
-        controller.dropPuck(column: 1)
-        XCTAssertEqual(controller.game_board,
-                       [   [0,0,0,0,0,0],
-                           [0,0,0,0,0,0],
-                           [0,0,0,0,0,0],
-                           [0,0,0,0,0,0],
-                           [0,0,0,0,0,0],
-                           [1,2,0,0,0,0]])
-        XCTAssertEqual(controller.player_pucks, 1)
-        XCTAssertEqual(controller.comp_pucks, 1)
-        //test adding pucks on top of other pucks
-        controller.game_state = .player_state
-        controller.dropPuck(column: 1)
-        controller.game_state = .computer_state
-        controller.dropPuck(column: 0)
-        XCTAssertEqual(controller.game_board, [   [0,0,0,0,0,0],
-                                                  [0,0,0,0,0,0],
-                                                  [0,0,0,0,0,0],
-                                                  [0,0,0,0,0,0],
-                                                  [2,1,0,0,0,0],
-                                                  [1,2,0,0,0,0]])
-        //test adding a puck to a full column
-        controller.game_board = [   [0,0,1,0,0,0],
-                                    [0,0,1,0,0,0],
-                                    [0,0,1,0,0,0],
-                                    [0,0,1,0,0,0],
-                                    [0,0,1,0,0,0],
-                                    [0,0,1,0,0,0]]
-        controller.player_pucks = 6
-        controller.game_state = .player_state
-        controller.dropPuck(column: 2)
-        XCTAssertEqual(controller.game_board,
-                       [   [0,0,1,0,0,0],
-                           [0,0,1,0,0,0],
-                           [0,0,1,0,0,0],
-                           [0,0,1,0,0,0],
-                           [0,0,1,0,0,0],
-                           [0,0,1,0,0,0]])
-        XCTAssertEqual(controller.player_pucks, 6)
-        tearDown()
-    }
+//    func test_dropPuck() {
+//        //test adding player puck
+//        controller.game_state = .player_state
+//        controller.dropPuck(column: 0)
+//        XCTAssertEqual(controller.game_board,
+//                       [   [0,0,0,0,0,0],
+//                           [0,0,0,0,0,0],
+//                           [0,0,0,0,0,0],
+//                           [0,0,0,0,0,0],
+//                           [0,0,0,0,0,0],
+//                           [1,0,0,0,0,0]])
+//        XCTAssertEqual(controller.player_pucks, 1)
+//        XCTAssertEqual(controller.comp_pucks, 0)
+//        //test adding computer puck
+//        controller.game_state = .computer_state
+//        controller.dropPuck(column: 1)
+//        XCTAssertEqual(controller.game_board,
+//                       [   [0,0,0,0,0,0],
+//                           [0,0,0,0,0,0],
+//                           [0,0,0,0,0,0],
+//                           [0,0,0,0,0,0],
+//                           [0,0,0,0,0,0],
+//                           [1,2,0,0,0,0]])
+//        XCTAssertEqual(controller.player_pucks, 1)
+//        XCTAssertEqual(controller.comp_pucks, 1)
+//        //test adding pucks on top of other pucks
+//        controller.game_state = .player_state
+//        controller.dropPuck(column: 1)
+//        controller.game_state = .computer_state
+//        controller.dropPuck(column: 0)
+//        XCTAssertEqual(controller.game_board, [   [0,0,0,0,0,0],
+//                                                  [0,0,0,0,0,0],
+//                                                  [0,0,0,0,0,0],
+//                                                  [0,0,0,0,0,0],
+//                                                  [2,1,0,0,0,0],
+//                                                  [1,2,0,0,0,0]])
+//        //test adding a puck to a full column
+//        controller.game_board = [   [0,0,1,0,0,0],
+//                                    [0,0,1,0,0,0],
+//                                    [0,0,1,0,0,0],
+//                                    [0,0,1,0,0,0],
+//                                    [0,0,1,0,0,0],
+//                                    [0,0,1,0,0,0]]
+//        controller.player_pucks = 6
+//        controller.game_state = .player_state
+//        controller.dropPuck(column: 2)
+//        XCTAssertEqual(controller.game_board,
+//                       [   [0,0,1,0,0,0],
+//                           [0,0,1,0,0,0],
+//                           [0,0,1,0,0,0],
+//                           [0,0,1,0,0,0],
+//                           [0,0,1,0,0,0],
+//                           [0,0,1,0,0,0]])
+//        XCTAssertEqual(controller.player_pucks, 6)
+//        tearDown()
+//    }
     
     func test_isColumnFull() {
         controller.game_board = [   [0,0,0,0,0,1],
