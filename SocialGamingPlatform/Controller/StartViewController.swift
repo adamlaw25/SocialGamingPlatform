@@ -25,7 +25,7 @@ class StartViewController: UIViewController, UITextFieldDelegate {
     
     //a button action that triggers the login
     @IBAction func loginAction(_ sender: Any) {
-        Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
+            Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
             if error == nil{
                 print("logggggggg")
                 print(Auth.auth().currentUser?.email!)

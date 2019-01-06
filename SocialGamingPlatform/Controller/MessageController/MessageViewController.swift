@@ -17,6 +17,7 @@ class MessageViewController: MessagesViewController {
     private let db = Firestore.firestore()
     private var reference: CollectionReference?
     private let storage = Storage.storage().reference()
+    private let message_limit = 20
     
     private var messages: [Message] = []
     
@@ -114,6 +115,13 @@ class MessageViewController: MessagesViewController {
         
         let isLatestMessage = messages.index(of: message) == (messages.count - 1)
         let shouldScrollToBottom = isLatestMessage
+        
+        //added a check method to check if the no of messages exceed 20
+        let msgCtr = messages.count
+        print(msgCtr)
+        if msgCtr > message_limit {
+           self.messages = Array(messages[msgCtr-message_limit...msgCtr-1])
+        }
         
         messagesCollectionView.reloadData()
         
